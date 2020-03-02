@@ -8,6 +8,11 @@ namespace Orb.GirlLike.Players
     public float speed;
     public float jumpForce;
 
+    [Header("Collider Settings")]
+#pragma warning disable CS0649
+    [SerializeField] private PhysicsMaterial2D materialAir;
+    [SerializeField] private PhysicsMaterial2D materialGround;
+#pragma warning restore CS0649
 
     [Header("Ground Settings")]
     public Vector2 boxSize;
@@ -27,6 +32,9 @@ namespace Orb.GirlLike.Players
     private void Update()
     {
       SetXVelocity(horizontalAxis * speed);
+
+      var inGround = IsGround(out var hit);
+      _rigidbody.sharedMaterial = (inGround) ? materialGround : materialAir;
     }
 
     public void Jump(ActionState state)
