@@ -5,8 +5,10 @@ namespace Orb.GirlLike.Controllers
   [RequireComponent(typeof(ControllerMap))]
   public class Controller : MonoBehaviour
   {
+#pragma warning disable CS0649
     [SerializeField] [HideInInspector] internal Button jump;
     [SerializeField] [HideInInspector] internal Axis horizontal;
+#pragma warning restore CS0649
 
     public ControllerMap map { get; private set; }
 
