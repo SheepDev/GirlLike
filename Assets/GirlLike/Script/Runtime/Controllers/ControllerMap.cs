@@ -6,6 +6,8 @@ namespace Orb.GirlLike.Controllers
   {
     public AxisInfo horizontal;
     public KeyCode jumpKey;
+    public KeyCode attackKey;
+    public KeyCode dashKey;
   }
 
   [System.Serializable]

@@ -1,0 +1,547 @@
+fileFormatVersion: 2
+guid: 81be20a1449b75941bd57688c4926219
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -547053214542674537
+    second: peach_jump_0
+  - first:
+      213: 2481714744120990054
+    second: peach_jump_1
+  - first:
+      213: -3848032523022607096
+    second: peach_jump_2
+  - first:
+      213: 3846066729140659286
+    second: peach_jump_3
+  - first:
+      213: -2440243540582254252
+    second: peach_jump_4
+  - first:
+      213: -5013243821005299778
+    second: peach_jump_5
+  - first:
+      213: -4158469143961622775
+    second: peach_jump_6
+  - first:
+      213: 8078787653344182531
+    second: peach_jump_7
+  - first:
+      213: -32133699412343055
+    second: peach_jump_0
+  - first:
+      213: 8839940679506414063
+    second: peach_jump_1
+  - first:
+      213: 4923930350326163441
+    second: peach_jump_2
+  - first:
+      213: -8347336336447809658
+    second: peach_jump_3
+  - first:
+      213: 3886672590459545522
+    second: peach_jump_4
+  - first:
+      213: 5176552100838708094
+    second: peach_jump_5
+  - first:
+      213: 7621237453879480669
+    second: peach_jump_6
+  - first:
+      213: 1227491005047143162
+    second: peach_jump_7
+  - first:
+      213: -6083141508243884418
+    second: peach_jump_8
+  - first:
+      213: -2749047462894332713
+    second: peach_jump_9
+  - first:
+      213: -8167262256398720716
+    second: peach_jump_10
+  - first:
+      213: 8455021153301704936
+    second: peach_jump_11
+  - first:
+      213: -2347275384867564971
+    second: peach_jump_12
+  - first:
+      213: -3075921211694874315
+    second: peach_jump_13
+  - first:
+      213: -1531093767986592048
+    second: peach_jump_14
+  - first:
+      213: 7258460454576882707
+    second: peach_jump_15
+  - first:
+      213: -1924331264058530059
+    second: peach_jump_8
+  - first:
+      213: -739668464717706670
+    second: peach_jump_9
+  - first:
+      213: 8940801935237832557
+    second: peach_jump_10
+  - first:
+      213: -5795766870094656647
+    second: peach_jump_11
+  - first:
+      213: 6485246854202339063
+    second: peach_jump_12
+  - first:
+      213: 913949499521440524
+    second: peach_jump_13
+  - first:
+      213: -635555120007884597
+    second: peach_jump_14
+  - first:
+      213: -1000726553764933176
+    second: peach_jump_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 35
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: peach_jump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f645351296dd8ff0800000000000000
+      internalID: -32133699412343055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 300
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe941854637cdaa70800000000000000
+      internalID: 8839940679506414063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_2
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 300
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7a4f5c090555440800000000000000
+      internalID: 4923930350326163441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 300
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687515df3dd482c80800000000000000
+      internalID: -8347336336447809658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7a698e02c30f530800000000000000
+      internalID: 3886672590459545522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_5
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 200
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e731bcb85bec6d740800000000000000
+      internalID: 5176552100838708094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_6
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 200
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d519363d51314c960800000000000000
+      internalID: 7621237453879480669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_7
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 200
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa72d8c09ce80110800000000000000
+      internalID: 1227491005047143162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f6ec9f29e66b45e0800000000000000
+      internalID: -1924331264058530059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_9
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 100
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a41f4437b2cb5f0800000000000000
+      internalID: -739668464717706670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_10
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 100
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6fd9fc5dfb141c70800000000000000
+      internalID: 8940801935237832557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_11
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 100
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97bc70b2dbc419fa0800000000000000
+      internalID: -5795766870094656647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe237157a9300a50800000000000000
+      internalID: 6485246854202339063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_13
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b1f9d3a300fac00800000000000000
+      internalID: 913949499521440524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_14
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0dfb45cfd0e27f0800000000000000
+      internalID: -635555120007884597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: peach_jump_15
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 140
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c15a8d5084bc12f0800000000000000
+      internalID: -1000726553764933176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
