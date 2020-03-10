@@ -8,6 +8,7 @@ namespace Orb.GirlLike.Controllers
 #pragma warning disable CS0649
     [SerializeField] [HideInInspector] internal Button jump;
     [SerializeField] [HideInInspector] internal Button attack;
+    [SerializeField] [HideInInspector] internal Button interactive;
     [SerializeField] [HideInInspector] internal Button dash;
     [SerializeField] [HideInInspector] internal Axis horizontal;
 #pragma warning restore CS0649
@@ -24,6 +25,7 @@ namespace Orb.GirlLike.Controllers
       jump.CheckState(map.jumpKey);
       attack.CheckState(map.attackKey);
       dash.CheckState(map.dashKey);
+      interactive.CheckState(map.interactiveKey);
 
       var info = map.horizontal;
       horizontal.CheckUpdate(info.name, info.isInvert);
