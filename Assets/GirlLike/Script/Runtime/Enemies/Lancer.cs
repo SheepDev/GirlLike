@@ -96,7 +96,10 @@ namespace Orb.GirlLike.Ememies
     private void SetTargetDirection(bool isLeft)
     {
       var direction = isLeft ? Vector3.left : Vector3.right;
-      sprite.flipX = !isLeft;
+      var scala = Vector3.one;
+      if (!isLeft) scala.x = -1;
+      GetTransform().localScale = scala;
+
       MoveTo.Direction(direction);
     }
 
@@ -132,7 +135,8 @@ namespace Orb.GirlLike.Ememies
       var move = spear.GetComponent<MoveTo>();
       var sprite = spear.GetComponent<SpriteRenderer>();
 
-      var isRight = sprite.flipX = this.sprite.flipX;
+      var isRight = transform.localScale.x < 0;
+      spear.transform.localScale = transform.localScale;
       move.Direction(isRight ? Vector3.right : Vector3.left);
 
       spear.SetActive(true);
