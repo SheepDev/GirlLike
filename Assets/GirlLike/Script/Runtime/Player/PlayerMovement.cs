@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Gameplay.Effect;
 using Orb.GirlLike.Controllers;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,6 +9,7 @@ namespace Orb.GirlLike.Players
 {
   public class PlayerMovement : MonoBehaviour
   {
+    public Parallax parallax;
     public float defaultSpeed;
     public float currentSpeed;
 
@@ -36,6 +38,7 @@ namespace Orb.GirlLike.Players
     public LayerMask layerGround;
 
     private Transform cacheTransform;
+    private Vector3 lastPosition;
     private float desiredMoveAxis;
     private float currentMoveAxis;
 
@@ -49,17 +52,30 @@ namespace Orb.GirlLike.Players
       SetDirection(look, true);
 
       currentSpeed = defaultSpeed;
+      lastPosition = transform.position;
     }
 
     private void Update()
     {
       var inGround = InGround();
       _rigidbody.sharedMaterial = (inGround) ? materialGround : materialAir;
+      ApplyParallax();
 
       if (IsDisable()) return;
 
       var velocity = currentMoveAxis * currentSpeed;
       SetXVelocity(velocity);
+    }
+
+    private void ApplyParallax()
+    {
+      var transform = GetTransform();
+      if (transform.position != lastPosition)
+      {
+        var delta = lastPosition - transform.position;
+        parallax.Move(delta.normalized, delta.magnitude);
+        lastPosition = transform.position;
+      }
     }
 
     public void Jump(ActionState state)
