@@ -32,13 +32,15 @@ namespace Orb.GirlLike.Players
     public bool IsAttack => isAttack;
     public PlayerMovement Movement { get; private set; }
     public PlayerAnimator PlayerAnimator { get; private set; }
+    public PlayerStatus Status { get; private set; }
 
     private void Awake()
     {
       Movement = GetComponent<PlayerMovement>();
       PlayerAnimator = GetComponent<PlayerAnimator>();
-      var hitPoint = GetComponent<PlayerHitPoint>();
+      Status = GetComponent<PlayerStatus>();
 
+      var hitPoint = GetComponent<PlayerHitPoint>();
       onDash.AddListener(() => hitPoint.isIgnoreDamage = true);
       onDashFinish.AddListener(() => hitPoint.isIgnoreDamage = false);
     }
@@ -95,15 +97,16 @@ namespace Orb.GirlLike.Players
 
     private void ApplyDamage_AnimTrigger(string attackID)
     {
-      var setting = attackSettings.Find(obj => obj.ID == attackID);
+      var attack = attackSettings.Find(obj => obj.ID == attackID);
 
-      if (setting == null)
+      if (attack == null)
       {
         Debug.LogWarningFormat("[{0}] Not find attack ID \"{1}\" in Settings", name, attackID);
         return;
       }
 
-      setting.TriggerDamage(setting.baseDamage);
+      var damage = Status.CalculeDamage(attack.baseDamage);
+      attack.TriggerDamage(damage);
     }
 
     private void AllowNextAttack()

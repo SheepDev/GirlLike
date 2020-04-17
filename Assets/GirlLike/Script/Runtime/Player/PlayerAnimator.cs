@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using Orb.GirlLike.Utility;
+using UnityEngine;
 
 namespace Orb.GirlLike.Players
 {
   public class PlayerAnimator : MonoBehaviour
   {
-    [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private SpriteUtility spriteUtility;
     [SerializeField] private Animator spriteAnimator;
 
     public PlayerMovement PlayerMovement { get; private set; }
@@ -72,7 +73,7 @@ namespace Orb.GirlLike.Players
 
     private void SetDirection(LookDirection direction)
     {
-      Animator.Play(direction == LookDirection.Left ? "FlipX" : "Default");
+      spriteUtility.FlipX(direction == LookDirection.Left ? true : false);
     }
   }
 }
