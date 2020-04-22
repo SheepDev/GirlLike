@@ -16,7 +16,6 @@ namespace Orb.GirlLike.Players
     [SerializeField] private TakeDamage takeDamage;
 
     [Header("Event")]
-    public UnityEvent onDamage;
     public UnityEvent onVunerable;
 
     public PlayerMovement Moviment { get; private set; }
@@ -48,8 +47,6 @@ namespace Orb.GirlLike.Players
       Moviment._rigidbody.velocity = Vector2.zero;
       Moviment._rigidbody.AddForce(direction, ForceMode2D.Impulse);
       base.ApplyDamage(data);
-
-      onDamage.Invoke();
       IgnoreDamage(ignoreDamageDelay, true);
     }
 
