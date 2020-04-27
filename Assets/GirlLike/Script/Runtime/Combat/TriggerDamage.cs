@@ -15,9 +15,10 @@ namespace Orb.GirlLike.Combats
     private void OnTriggerStay2D(Collider2D other)
     {
       var takeDamage = other.GetComponent<TakeDamage>();
-      var tagName = selectTag.ToString();
+      if (takeDamage == null) return;
 
-      if (takeDamage != null && string.IsNullOrEmpty(tagName) || takeDamage.CompareTag(tagName))
+      var tagName = selectTag.ToString();
+      if (string.IsNullOrEmpty(tagName) || takeDamage.CompareTag(tagName))
       {
         takeDamage.PointDamage(damage, transform.position);
         onTrigger.Invoke();
