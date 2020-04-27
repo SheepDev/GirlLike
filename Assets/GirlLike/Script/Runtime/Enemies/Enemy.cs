@@ -11,6 +11,7 @@ namespace Orb.GirlLike.Ememies
 
     [Header("Collider Setup")]
     public BoundsBehaviour followBounds;
+    public BoundsBehaviour avoidBounds;
     public BoundsBehaviour attackBounds;
     public LayerMask mask;
 
@@ -39,7 +40,7 @@ namespace Orb.GirlLike.Ememies
 
     protected bool BoundsConstains(BoundsBehaviour bounds, Vector3 point)
     {
-      return bounds.GetBounds().Contains(point);
+      return bounds != null && bounds.GetBounds().Contains(point);
     }
 
     protected virtual void OnDie()
@@ -53,6 +54,13 @@ namespace Orb.GirlLike.Ememies
     private Vector3 GetCenter()
     {
       return center + GetTransform().position;
+    }
+
+    public bool TargetIsLeft()
+    {
+      var transform = GetTransform();
+      var targetPoint = target.GetCenter();
+      return targetPoint.x < transform.position.x;
     }
 
     public Transform GetTransform()

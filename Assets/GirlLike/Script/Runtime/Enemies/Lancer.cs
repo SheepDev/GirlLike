@@ -5,33 +5,23 @@ using UnityEngine;
 namespace Orb.GirlLike.Ememies
 {
   [RequireComponent(typeof(MoveTo))]
-  public class Lancer : MonoBehaviour
+  public class Lancer : Enemy
   {
-    [Header("Setup")]
-    [SerializeField] private SpriteRenderer sprite;
-    [SerializeField] private Vector3 center;
-    public Collider2D target;
-
     [Header("Spear Setup")]
     [SerializeField] private Transform spearSpawnPoint;
-    [SerializeField] private GameObject prefab;
-
-
-    [Header("Collider Setup")]
-    public BoundsData closeBounds;
-    public BoundsData attackBounds;
-    public BoundsData avoidBounds;
-
-    private Transform cacheTransform;
+    [SerializeField] private Spear prefab;
 
     private bool isAttack;
     private bool isAttackCountdown;
+    private bool isAllowToAttack;
 
+    public bool IsAllowToAttack => isAllowToAttack && !isAttackCountdown;
     public MoveTo MoveTo { get; private set; }
     public Animator Animator { get; private set; }
 
-    private void Awake()
+    protected override void Awake()
     {
+      base.Awake();
       MoveTo = GetComponent<MoveTo>();
       Animator = GetComponent<Animator>();
     }
@@ -39,51 +29,43 @@ namespace Orb.GirlLike.Ememies
     private void OnEnable()
     {
       Animator.Play("Spawn");
-    }
-
-    private void OnDisable()
-    {
-      MoveTo.enabled = false;
-      Destroy(gameObject, 3f);
+      isAllowToAttack = true;
     }
 
     private void Update()
     {
-      var point = GetTargetClosetPoint();
-      var isClose = IsTargetClose(point);
+      if (isAttack) return;
 
-      if (!isClose || isAttack)
+      var targetPoint = target.GetCenter();
+      if (IsAllowToAttack && BoundsConstains(attackBounds, targetPoint))
       {
-        Stop(!isAttack);
+        Stop();
+        StartCoroutine(Attack());
         return;
       }
 
-      var transform = GetTransform();
-      var isCloseToAttack = IsCloseToAttack(point);
-      var isAvoid = IsAvoid(point);
-      var isLeft = point.x < transform.position.x;
+      var isAvoid = BoundsConstains(avoidBounds, targetPoint);
+      if (isAvoid)
+      {
+        AvoidTarget();
+        return;
+      }
 
-      if (!isAttackCountdown && isCloseToAttack)
+      var isFollow = BoundsConstains(followBounds, targetPoint);
+      if (isFollow)
       {
-        Stop();
-        SetTargetDirection(isLeft);
-        StartCoroutine(Attack());
+        GoToTarget();
+        return;
       }
-      else if (!isCloseToAttack || isAvoid)
-      {
-        if (isAvoid) isLeft = !isLeft;
-        SetTargetDirection(isLeft);
-        MoveTo.enabled = true;
-        Animator.Play("Walk");
-      }
-      else
-      {
-        Stop(true);
-      }
+
+      Stop();
     }
 
     private IEnumerator Attack()
     {
+      var isLeft = TargetIsLeft();
+      SetDirection(isLeft);
+
       isAttack = true;
       Animator.Play("Attack");
       yield return new WaitForSeconds(2);
@@ -93,14 +75,10 @@ namespace Orb.GirlLike.Ememies
       isAttackCountdown = false;
     }
 
-    private void SetTargetDirection(bool isLeft)
+    protected override void OnDie()
     {
-      var direction = isLeft ? Vector3.left : Vector3.right;
-      var scala = Vector3.one;
-      if (!isLeft) scala.x = -1;
-      GetTransform().localScale = scala;
-
-      MoveTo.Direction(direction);
+      StopAllCoroutines();
+      Animator.Play("Die");
     }
 
     private void Stop(bool isAnimated = false)
@@ -111,92 +89,32 @@ namespace Orb.GirlLike.Ememies
         Animator.Play("Idle");
     }
 
-    private bool IsTargetClose(Vector3 point)
-    {
-      var bounds = GetBounds(closeBounds);
-      return bounds.Contains(point);
-    }
-
-    private bool IsCloseToAttack(Vector3 point)
-    {
-      var bounds = GetBounds(attackBounds);
-      return bounds.Contains(point);
-    }
-
-    private bool IsAvoid(Vector3 point)
-    {
-      var bounds = GetBounds(avoidBounds);
-      return bounds.Contains(point);
-    }
-
     private void SpawnSpear()
     {
       var spear = Instantiate(prefab, spearSpawnPoint.position, Quaternion.identity);
-      var move = spear.GetComponent<MoveTo>();
-      var sprite = spear.GetComponent<SpriteRenderer>();
-
-      var isRight = transform.localScale.x < 0;
-      spear.transform.localScale = transform.localScale;
-      move.Direction(isRight ? Vector3.right : Vector3.left);
-
-      spear.SetActive(true);
+      var isLeft = TargetIsLeft();
+      spear.SetDirection(isLeft);
+      spear.gameObject.SetActive(true);
     }
 
-    private Bounds GetTargetBounds()
+    private void AvoidTarget()
     {
-      return target.bounds;
+      var isLeft = TargetIsLeft();
+      GoTo(!isLeft);
     }
 
-    private Vector3 GetTargetClosetPoint()
+    private void GoToTarget()
     {
-      var targetBounds = GetTargetBounds();
-      return targetBounds.ClosestPoint(GetCenter());
+      var isLeft = TargetIsLeft();
+      GoTo(isLeft);
     }
 
-    private Bounds GetBounds(BoundsData data)
+    private void GoTo(bool isLeft)
     {
-      var transform = GetTransform();
-      return new Bounds(transform.position + data.center, data.size);
+      MoveTo.enabled = true;
+      MoveTo.Direction(isLeft ? Vector3.left : Vector3.right);
+      SetDirection(isLeft);
+      Animator.Play("Walk");
     }
-
-    private Vector3 GetCenter()
-    {
-      return center + GetTransform().position;
-    }
-
-    public Transform GetTransform()
-    {
-      if (cacheTransform == null)
-      {
-        cacheTransform = transform;
-      }
-
-      return cacheTransform;
-    }
-
-    private void OnDrawGizmos()
-    {
-      Gizmos.color = Color.magenta;
-      Gizmos.DrawSphere(GetCenter(), 0.1f);
-
-      Gizmos.color = Color.yellow;
-      var bounds = GetBounds(closeBounds);
-      Gizmos.DrawWireCube(bounds.center, bounds.size);
-
-      Gizmos.color = Color.red;
-      bounds = GetBounds(attackBounds);
-      Gizmos.DrawWireCube(bounds.center, bounds.size);
-
-      Gizmos.color = Color.cyan;
-      bounds = GetBounds(avoidBounds);
-      Gizmos.DrawWireCube(bounds.center, bounds.size);
-    }
-  }
-
-  [System.Serializable]
-  public struct BoundsData
-  {
-    public Vector3 center;
-    public Vector3 size;
   }
 }

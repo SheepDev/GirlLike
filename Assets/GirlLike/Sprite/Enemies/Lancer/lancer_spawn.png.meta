@@ -26,8 +26,38 @@ TextureImporter:
   - first:
       213: 860106327581605333
     second: lancer_spawn_7
+  - first:
+      213: -4029736535706047411
+    second: lancer_spawn_0
+  - first:
+      213: 8257725979915884448
+    second: lancer_spawn_1
+  - first:
+      213: -7597515052301170822
+    second: lancer_spawn_2
+  - first:
+      213: -2441791295532621514
+    second: lancer_spawn_3
+  - first:
+      213: -8120826974032780572
+    second: lancer_spawn_4
+  - first:
+      213: 2012744561923003020
+    second: lancer_spawn_8
+  - first:
+      213: 2847447499750161135
+    second: lancer_spawn_5
+  - first:
+      213: 745071411234377944
+    second: lancer_spawn_6
+  - first:
+      213: 9013524998874808398
+    second: lancer_spawn_7
+  - first:
+      213: -5478386963853655631
+    second: lancer_spawn_8
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -81,6 +111,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -126,6 +157,111 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 140
+        width: 140
+        height: 140
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ce3d2a8ff7318c0800000000000000
+      internalID: -4029736535706047411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lancer_spawn_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 140
+        width: 140
+        height: 140
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a796650706599270800000000000000
+      internalID: 8257725979915884448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lancer_spawn_2
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 140
+        width: 140
+        height: 140
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77c7e33054309690800000000000000
+      internalID: -7597515052301170822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lancer_spawn_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 140
+        width: 140
+        height: 140
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631232ef0c30d1ed0800000000000000
+      internalID: -2441791295532621514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lancer_spawn_4
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 140
+        width: 140
+        height: 140
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2ad52a4e60d4f80800000000000000
+      internalID: -8120826974032780572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lancer_spawn_5
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 140
         height: 140
@@ -136,14 +272,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e1210b75d1c548f0800000000000000
-      internalID: -556825856274521632
+      spriteID: feabe232a6a248720800000000000000
+      internalID: 2847447499750161135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lancer_spawn_1
+      name: lancer_spawn_6
       rect:
         serializedVersion: 2
         x: 140
@@ -157,14 +293,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3df5bb56ecf721230800000000000000
-      internalID: 3608086775923957715
+      spriteID: 8d09cee3086075a00800000000000000
+      internalID: 745071411234377944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lancer_spawn_2
+      name: lancer_spawn_7
       rect:
         serializedVersion: 2
         x: 280
@@ -178,14 +314,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47321e1a9b95eee10800000000000000
-      internalID: 2228817519414682484
+      spriteID: e4049041b39761d70800000000000000
+      internalID: 9013524998874808398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lancer_spawn_3
+      name: lancer_spawn_8
       rect:
         serializedVersion: 2
         x: 420
@@ -199,92 +335,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d61f7bcadbc61e430800000000000000
-      internalID: 3810446321634505069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lancer_spawn_4
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 0
-        width: 140
-        height: 140
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee0d9b0ef71642b70800000000000000
-      internalID: 8873324367685734638
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lancer_spawn_5
-      rect:
-        serializedVersion: 2
-        x: 700
-        y: 0
-        width: 140
-        height: 140
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75e42f42e39c88ae0800000000000000
-      internalID: -1546765203256750505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lancer_spawn_6
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 0
-        width: 140
-        height: 140
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a59cc18ffa2195b0800000000000000
-      internalID: -5363458404338854495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lancer_spawn_7
-      rect:
-        serializedVersion: 2
-        x: 980
-        y: 0
-        width: 140
-        height: 140
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5dd319cd526bfeb00800000000000000
-      internalID: 860106327581605333
+      spriteID: 1b14f55051cd8f3b0800000000000000
+      internalID: -5478386963853655631
       vertices: []
       indices: 
       edges: []
