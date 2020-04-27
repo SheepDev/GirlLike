@@ -13,6 +13,11 @@ namespace Orb.GirlLike.Combats
       Cast(damage, string.Empty);
     }
 
+    public void PointCast(float damage, Vector3 position)
+    {
+      PointCast(damage, position, string.Empty);
+    }
+
     public void Cast(float damage, string tag)
     {
       var takeDamages = GetOverlapBehavious();
@@ -23,6 +28,20 @@ namespace Orb.GirlLike.Combats
         if (isCast)
         {
           takeDamage.Damage(Mathf.Abs(damage));
+        }
+      }
+    }
+
+    public void PointCast(float damage, Vector3 pointDamage, string tag)
+    {
+      var takeDamages = GetOverlapBehavious();
+
+      foreach (var takeDamage in takeDamages)
+      {
+        var isCast = string.IsNullOrEmpty(tag) || takeDamage.CompareTag(tag);
+        if (isCast)
+        {
+          takeDamage.PointDamage(Mathf.Abs(damage), pointDamage);
         }
       }
     }

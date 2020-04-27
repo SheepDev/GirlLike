@@ -106,7 +106,7 @@ namespace Orb.GirlLike.Players
       }
 
       var damage = Status.CalculeDamage(attack.baseDamage);
-      attack.TriggerDamage(damage);
+      attack.TriggerPointDamage(damage, transform.position);
     }
 
     private void AllowNextAttack()
@@ -145,6 +145,11 @@ namespace Orb.GirlLike.Players
       public void TriggerDamage(float damage)
       {
         castDamage.Cast(damage, tag.ToString());
+      }
+
+      public void TriggerPointDamage(float damage, Vector3 position)
+      {
+        castDamage.PointCast(damage, position, tag.ToString());
       }
     }
   }
