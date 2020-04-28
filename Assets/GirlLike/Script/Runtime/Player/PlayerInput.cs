@@ -1,6 +1,7 @@
 ﻿using Orb.GirlLike.Controllers;
 using Orb.GirlLike.Itens;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Orb.GirlLike.Players
 {
@@ -8,10 +9,16 @@ namespace Orb.GirlLike.Players
   {
     public Controller controller;
 
+    [Header("Events")]
+    public UnityEvent onShow;
+    public UnityEvent onHidden;
+    private PlayerAnimator animator;
+
     public ItemPickup pickup { get; private set; }
 
     private void Awake()
     {
+      animator = GetComponent<PlayerAnimator>();
       var movement = GetComponent<PlayerMovement>();
       var combat = GetComponent<PlayerCombatSystem>();
       pickup = GetComponentInChildren<ItemPickup>();
@@ -28,6 +35,15 @@ namespace Orb.GirlLike.Players
       if (state != ActionState.Down) return;
 
       pickup.Pickup();
+    }
+
+    public void Hidden(bool isHidden)
+    {
+      controller.enabled = !isHidden;
+      if (isHidden)
+        onHidden.Invoke();
+      else
+        onShow.Invoke();
     }
   }
 }

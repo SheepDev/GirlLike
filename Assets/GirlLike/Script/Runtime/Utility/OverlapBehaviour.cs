@@ -9,7 +9,7 @@ namespace Orb.GirlLike.Utility
     public LayerMask mask;
 
     [Header("Events")]
-    public UnityEvent onOverlap;
+    public OverlapEvent onOverlap;
 
     protected virtual void Awake()
     {
@@ -28,9 +28,12 @@ namespace Orb.GirlLike.Utility
       var colliders = Physics2D.OverlapBoxAll(bounds.center, bounds.size, 0, mask);
 
       if (colliders.Length > 0)
-        onOverlap.Invoke();
+        onOverlap.Invoke(colliders);
 
       return colliders;
     }
+
+    [System.Serializable]
+    public class OverlapEvent : UnityEvent<Collider2D[]> { }
   }
 }

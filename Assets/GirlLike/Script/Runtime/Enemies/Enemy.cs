@@ -13,7 +13,6 @@ namespace Orb.GirlLike.Ememies
     public BoundsBehaviour followBounds;
     public BoundsBehaviour avoidBounds;
     public BoundsBehaviour attackBounds;
-    public LayerMask mask;
 
     private Rigidbody2D rb2D;
     private Transform cacheTransform;
