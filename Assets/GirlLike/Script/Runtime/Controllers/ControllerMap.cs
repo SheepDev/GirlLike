@@ -9,6 +9,8 @@ namespace Orb.GirlLike.Controllers
     public KeyCode attackKey;
     public KeyCode dashKey;
     public KeyCode interactiveKey;
+    public KeyCode nextItemKey;
+    public KeyCode previousItemKey;
   }
 
   [System.Serializable]

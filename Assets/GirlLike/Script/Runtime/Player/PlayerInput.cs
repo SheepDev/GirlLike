@@ -21,6 +21,7 @@ namespace Orb.GirlLike.Players
       animator = GetComponent<PlayerAnimator>();
       var movement = GetComponent<PlayerMovement>();
       var combat = GetComponent<PlayerCombatSystem>();
+      var bag = GetComponent<PlayerBag>();
       pickup = GetComponentInChildren<ItemPickup>();
 
       controller.jump.onUpdate += movement.Jump;
@@ -28,6 +29,8 @@ namespace Orb.GirlLike.Players
       controller.attack.onUpdate += combat.Attack;
       controller.dash.onUpdate += combat.Dash;
       controller.interactive.onUpdate += Interactive;
+      controller.nextItem.onUpdate += bag.NextItem;
+      controller.previousItem.onUpdate += bag.PreviousItem;
     }
 
     private void Interactive(ActionState state)

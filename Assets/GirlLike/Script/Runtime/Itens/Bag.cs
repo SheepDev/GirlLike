@@ -7,11 +7,10 @@ namespace Orb.GirlLike.Itens
   {
     public List<Item> itens;
 
-    public void Add(Item item)
+    public virtual void Add(Item item)
     {
       itens.Add(item);
       item.gameObject.SetActive(false);
-      item.transform.parent = transform;
     }
   }
 }
