@@ -31,6 +31,7 @@ namespace Orb.GirlLike.Players
       controller.interactive.onUpdate += Interactive;
       controller.nextItem.onUpdate += bag.NextItem;
       controller.previousItem.onUpdate += bag.PreviousItem;
+      controller.useItem.onUpdate += bag.UseItem;
     }
 
     private void Interactive(ActionState state)

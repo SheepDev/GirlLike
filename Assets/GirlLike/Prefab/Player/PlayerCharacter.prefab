@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 2912120161910940755}
   - component: {fileID: 2912120161910940752}
   - component: {fileID: 2912120161910940767}
+  - component: {fileID: 2930674505437895356}
   - component: {fileID: 2912120161910940765}
   - component: {fileID: 2912120161910940764}
   - component: {fileID: 2912120161910940754}
@@ -431,6 +432,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2930674505437895356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2912120161910940753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc7affdd78c2df4daca7cea3deb9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2912120161910940765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,6 +676,9 @@ MonoBehaviour:
           m_StringArgument: Die
           m_BoolArgument: 0
         m_CallState: 2
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
   onDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -753,7 +769,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itens: []
   maxItens: 5
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 9012635340978740196, guid: f2a5673fff39d3a4d8f297147d2cd650,
+    type: 3}
   itensHUD: {fileID: 5788994850970467629}
 --- !u!1 &2912120161926867345
 GameObject:
@@ -938,8 +955,9 @@ MonoBehaviour:
   attackKey: 323
   dashKey: 324
   interactiveKey: 102
-  nextItemKey: 101
-  previousItemKey: 113
+  useItemKey: 101
+  nextItemKey: 113
+  previousItemKey: 0
 --- !u!1 &3224638183934050612
 GameObject:
   m_ObjectHideFlags: 0

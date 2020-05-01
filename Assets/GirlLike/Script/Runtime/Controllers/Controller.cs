@@ -11,6 +11,7 @@ namespace Orb.GirlLike.Controllers
     [SerializeField] [HideInInspector] internal Button interactive;
     [SerializeField] [HideInInspector] internal Button nextItem;
     [SerializeField] [HideInInspector] internal Button previousItem;
+    [SerializeField] [HideInInspector] internal Button useItem;
     [SerializeField] [HideInInspector] internal Button dash;
     [SerializeField] [HideInInspector] internal Axis horizontal;
 #pragma warning restore CS0649
@@ -30,6 +31,7 @@ namespace Orb.GirlLike.Controllers
       interactive.CheckState(map.interactiveKey);
       nextItem.CheckState(map.nextItemKey);
       previousItem.CheckState(map.previousItemKey);
+      useItem.CheckState(map.useItemKey);
 
       var info = map.horizontal;
       horizontal.CheckUpdate(info.name, info.isInvert);

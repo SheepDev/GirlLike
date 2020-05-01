@@ -10,7 +10,9 @@ namespace Orb.GirlLike.Combats
 
     [Header("Event")]
     public UnityEvent onDie;
+    public UnityEvent onHeal;
     public UnityEvent onDamage;
+    public UnityEvent onUpdate;
 
     public bool IsDie => hitPoint <= 0;
     public float CurrentHitPoint => hitPoint;
@@ -32,6 +34,23 @@ namespace Orb.GirlLike.Combats
 
       if (IsDie)
         Die();
+    }
+
+    public virtual void Heal(float points)
+    {
+      if (IsDie) return;
+      hitPoint = Mathf.Min(maxHitPoint, hitPoint + points);
+      onHeal.Invoke();
+    }
+
+    public virtual void SetMaxHitPoint(float maxHitPoint)
+    {
+      maxHitPoint = Mathf.Abs(maxHitPoint);
+      if (this.maxHitPoint == maxHitPoint) return;
+
+      this.maxHitPoint = maxHitPoint;
+      hitPoint = Mathf.Min(hitPoint, this.maxHitPoint);
+      onUpdate.Invoke();
     }
 
     public virtual void Die()

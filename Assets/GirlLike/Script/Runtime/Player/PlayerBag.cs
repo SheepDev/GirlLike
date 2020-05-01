@@ -8,15 +8,20 @@ namespace Orb.GirlLike.Players
 {
   public class PlayerBag : Bag
   {
+#pragma warning disable CS0649
     [SerializeField] private int maxItens;
     [SerializeField] private ItemSlot itemPrefab;
     [SerializeField] private Transform itensHUD;
+#pragma warning restore CS0649
+
     private List<ItemSlot> slots;
+    private Player player;
     private int selectedIndex;
 
     private void Awake()
     {
       slots = new List<ItemSlot>();
+      player = GetComponent<Player>();
 
       for (int i = 0; i < maxItens; i++)
       {
@@ -34,6 +39,15 @@ namespace Orb.GirlLike.Players
         slot.Save(item);
         base.Add(item);
       }
+    }
+
+    public void UseItem(ActionState state)
+    {
+      if (state != ActionState.Down) return;
+      var item = slots[selectedIndex].CurrentItem;
+      if (item == null || item.type == Type.Passive) return;
+      var activeItem = (PlayerActiveItem)item;
+      activeItem.Use(player);
     }
 
     public void NextItem(ActionState state)

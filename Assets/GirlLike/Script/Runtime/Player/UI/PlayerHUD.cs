@@ -22,17 +22,12 @@ namespace Orb.GirlLike.Players.UI
     private void Awake()
     {
       profileIMG.sprite = profileSprite;
-
       hearts = new List<Heart>();
-      var maxHitPoint = Mathf.CeilToInt(hitPoint.MaxHitPoint);
 
-      for (int index = 0; index < maxHitPoint; index++)
-      {
-        var heart = Instantiate(heartPrefab, lifeBarRoot);
-        hearts.Add(heart);
-      }
-
+      UpdateLifeHUD();
+      hitPoint.onUpdate.AddListener(UpdateLifeHUD);
       hitPoint.onDamage.AddListener(UpdateLife);
+      hitPoint.onHeal.AddListener(UpdateLife);
     }
 
     public void UpdateLife()
@@ -46,6 +41,30 @@ namespace Orb.GirlLike.Players.UI
           heart.On();
         else
           heart.Off();
+      }
+    }
+
+    private void UpdateLifeHUD()
+    {
+      hearts.Clear();
+      DeleteChild(lifeBarRoot);
+
+      var maxHitPoint = Mathf.CeilToInt(hitPoint.MaxHitPoint);
+      for (int index = 0; index < maxHitPoint; index++)
+      {
+        var heart = Instantiate(heartPrefab, lifeBarRoot);
+        hearts.Add(heart);
+      }
+
+      UpdateLife();
+    }
+
+    public void DeleteChild(Transform transform)
+    {
+      for (int i = transform.childCount - 1; i >= 0; i--)
+      {
+        var child = transform.GetChild(i);
+        Destroy(child.gameObject);
       }
     }
   }
