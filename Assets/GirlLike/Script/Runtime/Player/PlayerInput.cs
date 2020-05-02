@@ -1,5 +1,4 @@
 ﻿using Orb.GirlLike.Controllers;
-using Orb.GirlLike.Itens;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,33 +11,22 @@ namespace Orb.GirlLike.Players
     [Header("Events")]
     public UnityEvent onShow;
     public UnityEvent onHidden;
-    private PlayerAnimator animator;
 
-    public ItemPickup pickup { get; private set; }
-
-    private void Awake()
+    private void Start()
     {
-      animator = GetComponent<PlayerAnimator>();
-      var movement = GetComponent<PlayerMovement>();
-      var combat = GetComponent<PlayerCombatSystem>();
-      var bag = GetComponent<PlayerBag>();
-      pickup = GetComponentInChildren<ItemPickup>();
+      var player = GetComponent<Player>();
+      var movement = player.Movement;
+      var combat = player.Combat;
+      var bag = player.Bag;
 
       controller.jump.onUpdate += movement.Jump;
       controller.horizontal.onUpdate += movement.SetMoveAxis;
       controller.attack.onUpdate += combat.Attack;
       controller.dash.onUpdate += combat.Dash;
-      controller.interactive.onUpdate += Interactive;
+      controller.interactive.onUpdate += player.Interactive;
       controller.nextItem.onUpdate += bag.NextItem;
       controller.previousItem.onUpdate += bag.PreviousItem;
       controller.useItem.onUpdate += bag.UseItem;
-    }
-
-    private void Interactive(ActionState state)
-    {
-      if (state != ActionState.Down) return;
-
-      pickup.Pickup();
     }
 
     public void Hidden(bool isHidden)
