@@ -69,6 +69,8 @@ namespace Orb.GirlLike.Players
 
     private void ApplyParallax()
     {
+      if (parallax == null) return;
+
       var transform = GetTransform();
       if (transform.position != lastPosition)
       {
