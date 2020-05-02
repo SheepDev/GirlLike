@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/GirlLike/Scene/Menu.unity
+    guid: cb9764d6110a1664f81c1ead2493d725
+  - enabled: 1
+    path: Assets/GirlLike/Scene/Hall.unity
+    guid: 9535241eff4d9d44696c957916d4073c
+  - enabled: 1
+    path: Assets/GirlLike/Scene/Fase_1.unity
+    guid: 77560b6ef2588ee4185e58ee4cc9b7e6
   m_configObjects: {}
