@@ -10,7 +10,7 @@ namespace Orb.GirlLike.Players
 {
   public class PlayerCombatSystem : MonoBehaviour
   {
-    public bool isBlock;
+    public bool isEnable;
     private bool isAttack;
     private bool isAllowNextAttack;
     private bool isNextAttack;
@@ -48,7 +48,7 @@ namespace Orb.GirlLike.Players
     public void Attack(ActionState state)
     {
       var inGround = Movement.InGround();
-      if (!inGround || isBlock || state != ActionState.Down) return;
+      if (!inGround || !isEnable || state != ActionState.Down) return;
 
       if (isAttack)
       {
@@ -65,7 +65,7 @@ namespace Orb.GirlLike.Players
 
     public void Dash(ActionState state)
     {
-      if (state != ActionState.Down || isDash || isDashCountdown) return;
+      if (!isEnable || isDash || isDashCountdown || state != ActionState.Down) return;
 
       onDash.Invoke();
       StartCoroutine(WhileDash());

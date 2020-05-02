@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f3cc20ec434fe41a411be51722ddae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBlock: 0
+  isEnable: 0
   isDash: 0
   isDashCountdown: 0
   dashDelay: 1
@@ -743,9 +743,10 @@ MonoBehaviour:
     type: 3}
   heartPrefab: {fileID: 3840459008024745847, guid: f812ae08eeeda764a93552df29d55675,
     type: 3}
+  canvas: {fileID: 1032115506609263511}
+  lifeBarRoot: {fileID: 2480701270221067721}
   hitPoint: {fileID: 2912120161910940761}
   profileIMG: {fileID: 8219602499960198141}
-  lifeBarRoot: {fileID: 2480701270221067721}
 --- !u!114 &6100987070386443436
 MonoBehaviour:
   m_ObjectHideFlags: 0

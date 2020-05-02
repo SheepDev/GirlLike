@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Orb.GirlLike.Controllers;
 using Orb.GirlLike.Itens;
+using Orb.GirlLike.Players.UI;
 using Orb.GirlLike.Utility;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ namespace Orb.GirlLike.Players
     public PlayerHitPoint HitPoint { get; private set; }
     public PlayerAnimator Animator { get; private set; }
     public ItemPickup Pickup { get; private set; }
+    public PlayerHUD HUD { get; private set; }
     public PlayerMovement Movement { get; private set; }
     public PlayerCombatSystem Combat { get; private set; }
     public PlayerBag Bag { get; private set; }
@@ -28,6 +30,17 @@ namespace Orb.GirlLike.Players
       HitPoint = GetComponent<PlayerHitPoint>();
       Animator = GetComponent<PlayerAnimator>();
       Pickup = GetComponentInChildren<ItemPickup>();
+      HUD = GetComponent<PlayerHUD>();
+    }
+
+    public void HiddenHUD(bool isHidden)
+    {
+      HUD.Canvas.enabled = !isHidden;
+    }
+
+    public void DisableCombat(bool isDisable)
+    {
+      Combat.isEnable = !isDisable;
     }
 
     public Transform GetTransform()

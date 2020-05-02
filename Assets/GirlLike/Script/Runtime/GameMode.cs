@@ -9,6 +9,7 @@ namespace Orb.GirlLike
   public class GameMode : MonoBehaviour
   {
     public static GameMode Current;
+    public bool isDisableHUDAndCombat;
 
     public UnityEvent onSetCharacter;
 #pragma warning disable CS0649
@@ -30,6 +31,10 @@ namespace Orb.GirlLike
 
       characterType = (PlayerCharacterType)PlayerPrefs.GetInt("CharacterType", 0);
       SpawnPlayer();
+    }
+
+    private void Start()
+    {
       SetupPlayer();
     }
 
@@ -86,6 +91,8 @@ namespace Orb.GirlLike
     {
       var player = GetPlayer();
       player.Movement.parallax = parallax;
+      player.HiddenHUD(true);
+      player.DisableCombat(true);
       cam.Follow = player.GetTransform();
     }
 

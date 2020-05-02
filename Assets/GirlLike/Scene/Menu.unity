@@ -775,7 +775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 513182830, guid: 95e98725fec36be4dadaead65b5b6aeb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.8171525
+      value: 6.826778
       objectReference: {fileID: 0}
     - target: {fileID: 513182830, guid: 95e98725fec36be4dadaead65b5b6aeb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -795,6 +795,11 @@ PrefabInstance:
       propertyPath: playerStart
       value: 
       objectReference: {fileID: 305422661}
+    - target: {fileID: 2989257351204206245, guid: 95e98725fec36be4dadaead65b5b6aeb,
+        type: 3}
+      propertyPath: isDisableHUDAndCombat
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8255941454605192964, guid: 95e98725fec36be4dadaead65b5b6aeb,
         type: 3}
       propertyPath: m_LocalPosition.x

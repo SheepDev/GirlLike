@@ -7,22 +7,27 @@ namespace Orb.GirlLike.Players.UI
 {
   public class PlayerHUD : MonoBehaviour
   {
-    public Sprite profileSprite;
+#pragma warning disable CS0649
+    [SerializeField] private Sprite profileSprite;
 
     [Header("Prefab")]
-    public Heart heartPrefab;
+    [SerializeField] private Heart heartPrefab;
 
     [Header("Config")]
-    public HitPoint hitPoint;
-    public Image profileIMG;
-    public Transform lifeBarRoot;
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private Transform lifeBarRoot;
+    [SerializeField] private HitPoint hitPoint;
+    [SerializeField] private Image profileIMG;
+#pragma warning restore CS0649
 
     private List<Heart> hearts;
 
+    public Canvas Canvas { get => canvas; set => canvas = value; }
+
     private void Awake()
     {
-      profileIMG.sprite = profileSprite;
       hearts = new List<Heart>();
+      profileIMG.sprite = profileSprite;
 
       UpdateLifeHUD();
       hitPoint.onUpdate.AddListener(UpdateLifeHUD);
