@@ -55,6 +55,11 @@ namespace Orb.GirlLike
       return currentPlayer;
     }
 
+    public void CloseGame()
+    {
+      Application.Quit(0);
+    }
+
     private void SpawnPlayer()
     {
       var player = GetPlayer();

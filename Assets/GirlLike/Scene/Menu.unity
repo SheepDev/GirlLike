@@ -290,7 +290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224288470}
   - component: {fileID: 224288471}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243208496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.48, y: 0.74, z: -11.091797}
+  m_LocalPosition: {x: 24.48, y: 0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 267741611}
   - component: {fileID: 267741610}
   - component: {fileID: 267741609}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Radio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267741607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.28, y: 0, z: 0}
+  m_LocalPosition: {x: 20.28, y: 0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 649133606}
@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 649133606}
   - component: {fileID: 649133607}
   - component: {fileID: 649133608}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 513182830, guid: 95e98725fec36be4dadaead65b5b6aeb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.820419
+      value: 6.8171525
       objectReference: {fileID: 0}
     - target: {fileID: 513182830, guid: 95e98725fec36be4dadaead65b5b6aeb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -875,6 +875,18 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 818481378}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &949959627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2989257351204206245, guid: 95e98725fec36be4dadaead65b5b6aeb,
+    type: 3}
+  m_PrefabInstance: {fileID: 949959624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693df751fa671774587671dc65332804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &996126455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,7 +1099,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1309747454}
   - component: {fileID: 1309747455}
-  m_Layer: 0
+  - component: {fileID: 1309747457}
+  - component: {fileID: 1309747456}
+  m_Layer: 10
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1122,7 +1136,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16602802, y: 3.2643132}
+  m_Offset: {x: 0.07054329, y: 3.2643132}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1133,8 +1147,65 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1254978, y: 7.5286264}
+  m_Size: {x: 1.3471031, y: 7.5286264}
   m_EdgeRadius: 0
+--- !u!114 &1309747456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309747453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b62e9ccbe305d48b5668cd44e32211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOverrideSpeed: 0
+  overrideSpeed: 0
+  onFadeInComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 949959627}
+        m_MethodName: CloseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onFadeOffComplete:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1309747457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309747453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013cc23d686667c45932dce9690b99e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInteractive:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1309747456}
+        m_MethodName: FadeIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1401981807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1808265836}
   - component: {fileID: 1808265837}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1385,7 @@ GameObject:
   - component: {fileID: 2067744348}
   - component: {fileID: 2067744349}
   - component: {fileID: 2067744347}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
