@@ -444,6 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc7affdd78c2df4daca7cea3deb9301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overlapInteractive: {fileID: 7565174837049219749}
 --- !u!114 &2912120161910940765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,6 +683,9 @@ MonoBehaviour:
   onDamage:
     m_PersistentCalls:
       m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   forceDamage: 3
   ignoreDamageDelay: 1
   isIgnoreDamage: 0
@@ -841,8 +845,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -356551867
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 2010667974363835119, guid: 4d7b2c6ea1398294b952e0605c538f77,
     type: 3}
@@ -1276,7 +1280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6733972310279627655}
   - component: {fileID: 6733972310279627657}
-  - component: {fileID: 6733972310279627656}
+  - component: {fileID: 7565174837049219749}
   m_Layer: 0
   m_Name: PickupCollider
   m_TagString: Player
@@ -1311,7 +1315,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08248761, y: 0.4000646}
+  m_Offset: {x: -0.060205936, y: 0.6154671}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1322,9 +1326,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2969551, y: 0.79378104}
+  m_Size: {x: 0.3313589, y: 1.224586}
   m_EdgeRadius: 0
---- !u!114 &6733972310279627656
+--- !u!114 &7565174837049219749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1333,7 +1337,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6733972310279627654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed62ce9d8ed41224ab4f0e2b8867dcff, type: 3}
+  m_Script: {fileID: 11500000, guid: ad0addd0cfc90a641838e31a5d01944b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filter2D:
@@ -1345,23 +1349,12 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 2048
+      m_Bits: 3072
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  searchArea: {fileID: 6733972310279627657}
-  onPickup:
+  _collider2D: {fileID: 6733972310279627657}
+  onOverlap:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1142894548803847605}
-        m_MethodName: Add
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Orb.GirlLike.Controllers;
 using Orb.GirlLike.Itens;
 using Orb.GirlLike.Utility;
@@ -10,6 +11,7 @@ namespace Orb.GirlLike.Players
 #pragma warning disable CS0649
     [SerializeField] private OverlapBehaviour overlapInteractive;
 #pragma warning restore CS0649
+    private Transform cacheTransform;
 
     public PlayerHitPoint HitPoint { get; private set; }
     public PlayerAnimator Animator { get; private set; }
@@ -17,8 +19,6 @@ namespace Orb.GirlLike.Players
     public PlayerMovement Movement { get; private set; }
     public PlayerCombatSystem Combat { get; private set; }
     public PlayerBag Bag { get; private set; }
-
-    private bool isPickupItem;
 
     private void Awake()
     {
@@ -30,16 +30,34 @@ namespace Orb.GirlLike.Players
       Pickup = GetComponentInChildren<ItemPickup>();
     }
 
+    public Transform GetTransform()
+    {
+      if (cacheTransform == null)
+      {
+        cacheTransform = transform;
+      }
+
+      return cacheTransform;
+    }
+
     internal void Interactive(ActionState state)
     {
       if (state != ActionState.Down) return;
 
-      Interactive(overlapInteractive.Overlap());
+      var colliders = overlapInteractive.GetOverlapColliders();
+      if (SearchCloseItem(colliders, out var item))
+      {
+        Bag.Add(item);
+      }
+      else
+      {
+        Interactive(colliders);
+      }
     }
 
-    private void Interactive(Collider2D[] colliders)
+    private void Interactive<T>(ICollection<T> components) where T : Component
     {
-      foreach (var collider in colliders)
+      foreach (var collider in components)
       {
         var interactivePlayer = collider.GetComponent<InteractivePlayer>();
         if (interactivePlayer != null)
@@ -48,6 +66,23 @@ namespace Orb.GirlLike.Players
           return;
         }
       }
+    }
+
+    private bool SearchCloseItem<T>(ICollection<T> components, out Item foundItem) where T : Component
+    {
+      foreach (var component in components)
+      {
+        var item = component.GetComponent<Item>();
+
+        if (item != null)
+        {
+          foundItem = item;
+          return true;
+        }
+      }
+
+      foundItem = default;
+      return false;
     }
   }
 }
