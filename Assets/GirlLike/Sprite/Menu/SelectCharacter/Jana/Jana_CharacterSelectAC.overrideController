@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Jana_CharacterSelectAC
+  m_Controller: {fileID: 9100000, guid: 302a91f03b17b874e956015acb830a78, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9df4b5fec26214b47acdf66558f0f040, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0c51f94c8888c7c43af1b02a882728a5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e6995eae62612a04cb954a0ba35fd204, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 926450c2160aa9642ab4d0bd745d2f34, type: 2}
