@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Orb.GirlLike.Utility
 {
   public class OverlapBehaviour : MonoBehaviour
   {
+    public ContactFilter2D filter2D;
     public Collider2D _collider2D;
-    public LayerMask mask;
 
     [Header("Events")]
     public OverlapEvent onOverlap;
@@ -17,23 +18,22 @@ namespace Orb.GirlLike.Utility
         _collider2D = GetComponent<Collider2D>();
     }
 
-    protected virtual void Update()
+    public void Overlap()
     {
-      Overlap();
+      var colliders = GetOverlapColliders();
+
+      if (colliders.Count > 0)
+        onOverlap.Invoke(colliders);
     }
 
-    public Collider2D[] Overlap()
+    public List<Collider2D> GetOverlapColliders()
     {
-      var bounds = _collider2D.bounds;
-      var colliders = Physics2D.OverlapBoxAll(bounds.center, bounds.size, 0, mask);
-
-      if (colliders.Length > 0)
-        onOverlap.Invoke(colliders);
-
+      var colliders = new List<Collider2D>();
+      _collider2D.OverlapCollider(filter2D, colliders);
       return colliders;
     }
 
     [System.Serializable]
-    public class OverlapEvent : UnityEvent<Collider2D[]> { }
+    public class OverlapEvent : UnityEvent<List<Collider2D>> { }
   }
 }

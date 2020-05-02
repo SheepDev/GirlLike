@@ -100,10 +100,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0addd0cfc90a641838e31a5d01944b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  filter2D:
+    useTriggers: 1
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 512
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
   _collider2D: {fileID: 1276946570}
-  mask:
-    serializedVersion: 2
-    m_Bits: 512
   onOverlap:
     m_PersistentCalls:
       m_Calls: []

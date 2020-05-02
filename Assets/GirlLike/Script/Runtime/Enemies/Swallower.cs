@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Orb.GirlLike.AI;
 using Orb.GirlLike.Players;
 using Orb.GirlLike.Utility;
@@ -74,7 +75,7 @@ namespace Orb.GirlLike.Ememies
       _rb2D.AddForce(force, ForceMode2D.Impulse);
     }
 
-    private void Eat(Collider2D[] colliders)
+    private void Eat(List<Collider2D> colliders)
     {
       if (player != null) return;
 
