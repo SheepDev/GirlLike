@@ -1,5 +1,6 @@
 ﻿using Orb.GirlLike.Players;
 using UnityEngine;
+using UnityEngine.Events;
 using Cinemachine;
 using Gameplay.Effect;
 
@@ -7,8 +8,9 @@ namespace Orb.GirlLike
 {
   public class GameMode : MonoBehaviour
   {
-    private static GameMode Current;
+    public static GameMode Current;
 
+    public UnityEvent onSetCharacter;
 #pragma warning disable CS0649
     [SerializeField] private Transform playerStart;
     [SerializeField] private Parallax parallax;
@@ -16,6 +18,8 @@ namespace Orb.GirlLike
     [SerializeField] private Player[] playerCharactes;
 #pragma warning restore CS0649
     private Player currentPlayer;
+    private PlayerCharacterType characterType;
+    public PlayerCharacterType CurrentCharacterType => characterType;
 
     private void Awake()
     {
@@ -24,39 +28,68 @@ namespace Orb.GirlLike
       else
         Destroy(this);
 
-      var player = GetPlayer();
-      player.Movement.parallax = parallax;
-      cam.Follow = player.GetTransform();
+      characterType = (PlayerCharacterType)PlayerPrefs.GetInt("CharacterType", 0);
+      SpawnPlayer();
+      SetupPlayer();
+    }
+
+    public void SetCharacter(PlayerCharacterType character)
+    {
+      if (characterType == character) return;
+      characterType = character;
+      Destroy(currentPlayer.gameObject);
+      currentPlayer = null;
+      SpawnPlayer();
+      SetupPlayer();
+      SaveCharacterType();
+      onSetCharacter.Invoke();
     }
 
     public Player GetPlayer()
     {
       if (currentPlayer == null)
       {
-        currentPlayer = Instantiate(GetPlayerPrefab());
+        currentPlayer = Instantiate(GetPlayerPrefab(characterType));
       }
 
       return currentPlayer;
     }
 
-    private Player GetPlayerPrefab()
+    private void SpawnPlayer()
     {
-      var playerCharacter = (PlayerCharacter)PlayerPrefs.GetInt("PlayerCharacter", 0);
+      var player = GetPlayer();
+      var playerTransform = player.GetTransform();
+      playerTransform.position = playerStart.position;
+    }
 
-      switch (playerCharacter)
+    private Player GetPlayerPrefab(PlayerCharacterType characterType)
+    {
+      switch (characterType)
       {
-        case PlayerCharacter.Jana:
+        case PlayerCharacterType.Jana:
           return playerCharactes[0];
-        case PlayerCharacter.Diana:
+        case PlayerCharacterType.Diana:
           return playerCharactes[1];
-        case PlayerCharacter.Thay:
+        case PlayerCharacterType.Thay:
           return playerCharactes[2];
         default:
           throw new System.Exception("Player Prefab not found");
       }
     }
 
-    public enum PlayerCharacter
+    private void SetupPlayer()
+    {
+      var player = GetPlayer();
+      player.Movement.parallax = parallax;
+      cam.Follow = player.GetTransform();
+    }
+
+    private void SaveCharacterType()
+    {
+      PlayerPrefs.SetInt("CharacterType", (int)characterType);
+    }
+
+    public enum PlayerCharacterType
     {
       Jana, Diana, Thay
     }
