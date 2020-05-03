@@ -124,6 +124,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1142894548803847605, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 9012635340978740196, guid: f2a5673fff39d3a4d8f297147d2cd650,
+        type: 3}
     - target: {fileID: 2912120161910940753, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: m_Name
@@ -137,12 +143,12 @@ PrefabInstance:
     - target: {fileID: 2912120161910940755, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9
+      value: 5.51
       objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940755, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940755, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
@@ -189,6 +195,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940765, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: onShow.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940765, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: onHidden.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: attackSettings.Array.size
@@ -202,8 +218,24 @@ PrefabInstance:
     - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: attackSettings.Array.data[0].baseDamage
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: attackSettings.Array.data[0].ID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: attackSettings.Array.data[0].tag.name
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645955909855247457, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: profileSprite
+      value: 
+      objectReference: {fileID: 362700218511247272, guid: 8e62a5fa4b7d7744aaad8309c48899fe,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e0d9c09e2f68934295ed0003b46d944, type: 3}
 --- !u!4 &8319588639260318670 stripped
