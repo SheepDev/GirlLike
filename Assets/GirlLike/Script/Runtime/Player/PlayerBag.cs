@@ -39,7 +39,7 @@ namespace Orb.GirlLike.Players
 
     public override void Add(Item item)
     {
-      if (GetAvaliableSlot(out var slot))
+      if (!HasItem(item) && GetAvaliableSlot(out var slot))
       {
         slot.Save(item);
         base.Add(item);
@@ -83,6 +83,17 @@ namespace Orb.GirlLike.Players
       slots[selectedIndex].Select(false);
       selectedIndex = (int)Mathf.Repeat(index, slots.Count);
       slots[selectedIndex].Select(true);
+    }
+
+    public bool HasItem(Item item)
+    {
+      foreach (var slot in slots)
+      {
+        if (slot.HasItem && slot.CurrentItem.ID == item.ID)
+          return true;
+      }
+
+      return false;
     }
 
     private bool GetAvaliableSlot(out ItemSlot itemSlot)
