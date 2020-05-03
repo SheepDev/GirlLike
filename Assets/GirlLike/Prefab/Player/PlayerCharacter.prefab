@@ -614,6 +614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnable: 0
+  attackDelay: 1
   isDash: 0
   isDashCountdown: 0
   dashDelay: 1
@@ -627,6 +628,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   attackSettings: []
+  projectileSettings: []
 --- !u!114 &2912120161910940761
 MonoBehaviour:
   m_ObjectHideFlags: 0

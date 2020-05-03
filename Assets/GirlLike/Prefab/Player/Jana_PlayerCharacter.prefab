@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnable: 1
+  attackDelay: 0
   isDash: 0
   isDashCountdown: 0
   dashDelay: 0
@@ -145,6 +146,7 @@ MonoBehaviour:
     tag:
       name: 8
     castDamage: {fileID: 0}
+  projectileSettings: []
 --- !u!1001 &7639926781491612556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,6 +258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dashForce
       value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: attackDelay
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940767, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
