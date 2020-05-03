@@ -142,12 +142,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 7119140815241916506}
   center: {x: 0, y: 0.5, z: 0}
+  minCoin: 5
+  maxCoin: 10
+  coinPrefab: {fileID: 5792025264754144352, guid: f619ff2442219df4aa75252aebb56455,
+    type: 3}
   followBounds: {fileID: 0}
   avoidBounds: {fileID: 0}
   attackBounds: {fileID: 2039510348}
-  mask:
-    serializedVersion: 2
-    m_Bits: 768
   spearSpawnPoint: {fileID: 8648171454967243570}
   prefab: {fileID: 8648171455476333000}
 --- !u!114 &2038072610
@@ -308,10 +309,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94443c9d6eaf6e645b4eae31985b0987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  filter2D:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
   _collider2D: {fileID: 8648171455476332999}
-  mask:
-    serializedVersion: 2
-    m_Bits: 256
   onOverlap:
     m_PersistentCalls:
       m_Calls: []

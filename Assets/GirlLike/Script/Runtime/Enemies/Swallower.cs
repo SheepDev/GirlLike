@@ -41,7 +41,7 @@ namespace Orb.GirlLike.Ememies
     {
       if (isAttack) return;
 
-      var targetPoint = target.GetCenter();
+      var targetPoint = GetTarget().GetCenter();
       if (IsAllowToAttack && BoundsConstains(attackBounds, targetPoint))
       {
         Stop();

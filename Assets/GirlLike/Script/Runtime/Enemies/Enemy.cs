@@ -1,13 +1,18 @@
-﻿using Orb.GirlLike.Utility;
+﻿using Orb.GirlLike.Players;
+using Orb.GirlLike.Utility;
 using UnityEngine;
 
 namespace Orb.GirlLike.Ememies
 {
   public class Enemy : MonoBehaviour
   {
-    protected Target target;
+    private Target target;
     public SpriteUtility sprite;
     public Vector3 center;
+    [Header("Drop Setup")]
+    public int minCoin;
+    public int maxCoin;
+    public Coin coinPrefab;
 
     [Header("Collider Setup")]
     public BoundsBehaviour followBounds;
@@ -27,9 +32,6 @@ namespace Orb.GirlLike.Ememies
       HitPoint.enemy = this;
       HitPoint.onDie.AddListener(OnDie);
       HitPoint.onDamage.AddListener(OnTakeDamage);
-
-      var player = GameObject.FindGameObjectWithTag("Player");
-      target = player.GetComponent<Target>();
     }
 
     protected void SetDirection(bool isLeft)
@@ -44,6 +46,14 @@ namespace Orb.GirlLike.Ememies
 
     protected virtual void OnDie()
     {
+      var count = Random.Range(minCoin, maxCoin + 1);
+      var transform = GetTransform();
+
+      for (int i = 0; i < count; i++)
+      {
+        var coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
+        coin.ApplyRandomForce();
+      }
     }
 
     protected virtual void OnTakeDamage()
@@ -60,6 +70,13 @@ namespace Orb.GirlLike.Ememies
       var transform = GetTransform();
       var targetPoint = target.GetCenter();
       return targetPoint.x < transform.position.x;
+    }
+
+    protected Target GetTarget()
+    {
+      if (target == null)
+        target = GameMode.Current.GetPlayer().GetComponent<Target>();
+      return target;
     }
 
     public Transform GetTransform()

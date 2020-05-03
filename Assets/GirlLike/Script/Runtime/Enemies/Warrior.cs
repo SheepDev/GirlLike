@@ -33,7 +33,7 @@ namespace Orb.GirlLike.Ememies
     {
       if (isAttack) return;
 
-      var targetPoint = target.GetCenter();
+      var targetPoint = GetTarget().GetCenter();
 
       if (isAllowToAttack && BoundsConstains(attackBounds, targetPoint))
       {
@@ -57,12 +57,13 @@ namespace Orb.GirlLike.Ememies
     {
       StopAllCoroutines();
       Animator.Play("Die");
+      base.OnDie();
     }
 
     private void GoToTarget()
     {
       var transform = GetTransform();
-      var targetPoint = target.GetCenter();
+      var targetPoint = GetTarget().GetCenter();
       var isLeft = targetPoint.x < transform.position.x;
 
       MoveTo.enabled = true;

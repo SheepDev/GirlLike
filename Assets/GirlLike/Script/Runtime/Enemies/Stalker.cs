@@ -71,6 +71,7 @@ namespace Orb.GirlLike.Ememies
       }
     }
 
+
     private IEnumerator Attack()
     {
       isAttack = true;
@@ -157,6 +158,14 @@ namespace Orb.GirlLike.Ememies
       Gizmos.color = Color.red;
       bounds = GetBounds(attackBounds);
       Gizmos.DrawWireCube(bounds.center, bounds.size);
+    }
+
+
+    [System.Serializable]
+    public struct BoundsData
+    {
+      public Vector3 center;
+      public Vector3 size;
     }
   }
 }

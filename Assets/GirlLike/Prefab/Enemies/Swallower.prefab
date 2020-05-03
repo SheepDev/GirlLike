@@ -132,6 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 2199607487497901213}
   center: {x: 0, y: 0.69, z: 0}
+  minCoin: 5
+  maxCoin: 10
+  coinPrefab: {fileID: 5792025264754144352, guid: f619ff2442219df4aa75252aebb56455,
+    type: 3}
   followBounds: {fileID: 0}
   avoidBounds: {fileID: 0}
   attackBounds: {fileID: 563192347537326415}

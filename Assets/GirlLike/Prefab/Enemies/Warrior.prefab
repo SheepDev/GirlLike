@@ -58,14 +58,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b203954de818e4db5c2596d20d8aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   sprite: {fileID: 5479004404593334092}
   center: {x: 0, y: 0.56, z: 0}
+  minCoin: 5
+  maxCoin: 10
+  coinPrefab: {fileID: 5792025264754144352, guid: f619ff2442219df4aa75252aebb56455,
+    type: 3}
   followBounds: {fileID: 0}
+  avoidBounds: {fileID: 0}
   attackBounds: {fileID: 1006367411}
-  mask:
-    serializedVersion: 2
-    m_Bits: 768
   attackDuration: 4
   attackCountdown: 1
 --- !u!114 &6349335411951355793
