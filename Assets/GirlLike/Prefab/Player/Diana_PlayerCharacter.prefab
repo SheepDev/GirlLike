@@ -133,12 +133,17 @@ PrefabInstance:
     - target: {fileID: 2912120161910940753, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: m_Name
-      value: Peach_PlayerCharacter
+      value: Diana_PlayerCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940754, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: parallax
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940754, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: defaultSpeed
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940755, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
@@ -229,6 +234,21 @@ PrefabInstance:
         type: 3}
       propertyPath: attackSettings.Array.data[0].tag.name
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: dashDuration
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: dashForce
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: dashStartDelay
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5645955909855247457, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}

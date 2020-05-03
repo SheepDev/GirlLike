@@ -114,6 +114,37 @@ MonoBehaviour:
   colliders:
   - {fileID: 868316365}
   - {fileID: 868316364}
+--- !u!114 &-1466482777439724593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787208986757263325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f3cc20ec434fe41a411be51722ddae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnable: 1
+  isDash: 0
+  isDashCountdown: 0
+  dashDelay: 0
+  dashStartDelay: 0.2
+  dashDuration: 0.62
+  dashForce: 5
+  onDash:
+    m_PersistentCalls:
+      m_Calls: []
+  onDashFinish:
+    m_PersistentCalls:
+      m_Calls: []
+  attackSettings:
+  - ID: 0
+    baseDamage: 1
+    tag:
+      name: 8
+    castDamage: {fileID: 0}
 --- !u!1001 &7639926781491612556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: parallax
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940754, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: jumpForce
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940755, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
@@ -194,7 +230,7 @@ PrefabInstance:
     - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: dashDuration
-      value: 0.5
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
@@ -216,6 +252,11 @@ PrefabInstance:
       propertyPath: attackSettings.Array.data[0].castDamage
       value: 
       objectReference: {fileID: 868316363}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: dashForce
+      value: 5.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940767, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: m_Controller
@@ -234,6 +275,12 @@ PrefabInstance:
       objectReference: {fileID: 4787208986773053983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e0d9c09e2f68934295ed0003b46d944, type: 3}
+--- !u!1 &4787208986757263325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2912120161910940753, guid: 1e0d9c09e2f68934295ed0003b46d944,
+    type: 3}
+  m_PrefabInstance: {fileID: 7639926781491612556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &4787208986773053983 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2912120161926867347, guid: 1e0d9c09e2f68934295ed0003b46d944,

@@ -407,7 +407,7 @@ Rigidbody2D:
   m_Mass: 0.57020766
   m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: e3d2ca1dc5bda8146aa99d13009ae102, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -579,9 +579,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallax: {fileID: 0}
-  defaultSpeed: 4
+  defaultSpeed: 2.9
   currentSpeed: 0
-  jumpForce: 5
+  jumpForce: 6
   isBlockJump: 0
   movimentSetting: 0
   look: 1
@@ -617,7 +617,7 @@ MonoBehaviour:
   isDash: 0
   isDashCountdown: 0
   dashDelay: 1
-  dashStartDelay: 0.15
+  dashStartDelay: 0.1
   dashDuration: 0.85
   dashForce: 6.5
   onDash:
@@ -777,6 +777,9 @@ MonoBehaviour:
   itemPrefab: {fileID: 9012635340978740196, guid: f2a5673fff39d3a4d8f297147d2cd650,
     type: 3}
   itensHUD: {fileID: 5788994850970467629}
+  coinUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2912120161926867345
 GameObject:
   m_ObjectHideFlags: 0
