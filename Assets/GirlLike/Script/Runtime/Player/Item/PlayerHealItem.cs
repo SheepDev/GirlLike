@@ -4,9 +4,12 @@ namespace Orb.GirlLike.Players
   {
     public int healPoint;
 
-    public override void Use(Player player)
+    public override bool Use(Player player)
     {
+      var hitPoint = player.HitPoint;
+      if (hitPoint.CurrentHitPoint == hitPoint.MaxHitPoint) return false;
       player.HitPoint.Heal(healPoint);
+      return true;
     }
   }
 }

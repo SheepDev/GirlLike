@@ -51,8 +51,10 @@ namespace Orb.GirlLike.Players
       if (state != ActionState.Down) return;
       var item = slots[selectedIndex].CurrentItem;
       if (item == null || item.type == Itens.Type.Passive) return;
+
       var activeItem = (PlayerActiveItem)item;
-      activeItem.Use(player);
+      if (activeItem.Use(player))
+        DestroyItem(selectedIndex);
     }
 
     public void NextItem(ActionState state)
@@ -67,6 +69,15 @@ namespace Orb.GirlLike.Players
       SetSelectedIndex(selectedIndex - 1);
     }
 
+    public void DestroyItem(int index)
+    {
+      var slot = slots[index];
+      if (slot.Remove(out var item))
+      {
+        Destroy(item.gameObject);
+      }
+    }
+
     private void SetSelectedIndex(int index)
     {
       slots[selectedIndex].Select(false);
@@ -74,7 +85,7 @@ namespace Orb.GirlLike.Players
       slots[selectedIndex].Select(true);
     }
 
-    public bool GetAvaliableSlot(out ItemSlot itemSlot)
+    private bool GetAvaliableSlot(out ItemSlot itemSlot)
     {
       itemSlot = default;
 

@@ -4,7 +4,7 @@ namespace Orb.GirlLike.Players
 {
   public abstract class PlayerActiveItem : Item
   {
-    public abstract void Use(Player player);
+    public abstract bool Use(Player player);
 
     private void OnValidate()
     {

@@ -14,12 +14,22 @@ namespace Orb.GirlLike.Players.UI
 
     public bool IsAvailable => saved == null;
     public Item CurrentItem => saved;
+    public bool HasItem => !IsAvailable;
 
     public void Save(Item item)
     {
       imgIcon.sprite = item.GetComponent<SpriteRenderer>().sprite;
       imgIcon.enabled = true;
       saved = item;
+    }
+
+    public bool Remove(out Item item)
+    {
+      var hasItem = HasItem;
+      item = CurrentItem;
+      saved = null;
+      imgIcon.enabled = false;
+      return hasItem;
     }
 
     public void Select(bool isSelect)
