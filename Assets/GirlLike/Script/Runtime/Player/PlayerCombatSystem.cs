@@ -10,8 +10,12 @@ namespace Orb.GirlLike.Players
 {
   public class PlayerCombatSystem : MonoBehaviour
   {
+    [Header("Attack")]
     public bool isEnable;
+    public float attackDelay;
+
     private bool isAttack;
+    private bool isDelayAttack;
     private bool isAllowNextAttack;
     private bool isNextAttack;
 
@@ -27,7 +31,9 @@ namespace Orb.GirlLike.Players
     public UnityEvent onDash;
     public UnityEvent onDashFinish;
 
+    [Header("Settings")]
     [SerializeField] private List<AttackSetting> attackSettings;
+    [SerializeField] private ProjectileSettings[] projectileSettings;
 
     public bool IsAttack => isAttack;
     public PlayerMovement Movement { get; private set; }
@@ -48,7 +54,7 @@ namespace Orb.GirlLike.Players
     public void Attack(ActionState state)
     {
       var inGround = Movement.InGround();
-      if (!inGround || !isEnable || state != ActionState.Down) return;
+      if (!inGround || !isEnable || isDelayAttack || state != ActionState.Down) return;
 
       if (isAttack)
       {
@@ -109,6 +115,13 @@ namespace Orb.GirlLike.Players
       attack.TriggerPointDamage(damage, transform.position);
     }
 
+    private void SpawnProjectil(int id)
+    {
+      var settings = projectileSettings[id];
+      var projectile = Instantiate(settings.prefab, settings.pivo.position, Quaternion.identity);
+      projectile.SetDirection(Movement.Direction == LookDirection.Left);
+    }
+
     private void AllowNextAttack()
     {
       isAllowNextAttack = true;
@@ -132,6 +145,21 @@ namespace Orb.GirlLike.Players
 
       isAllowNextAttack = isNextAttack = isAttack = false;
       PlayerAnimator.Animator.SetBool("IsAttack", isAttack);
+      StartCoroutine(DelayAttack(attackDelay));
+    }
+
+    private IEnumerator DelayAttack(float attackDelay)
+    {
+      isDelayAttack = true;
+      yield return new WaitForSeconds(attackDelay);
+      isDelayAttack = false;
+    }
+
+    [System.Serializable]
+    public struct ProjectileSettings
+    {
+      public Transform pivo;
+      public Projectile prefab;
     }
 
     [System.Serializable]
