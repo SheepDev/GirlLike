@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 868316366}
   - component: {fileID: 868316364}
   - component: {fileID: 868316365}
-  - component: {fileID: 868316363}
+  - component: {fileID: 3261451938419270829}
   m_Layer: 16
   m_Name: Damage
   m_TagString: Untagged
@@ -85,7 +85,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2952714, y: 0.5142312}
   m_EdgeRadius: 0
---- !u!114 &868316363
+--- !u!114 &3261451938419270829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,14 +106,14 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 131072
+      m_Bits: 4096
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
   colliders:
-  - {fileID: 868316365}
   - {fileID: 868316364}
+  - {fileID: 868316365}
 --- !u!114 &-1466482777439724593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEnable: 1
   attackDelay: 0
+  movementSpeedDuringAttack: 0
   isDash: 0
   isDashCountdown: 0
   dashDelay: 0
@@ -141,8 +142,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   attackSettings:
-  - ID: 0
-    baseDamage: 1
+  - baseDamage: 1
     tag:
       name: 8
     castDamage: {fileID: 0}
@@ -253,7 +253,7 @@ PrefabInstance:
         type: 3}
       propertyPath: attackSettings.Array.data[0].castDamage
       value: 
-      objectReference: {fileID: 868316363}
+      objectReference: {fileID: 3261451938419270829}
     - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: dashForce
@@ -263,6 +263,11 @@ PrefabInstance:
         type: 3}
       propertyPath: attackDelay
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: movementSpeedDuringAttack
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940767, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}

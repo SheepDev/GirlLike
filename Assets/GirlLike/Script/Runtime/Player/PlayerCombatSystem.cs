@@ -13,6 +13,7 @@ namespace Orb.GirlLike.Players
     [Header("Attack")]
     public bool isEnable;
     public float attackDelay;
+    public float movementSpeedDuringAttack;
 
     private bool isAttack;
     private bool isDelayAttack;
@@ -32,7 +33,7 @@ namespace Orb.GirlLike.Players
     public UnityEvent onDashFinish;
 
     [Header("Settings")]
-    [SerializeField] private List<AttackSetting> attackSettings;
+    [SerializeField] private AttackSetting[] attackSettings;
     [SerializeField] private ProjectileSettings[] projectileSettings;
 
     public bool IsAttack => isAttack;
@@ -64,7 +65,7 @@ namespace Orb.GirlLike.Players
       {
         Movement.LockLookDirection(true);
         Movement.isBlockJump = true;
-        Movement.currentSpeed = Movement.defaultSpeed * .3f;
+        Movement.currentSpeed = movementSpeedDuringAttack;
         PlayerAnimator.Animator.SetBool("IsAttack", isAttack = true);
       }
     }
@@ -101,16 +102,9 @@ namespace Orb.GirlLike.Players
       isDashCountdown = false;
     }
 
-    private void ApplyDamage_AnimTrigger(string attackID)
+    private void ApplyDamage_AnimTrigger(int Id)
     {
-      var attack = attackSettings.Find(obj => obj.ID == attackID);
-
-      if (attack == null)
-      {
-        Debug.LogWarningFormat("[{0}] Not find attack ID \"{1}\" in Settings", name, attackID);
-        return;
-      }
-
+      var attack = attackSettings[Id];
       var damage = Status.CalculeDamage(attack.baseDamage);
       attack.TriggerPointDamage(damage, transform.position);
     }
@@ -165,7 +159,6 @@ namespace Orb.GirlLike.Players
     [System.Serializable]
     public class AttackSetting
     {
-      public string ID;
       public float baseDamage;
       public Tag tag;
       public CastDamage castDamage;
