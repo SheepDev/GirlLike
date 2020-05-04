@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Orb.GirlLike.Combats;
 using Orb.GirlLike.Controllers;
 using Orb.GirlLike.Settings;
@@ -35,6 +34,7 @@ namespace Orb.GirlLike.Players
     [Header("Settings")]
     [SerializeField] private AttackSetting[] attackSettings;
     [SerializeField] private ProjectileSettings[] projectileSettings;
+    private Player player;
 
     public bool IsAttack => isAttack;
     public PlayerMovement Movement { get; private set; }
@@ -43,6 +43,7 @@ namespace Orb.GirlLike.Players
 
     private void Awake()
     {
+      player = GetComponent<Player>();
       Movement = GetComponent<PlayerMovement>();
       PlayerAnimator = GetComponent<PlayerAnimator>();
       Status = GetComponent<PlayerStatus>();
@@ -88,7 +89,7 @@ namespace Orb.GirlLike.Players
       Movement._rigidbody.velocity = Vector2.zero;
 
       var direction = Movement.Direction == LookDirection.Left ? Vector2.left : Vector2.right;
-      direction *= dashForce;
+      direction *= dashForce + player.Status.DashSpeedBonus;
       Movement._rigidbody.AddForce(direction, ForceMode2D.Impulse);
 
       yield return new WaitForSeconds(dashDuration);

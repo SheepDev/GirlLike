@@ -11,6 +11,7 @@ namespace Orb.GirlLike.Players
     [Header("Movimenet")]
     public float moveSpeedBonus;
     public float jumpForceBonus;
+    public float dashForceBonus;
 
     private void OnValidate()
     {

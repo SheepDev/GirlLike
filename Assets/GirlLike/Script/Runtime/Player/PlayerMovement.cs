@@ -92,7 +92,7 @@ namespace Orb.GirlLike.Players
         && state == ActionState.Down && InGround();
 
       if (!isJump) return;
-      var jumpForce = this.jumpForce + player.Status.JumpBonus;
+      var jumpForce = this.jumpForce + player.Status.JumpForceBonus;
       var velocity = _rigidbody.velocity;
       velocity.y = 0;
       _rigidbody.velocity = velocity;

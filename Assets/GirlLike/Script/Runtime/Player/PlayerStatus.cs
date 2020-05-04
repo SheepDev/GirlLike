@@ -6,13 +6,13 @@ namespace Orb.GirlLike.Players
   public class PlayerStatus : MonoBehaviour
   {
     [SerializeField] private float defaultSpeed;
-    private float damageBonus;
-    private float moveSpeedBonus;
-    private float jumpForceBonus;
     private Player player;
 
-    public float DefaultSpeed => defaultSpeed + moveSpeedBonus;
-    public float JumpBonus => jumpForceBonus;
+    public float DefaultSpeed => defaultSpeed + MoveSpeedBonus;
+    public float DamageBonus { get; private set; }
+    public float MoveSpeedBonus { get; private set; }
+    public float JumpForceBonus { get; private set; }
+    public float DashSpeedBonus { get; private set; }
 
     private void Start()
     {
@@ -25,9 +25,10 @@ namespace Orb.GirlLike.Players
     private void AddBonus(Item item)
     {
       var playerItem = item as PlayerPassiveItem;
-      damageBonus += playerItem.damageBonus;
-      moveSpeedBonus += playerItem.moveSpeedBonus;
-      jumpForceBonus += playerItem.jumpForceBonus;
+      DamageBonus += playerItem.damageBonus;
+      MoveSpeedBonus += playerItem.moveSpeedBonus;
+      JumpForceBonus += playerItem.jumpForceBonus;
+      DashSpeedBonus += playerItem.dashForceBonus;
 
       player.Movement.BackToDefaultSpeed();
     }
@@ -35,16 +36,17 @@ namespace Orb.GirlLike.Players
     private void RemoveBonus(Item item)
     {
       var playerItem = item as PlayerPassiveItem;
-      damageBonus -= playerItem.damageBonus;
-      moveSpeedBonus -= playerItem.moveSpeedBonus;
-      jumpForceBonus -= playerItem.jumpForceBonus;
+      DamageBonus -= playerItem.damageBonus;
+      MoveSpeedBonus -= playerItem.moveSpeedBonus;
+      JumpForceBonus -= playerItem.jumpForceBonus;
+      DashSpeedBonus -= playerItem.dashForceBonus;
 
       player.Movement.BackToDefaultSpeed();
     }
 
     public float CalculeDamage(float baseDamage)
     {
-      return baseDamage + damageBonus;
+      return baseDamage + DamageBonus;
     }
   }
 }
