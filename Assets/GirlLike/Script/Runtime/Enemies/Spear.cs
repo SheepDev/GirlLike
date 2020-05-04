@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Orb.GirlLike.AI;
 using Orb.GirlLike.Utility;
 using UnityEngine;
@@ -16,6 +15,11 @@ namespace Orb.GirlLike.Ememies
     {
       base.Awake();
       onOverlap.AddListener((c) => Stop());
+    }
+
+    private void Update()
+    {
+      Overlap();
     }
 
     public void SetDirection(bool isLeft)
