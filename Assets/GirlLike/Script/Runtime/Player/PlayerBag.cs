@@ -4,6 +4,7 @@ using Orb.GirlLike.Helper;
 using Orb.GirlLike.Itens;
 using Orb.GirlLike.Players.UI;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Orb.GirlLike.Players
 {
@@ -16,6 +17,8 @@ namespace Orb.GirlLike.Players
 #pragma warning restore CS0649
     [Header("Events")]
     public IntEvent coinUpdate;
+    public ItemEvent onAddPassiveItem;
+    public ItemEvent onRemovePassiveItem;
 
     private List<ItemSlot> slots;
     private Player player;
@@ -43,6 +46,11 @@ namespace Orb.GirlLike.Players
       {
         slot.Save(item);
         base.Add(item);
+
+        if (item.type == Type.Passive)
+        {
+          onAddPassiveItem.Invoke(item);
+        }
       }
     }
 
@@ -74,7 +82,27 @@ namespace Orb.GirlLike.Players
       var slot = slots[index];
       if (slot.Remove(out var item))
       {
+        if (item.type == Type.Passive)
+        {
+          onRemovePassiveItem.Invoke(item);
+        }
+
         Destroy(item.gameObject);
+      }
+    }
+
+    public void DropItem(int index)
+    {
+      var slot = slots[index];
+      if (slot.Remove(out var item))
+      {
+        item.transform.position = player.GetTransform().position;
+        item.gameObject.SetActive(true);
+
+        if (item.type == Type.Passive)
+        {
+          onRemovePassiveItem.Invoke(item);
+        }
       }
     }
 
@@ -127,5 +155,8 @@ namespace Orb.GirlLike.Players
       coinAmount += Mathf.Abs(totalCoin);
       coinUpdate.Invoke(coinAmount);
     }
+
+    [System.Serializable]
+    public class ItemEvent : UnityEvent<Item> { }
   }
 }

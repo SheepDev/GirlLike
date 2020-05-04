@@ -615,6 +615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEnable: 0
   attackDelay: 1
+  movementSpeedDuringAttack: 0
   isDash: 0
   isDashCountdown: 0
   dashDelay: 1
@@ -727,8 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b9d5f7b1be7b74288aeb803e4ac74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpeed: 0
-  defaultAttackDamage: 0
+  defaultSpeed: 2.9
 --- !u!114 &5645955909855247457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,6 +780,12 @@ MonoBehaviour:
     type: 3}
   itensHUD: {fileID: 5788994850970467629}
   coinUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onAddPassiveItem:
+    m_PersistentCalls:
+      m_Calls: []
+  onRemovePassiveItem:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &2912120161926867345

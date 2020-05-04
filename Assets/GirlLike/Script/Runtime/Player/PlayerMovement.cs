@@ -10,7 +10,6 @@ namespace Orb.GirlLike.Players
   public class PlayerMovement : MonoBehaviour
   {
     public Parallax parallax;
-    public float defaultSpeed;
     public float currentSpeed;
 
     public float jumpForce;
@@ -41,6 +40,7 @@ namespace Orb.GirlLike.Players
     private Vector3 lastPosition;
     private float desiredMoveAxis;
     private float currentMoveAxis;
+    private Player player;
 
     public Vector2 Velocity => _rigidbody.velocity;
     public LookDirection Direction => look;
@@ -49,10 +49,15 @@ namespace Orb.GirlLike.Players
     private void Awake()
     {
       _rigidbody = GetComponent<Rigidbody2D>();
-      SetDirection(look, true);
+      player = GetComponent<Player>();
 
-      currentSpeed = defaultSpeed;
+      SetDirection(look, true);
       lastPosition = transform.position;
+    }
+
+    private void Start()
+    {
+      BackToDefaultSpeed();
     }
 
     private void Update()
@@ -87,6 +92,7 @@ namespace Orb.GirlLike.Players
         && state == ActionState.Down && InGround();
 
       if (!isJump) return;
+      var jumpForce = this.jumpForce + player.Status.JumpBonus;
       var velocity = _rigidbody.velocity;
       velocity.y = 0;
       _rigidbody.velocity = velocity;
@@ -133,6 +139,11 @@ namespace Orb.GirlLike.Players
       var velocity = _rigidbody.velocity;
       velocity.x = value;
       _rigidbody.velocity = velocity;
+    }
+
+    public void BackToDefaultSpeed()
+    {
+      currentSpeed = player.Status.DefaultSpeed;
     }
 
     public bool InGround()

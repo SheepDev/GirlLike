@@ -18,6 +18,7 @@ namespace Orb.GirlLike.Players
     public PlayerAnimator Animator { get; private set; }
     public ItemPickup Pickup { get; private set; }
     public PlayerHUD HUD { get; private set; }
+    public PlayerStatus Status { get; private set; }
     public PlayerMovement Movement { get; private set; }
     public PlayerCombatSystem Combat { get; private set; }
     public PlayerBag Bag { get; private set; }
@@ -31,6 +32,7 @@ namespace Orb.GirlLike.Players
       Animator = GetComponent<PlayerAnimator>();
       Pickup = GetComponentInChildren<ItemPickup>();
       HUD = GetComponent<PlayerHUD>();
+      Status = GetComponent<PlayerStatus>();
     }
 
     public void HiddenHUD(bool isHidden)

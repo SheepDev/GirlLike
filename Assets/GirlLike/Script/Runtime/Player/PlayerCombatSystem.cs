@@ -135,7 +135,7 @@ namespace Orb.GirlLike.Players
     {
       Movement.LockLookDirection(false);
       Movement.isBlockJump = false;
-      Movement.currentSpeed = Movement.defaultSpeed;
+      Movement.BackToDefaultSpeed();
 
       isAllowNextAttack = isNextAttack = isAttack = false;
       PlayerAnimator.Animator.SetBool("IsAttack", isAttack);
