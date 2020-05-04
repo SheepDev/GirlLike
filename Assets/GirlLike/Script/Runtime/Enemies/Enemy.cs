@@ -62,6 +62,8 @@ namespace Orb.GirlLike.Ememies
         var coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
         coin.ApplyRandomForce();
       }
+
+      enabled = false;
     }
 
     protected virtual void OnTakeDamage()
