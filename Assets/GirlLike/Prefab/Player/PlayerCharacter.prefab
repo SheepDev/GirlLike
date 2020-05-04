@@ -579,7 +579,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallax: {fileID: 0}
-  defaultSpeed: 2.9
   currentSpeed: 0
   jumpForce: 6
   isBlockJump: 0
@@ -689,8 +688,9 @@ MonoBehaviour:
   onUpdate:
     m_PersistentCalls:
       m_Calls: []
+  ignoreDamageDelay: 3
+  disableInputInSeconds: 1
   forceDamage: 3
-  ignoreDamageDelay: 1
   isIgnoreDamage: 0
   takeDamage: {fileID: 2912120161499279069}
   onVunerable:

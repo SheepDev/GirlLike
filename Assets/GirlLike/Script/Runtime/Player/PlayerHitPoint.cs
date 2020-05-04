@@ -7,11 +7,11 @@ namespace Orb.GirlLike.Players
 {
   public class PlayerHitPoint : HitPoint
   {
-    public float forceDamage;
     public float ignoreDamageDelay;
-    public bool isIgnoreDamage;
+    public float disableInputInSeconds;
 
-    internal bool isIgnoreDamage_Dash;
+    public float forceDamage;
+    public bool isIgnoreDamage;
 
     [SerializeField] private TakeDamage takeDamage;
 
@@ -34,7 +34,7 @@ namespace Orb.GirlLike.Players
     {
       if (isIgnoreDamage) return;
 
-      Moviment.DisableForSeconds(ignoreDamageDelay * .5f);
+      Moviment.DisableForSeconds(disableInputInSeconds);
       Animator.TakeDamage();
 
       var positionX = Moviment.GetTransform().position.x;

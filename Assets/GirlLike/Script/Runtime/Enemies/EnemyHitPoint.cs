@@ -10,16 +10,18 @@ namespace Orb.GirlLike.Ememies
 
     public override void ApplyDamage(PointDamageData data)
     {
-      var direction = CalculateDirection(data.point);
-      enemy._rb2D.AddForce(direction);
-
       base.ApplyDamage(data);
+
+      if (IsDie) return;
+
+      var direction = CalculateDirection(data.point);
+      enemy._rb2D.AddForce(direction, ForceMode2D.Impulse);
     }
 
     private Vector2 CalculateDirection(Vector3 point)
     {
       var positionX = enemy.GetTransform().position.x;
-      var direction = Vector2.one.normalized;
+      var direction = new Vector3(1, 0, 0);
       direction *= forceDamage;
 
       if (positionX < point.x)
