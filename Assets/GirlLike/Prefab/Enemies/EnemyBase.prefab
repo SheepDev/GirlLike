@@ -107,10 +107,16 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls: []
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
   onDamage:
     m_PersistentCalls:
       m_Calls: []
-  forceDamage: 11.84
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  forceDamage: 0
 --- !u!1 &521799654469880483
 GameObject:
   m_ObjectHideFlags: 0
