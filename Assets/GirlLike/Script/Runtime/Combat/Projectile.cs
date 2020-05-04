@@ -41,6 +41,12 @@ namespace Orb.GirlLike.Combats
       MoveTo.Direction(isLeft ? Vector3.left : Vector3.right);
     }
 
+    public void SetDirection(Vector3 forward)
+    {
+      if (isDestroy) return;
+      MoveTo.Direction(forward);
+    }
+
     private void OnEnable()
     {
       StartCoroutine(LifeTime(lifeTime));

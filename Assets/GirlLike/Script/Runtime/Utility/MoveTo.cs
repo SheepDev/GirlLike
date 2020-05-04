@@ -5,6 +5,7 @@ namespace Orb.GirlLike.AI
   public class MoveTo : MonoBehaviour
   {
     public float speed;
+    public bool isLocal;
     private Transform cacheTransform;
     private Vector3 direction;
 
@@ -12,7 +13,12 @@ namespace Orb.GirlLike.AI
     {
       var transform = GetTransform();
       var speedDelta = speed * Time.deltaTime;
-      var targetPosition = transform.position + direction * speedDelta;
+      var targetPosition = Vector3.one;
+
+      if (!isLocal)
+        targetPosition = transform.position + direction * speedDelta;
+      else
+        targetPosition = transform.position + transform.rotation * direction * speedDelta;
 
       transform.position = targetPosition;
     }
