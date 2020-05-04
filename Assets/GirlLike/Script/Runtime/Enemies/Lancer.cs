@@ -34,7 +34,7 @@ namespace Orb.GirlLike.Ememies
 
     private void Update()
     {
-      if (isAttack) return;
+      if (isAttack || IsStun) return;
 
       var targetPoint = GetTarget().GetCenter();
       if (IsAllowToAttack && BoundsConstains(attackBounds, targetPoint))
@@ -79,6 +79,22 @@ namespace Orb.GirlLike.Ememies
     {
       StopAllCoroutines();
       Animator.Play("Die");
+    }
+
+    protected override void OnStun()
+    {
+      StopAllCoroutines();
+      Stop();
+      isAttack = false;
+      isAllowToAttack = false;
+    }
+
+    protected override void OnNormal()
+    {
+      StopAllCoroutines();
+      Stop();
+      isAttack = false;
+      isAllowToAttack = true;
     }
 
     private void Stop(bool isAnimated = false)

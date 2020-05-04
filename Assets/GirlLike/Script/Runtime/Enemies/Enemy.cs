@@ -1,4 +1,5 @@
-﻿using Orb.GirlLike.Players;
+﻿using System.Collections;
+using Orb.GirlLike.Players;
 using Orb.GirlLike.Utility;
 using UnityEngine;
 
@@ -20,10 +21,11 @@ namespace Orb.GirlLike.Ememies
     public BoundsBehaviour attackBounds;
 
     private Rigidbody2D rb2D;
+    private bool isStun;
     private Transform cacheTransform;
-
     public Rigidbody2D _rb2D => rb2D;
     public EnemyHitPoint HitPoint { get; private set; }
+    public bool IsStun => isStun;
 
     protected virtual void Awake()
     {
@@ -32,6 +34,12 @@ namespace Orb.GirlLike.Ememies
       HitPoint.enemy = this;
       HitPoint.onDie.AddListener(OnDie);
       HitPoint.onDamage.AddListener(OnTakeDamage);
+    }
+
+    public void Stun(float stunDelay)
+    {
+      OnStun();
+      StartCoroutine(StunDelay(stunDelay));
     }
 
     protected void SetDirection(bool isLeft)
@@ -57,6 +65,14 @@ namespace Orb.GirlLike.Ememies
     }
 
     protected virtual void OnTakeDamage()
+    {
+    }
+
+    protected virtual void OnStun()
+    {
+    }
+
+    protected virtual void OnNormal()
     {
     }
 
@@ -94,6 +110,14 @@ namespace Orb.GirlLike.Ememies
       var center = GetCenter();
       Gizmos.color = Color.magenta;
       Gizmos.DrawSphere(center, 0.1f);
+    }
+
+    private IEnumerator StunDelay(float delay)
+    {
+      isStun = true;
+      yield return new WaitForSeconds(delay);
+      isStun = false;
+      OnNormal();
     }
   }
 }

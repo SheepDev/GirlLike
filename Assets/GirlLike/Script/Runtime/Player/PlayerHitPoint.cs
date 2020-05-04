@@ -58,6 +58,7 @@ namespace Orb.GirlLike.Players
     private IEnumerator IgnoreDamageInSeconds(float seconds, bool isStopDamageAnimation)
     {
       isIgnoreDamage = true;
+      Animator.Vunerable(false);
       yield return new WaitForSeconds(seconds);
 
       if (!Combat.isDash)
@@ -67,7 +68,7 @@ namespace Orb.GirlLike.Players
       }
 
       if (isStopDamageAnimation)
-        Animator.Vunerable();
+        Animator.Vunerable(true);
     }
   }
 }

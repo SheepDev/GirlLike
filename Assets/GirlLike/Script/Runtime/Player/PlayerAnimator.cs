@@ -66,9 +66,12 @@ namespace Orb.GirlLike.Players
       spriteAnimator.Play("Damage");
     }
 
-    public void Vunerable()
+    public void Vunerable(bool isVunerable)
     {
-      spriteAnimator.Play("Empty");
+      if (isVunerable)
+        spriteAnimator.Play("Empty");
+      else
+        spriteAnimator.Play("Damage");
     }
 
     private void SetDirection(LookDirection direction)
