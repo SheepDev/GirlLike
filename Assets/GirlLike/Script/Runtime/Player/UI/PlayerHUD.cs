@@ -2,6 +2,7 @@
 using Orb.GirlLike.Combats;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Orb.GirlLike.Players.UI
 {
@@ -16,23 +17,33 @@ namespace Orb.GirlLike.Players.UI
     [Header("Config")]
     [SerializeField] private Canvas canvas;
     [SerializeField] private Transform lifeBarRoot;
-    [SerializeField] private HitPoint hitPoint;
     [SerializeField] private Image profileIMG;
+    [SerializeField] private TextMeshProUGUI coinText;
 #pragma warning restore CS0649
 
+    private HitPoint hitPoint;
     private List<Heart> hearts;
+    private Player player;
 
     public Canvas Canvas { get => canvas; set => canvas = value; }
 
     private void Awake()
     {
       hearts = new List<Heart>();
-      profileIMG.sprite = profileSprite;
+      player = GetComponent<Player>();
 
+      profileIMG.sprite = profileSprite;
+    }
+
+    private void Start()
+    {
+      hitPoint = player.HitPoint;
       UpdateLifeHUD();
       hitPoint.onUpdate.AddListener(UpdateLifeHUD);
       hitPoint.onDamage.AddListener(UpdateLife);
       hitPoint.onHeal.AddListener(UpdateLife);
+
+      player.Bag.onCoinUpdate.AddListener((amount) => coinText.text = amount.ToString());
     }
 
     public void UpdateLife()

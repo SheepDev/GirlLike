@@ -16,7 +16,7 @@ namespace Orb.GirlLike.Players
     [SerializeField] private Transform itensHUD;
 #pragma warning restore CS0649
     [Header("Events")]
-    public IntEvent coinUpdate;
+    public IntEvent onCoinUpdate;
     public ItemEvent onAddPassiveItem;
     public ItemEvent onRemovePassiveItem;
 
@@ -29,7 +29,7 @@ namespace Orb.GirlLike.Players
     {
       slots = new List<ItemSlot>();
       player = GetComponent<Player>();
-      coinUpdate = new IntEvent();
+      onCoinUpdate = new IntEvent();
 
       for (int i = 0; i < maxItens; i++)
       {
@@ -153,7 +153,7 @@ namespace Orb.GirlLike.Players
     private void AddCoin(int totalCoin)
     {
       coinAmount += Mathf.Abs(totalCoin);
-      coinUpdate.Invoke(coinAmount);
+      onCoinUpdate.Invoke(coinAmount);
     }
 
     [System.Serializable]
