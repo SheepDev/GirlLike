@@ -17,6 +17,7 @@ namespace Orb.GirlLike
     [SerializeField] private Transform playerStart;
     [SerializeField] private Parallax parallax;
     [SerializeField] private CinemachineVirtualCamera cam;
+    [SerializeField] private CinemachineVirtualCamera freeCam;
     [SerializeField] private Player[] playerCharactes;
 #pragma warning restore CS0649
     private Player currentPlayer;
@@ -30,13 +31,18 @@ namespace Orb.GirlLike
       else
         Destroy(this);
 
-      characterType = (PlayerCharacterType)PlayerPrefs.GetInt("CharacterType", 0);
+      characterType = GetSaveCharacterType();
       SpawnPlayer();
     }
 
     private void Start()
     {
       SetupPlayer();
+    }
+
+    public void EnableFreezeCam(bool isEnable)
+    {
+      cam.enabled = !isEnable;
     }
 
     public void SetCharacter(PlayerCharacterType character, float delay = 0)
@@ -92,6 +98,11 @@ namespace Orb.GirlLike
       player.HiddenHUD(isDisableHUDAndCombat);
       player.DisableCombat(isDisableHUDAndCombat);
       cam.Follow = player.GetTransform();
+    }
+
+    public PlayerCharacterType GetSaveCharacterType()
+    {
+      return (PlayerCharacterType)PlayerPrefs.GetInt("CharacterType", 0);
     }
 
     private void SaveCharacterType()

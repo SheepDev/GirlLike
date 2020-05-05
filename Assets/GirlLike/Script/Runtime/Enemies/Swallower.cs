@@ -17,7 +17,7 @@ namespace Orb.GirlLike.Ememies
     private bool isAttack;
     private bool isAllowToAttack;
     private bool isAttackCountdown;
-    private PlayerHitPoint player;
+    private Player player;
 
     public bool IsAllowToAttack => isAllowToAttack && !isAttackCountdown;
     public MoveTo MoveTo { get; private set; }
@@ -97,7 +97,7 @@ namespace Orb.GirlLike.Ememies
 
       foreach (var collider in colliders)
       {
-        var player = collider.GetComponentInParent<PlayerHitPoint>();
+        var player = collider.GetComponentInParent<Player>();
         if (player != null)
         {
           this.player = player;
@@ -134,7 +134,7 @@ namespace Orb.GirlLike.Ememies
       for (int i = 0; i < totalDamage; i++)
       {
         yield return new WaitForSeconds(1.2f);
-        player.ApplyDamage(1);
+        player.HitPoint.ApplyDamage(1);
       }
 
       Animator.SetBool("isChewing", false);
@@ -160,18 +160,19 @@ namespace Orb.GirlLike.Ememies
 
     private void Spitting()
     {
-      var playerMoviment = player.GetComponent<PlayerMovement>();
       var isLeft = !sprite.sprite.flipX;
       var direction = isLeft ? Vector3.left : Vector3.right;
       direction *= forceSpitting;
 
-      player.GetComponent<PlayerInput>().Hidden(false);
-      playerMoviment.GetTransform().position = mouthPivo.position;
+      player.Input.Hidden(false);
+      player.GetTransform().position = mouthPivo.position;
+      var playerMoviment = player.Movement;
+      var hitPoint = player.HitPoint;
 
       playerMoviment._rigidbody.velocity = Vector3.zero;
       playerMoviment._rigidbody.AddForce(direction, ForceMode2D.Impulse);
-      playerMoviment.DisableForSeconds(player.ignoreDamageDelay);
-      player.IgnoreDamage(player.ignoreDamageDelay, true);
+      playerMoviment.DisableForSeconds(hitPoint.disableInputInSeconds);
+      hitPoint.IgnoreDamage(hitPoint.ignoreDamageDelay, true);
       Animator.Play("EnterFloor");
       this.player = null;
     }

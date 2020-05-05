@@ -6,16 +6,27 @@ namespace Orb.GirlLike.Utility
 {
   public class OverlapBehaviour : MonoBehaviour
   {
+    [SerializeField] private bool isEnable;
     public ContactFilter2D filter2D;
     public Collider2D _collider2D;
 
     [Header("Events")]
     public OverlapEvent onOverlap;
 
+    public bool IsEnable { get => isEnable; set => isEnable = value; }
+
     protected virtual void Awake()
     {
       if (_collider2D == null)
         _collider2D = GetComponent<Collider2D>();
+    }
+
+    private void Update()
+    {
+      if (isEnable)
+      {
+        Overlap();
+      }
     }
 
     public void Overlap()

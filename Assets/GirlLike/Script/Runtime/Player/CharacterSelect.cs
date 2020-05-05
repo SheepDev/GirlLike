@@ -16,6 +16,10 @@ namespace Orb.GirlLike.Players
     {
       animator = GetComponentInChildren<Animator>();
       CheckAvaliable();
+      if (characterType == GameMode.Current.GetSaveCharacterType())
+      {
+        animator.Play("Empty");
+      }
 
       var gameMode = GameMode.Current;
       gameMode.onSetCharacter
@@ -36,6 +40,8 @@ namespace Orb.GirlLike.Players
 
     public void Avaliable(bool isAvaliable)
     {
+      if (this.isAvaliable == isAvaliable) return;
+
       this.isAvaliable = isAvaliable;
       animator.Play(isAvaliable ? "Idle" : "Selected");
     }
