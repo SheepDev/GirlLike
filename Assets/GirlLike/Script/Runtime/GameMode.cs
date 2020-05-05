@@ -17,6 +17,7 @@ namespace Orb.GirlLike
     [SerializeField] private Transform playerStart;
     [SerializeField] private Parallax parallax;
     [SerializeField] private CinemachineVirtualCamera cam;
+    [SerializeField] private CinemachineVirtualCamera freeCam;
     [SerializeField] private Player[] playerCharactes;
 #pragma warning restore CS0649
     private Player currentPlayer;
@@ -37,6 +38,11 @@ namespace Orb.GirlLike
     private void Start()
     {
       SetupPlayer();
+    }
+
+    public void EnableFreezeCam(bool isEnable)
+    {
+      cam.enabled = !isEnable;
     }
 
     public void SetCharacter(PlayerCharacterType character, float delay = 0)

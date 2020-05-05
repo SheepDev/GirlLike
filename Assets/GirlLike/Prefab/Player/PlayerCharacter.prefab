@@ -601,6 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overlapInteractive: {fileID: 7565174837049219749}
+  defaultGravity: 0
 --- !u!114 &2912120161910940765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,28 +640,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2912120161120871336}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2912120161910940752}
-        m_MethodName: set_isKinematic
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   onHidden:
     m_PersistentCalls:
       m_Calls:
@@ -686,28 +665,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2912120161120871336}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2912120161910940752}
-        m_MethodName: set_isKinematic
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2912120161910940764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,6 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e191c18ee917afa489fde2decd962877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnDisableInputInSeconds: 0
   spriteUtility: {fileID: 7753858337463643821}
   spriteAnimator: {fileID: 2912120161926867346}
 --- !u!114 &2912120161910940754
@@ -1509,6 +1467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0addd0cfc90a641838e31a5d01944b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnable: 0
   filter2D:
     useTriggers: 1
     useLayerMask: 1
