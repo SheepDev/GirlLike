@@ -990,11 +990,11 @@ MonoBehaviour:
   confine: {fileID: 167531598}
   border: {fileID: 418806907}
   itemInfos:
-  - {fileID: 11400000, guid: 35b4bee644744784d96332ffdcebdb82, type: 2}
-  - {fileID: 11400000, guid: abc704ad3240aa94b85cc3f4965ea355, type: 2}
   - {fileID: 11400000, guid: feab5d5812b47544bb48c2c44214e903, type: 2}
   - {fileID: 11400000, guid: e0f2fbf07ebece74b95edf4a570bafb4, type: 2}
   - {fileID: 11400000, guid: c560e17d61c2d5647839cbc90f03a04e, type: 2}
+  - {fileID: 11400000, guid: 35b4bee644744784d96332ffdcebdb82, type: 2}
+  - {fileID: 11400000, guid: abc704ad3240aa94b85cc3f4965ea355, type: 2}
   itemPrefab: {fileID: 1851049777876199300, guid: 071df2641e2c41044b9b67f845b05cfe,
     type: 3}
   isMoveToLeft: 1
@@ -1076,7 +1076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 513182830, guid: 95e98725fec36be4dadaead65b5b6aeb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9000007
+      value: 0.89999974
       objectReference: {fileID: 0}
     - target: {fileID: 513182830, guid: 95e98725fec36be4dadaead65b5b6aeb, type: 3}
       propertyPath: m_LocalPosition.y

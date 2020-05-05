@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Brenda lee
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 21300000, guid: b567aa525d4c4f04384810b064c18006, type: 3}
-  title: 
-  description: 
+  title: Branda Lee
+  description: "AUMENTA A DISTANCIA DO DASH\nBrenda Lee foi uma militante transexual
+    brasileira dos direitos LGBT. Brenda foi considerada \"o anjo da guarda das travestis\" 
+    e tinha como objetivo ajudar a todos, doentes ou n\xE3o, que eram discriminados
+    pela sociedade."

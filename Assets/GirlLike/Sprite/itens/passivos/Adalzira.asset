@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 21300000, guid: ce540e32e4637cd4682d945a7408d336, type: 3}
   title: 'Adalzira '
-  description: 
+  description: "AUMENTA ALTURA DO PULO\r\nAdalzira Cavalcanti de Albuquerque Bittencourt
+    Ferrara foi uma advogada, poeta e escritora brasileira. Adalzira Bittencourt
+    foi uma das primeiras a escrever sobre a import\xE2ncia da mulher brasileira
+    na literatura\r.\n"

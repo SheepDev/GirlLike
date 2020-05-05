@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 21300000, guid: 156595a84ea435445a83b23505055c44, type: 3}
   title: Nisia
-  description: 
+  description: "AUMENTA O ATAQUE\r\nN\xEDsia Floresta Brasileira Augusta, pseud\xF4nimo
+    de Dion\xEDsia Gon\xE7alves Pinto foi uma educadora, escritora e poetisa brasileira.
+    Primeira na educa\xE7\xE3o feminista no Brasil, com protagonismo nas letras,
+    no jornalismo e nos movimentos sociais.\r\n"
