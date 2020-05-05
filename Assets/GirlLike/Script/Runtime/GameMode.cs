@@ -30,7 +30,7 @@ namespace Orb.GirlLike
       else
         Destroy(this);
 
-      characterType = (PlayerCharacterType)PlayerPrefs.GetInt("CharacterType", 0);
+      characterType = GetSaveCharacterType();
       SpawnPlayer();
     }
 
@@ -92,6 +92,11 @@ namespace Orb.GirlLike
       player.HiddenHUD(isDisableHUDAndCombat);
       player.DisableCombat(isDisableHUDAndCombat);
       cam.Follow = player.GetTransform();
+    }
+
+    public PlayerCharacterType GetSaveCharacterType()
+    {
+      return (PlayerCharacterType)PlayerPrefs.GetInt("CharacterType", 0);
     }
 
     private void SaveCharacterType()
