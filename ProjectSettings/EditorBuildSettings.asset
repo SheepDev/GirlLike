@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/GirlLike/Scene/Menu.unity
     guid: cb9764d6110a1664f81c1ead2493d725
   - enabled: 1
-    path: Assets/GirlLike/Scene/Hall.unity
+    path: Assets/GirlLike/Scene/Hall/Hall.unity
     guid: 9535241eff4d9d44696c957916d4073c
   - enabled: 1
     path: Assets/GirlLike/Scene/Fase_1.unity
