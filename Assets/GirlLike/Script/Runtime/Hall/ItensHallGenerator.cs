@@ -9,7 +9,6 @@ namespace Orb.GirlLike.Hall
     public ItemInfoObject[] itemInfos;
     public ItemInfo itemPrefab;
     public bool isMoveToLeft;
-
     private SpriteRenderer sprite;
 
     private void Awake()
@@ -25,13 +24,10 @@ namespace Orb.GirlLike.Hall
       var size = sprite.size;
       var width = size.x;
 
-      for (int i = 0; i < itemInfos.Length; i++)
-      {
-        var item = itemInfos[i];
-        var itemHall = Instantiate(itemPrefab, _transform);
-        itemHall.Load(item);
-        itemHall.transform.localPosition = new Vector3(width * i, 0, 0);
-      }
+      if (isMoveToLeft)
+        AdditensReverse(_transform, width);
+      else
+        Additens(_transform, width);
 
       size.x = width * itemInfos.Length;
       sprite.size = size;
@@ -52,6 +48,28 @@ namespace Orb.GirlLike.Hall
       }
 
       confine.SetPath(0, path);
+    }
+
+    public void Additens(Transform _transform, float width)
+    {
+      for (int i = 0; i < itemInfos.Length; i++)
+      {
+        var item = itemInfos[i];
+        var itemHall = Instantiate(itemPrefab, _transform);
+        itemHall.Load(item);
+        itemHall.transform.localPosition = new Vector3(width * i, 0, 0);
+      }
+    }
+
+    public void AdditensReverse(Transform _transform, float width)
+    {
+      for (int i = itemInfos.Length - 1; i >= 0; i--)
+      {
+        var item = itemInfos[i];
+        var itemHall = Instantiate(itemPrefab, _transform);
+        itemHall.Load(item);
+        itemHall.transform.localPosition = new Vector3(width * i, 0, 0);
+      }
     }
   }
 }
