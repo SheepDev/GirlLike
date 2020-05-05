@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Cinemachine;
 using Gameplay.Effect;
+using System.Collections;
 
 namespace Orb.GirlLike
 {
@@ -38,16 +39,13 @@ namespace Orb.GirlLike
       SetupPlayer();
     }
 
-    public void SetCharacter(PlayerCharacterType character)
+    public void SetCharacter(PlayerCharacterType character, float delay = 0)
     {
       if (characterType == character) return;
       characterType = character;
       Destroy(currentPlayer.gameObject);
       currentPlayer = null;
-      SpawnPlayer();
-      SetupPlayer();
-      SaveCharacterType();
-      onSetCharacter.Invoke();
+      StartCoroutine(SpawnDelay(delay));
     }
 
     public Player GetPlayer()
@@ -99,6 +97,15 @@ namespace Orb.GirlLike
     private void SaveCharacterType()
     {
       PlayerPrefs.SetInt("CharacterType", (int)characterType);
+    }
+
+    private IEnumerator SpawnDelay(float delay)
+    {
+      yield return new WaitForSeconds(delay);
+      SpawnPlayer();
+      SetupPlayer();
+      SaveCharacterType();
+      onSetCharacter.Invoke();
     }
 
     public enum PlayerCharacterType

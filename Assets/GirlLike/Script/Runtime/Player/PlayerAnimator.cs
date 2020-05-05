@@ -5,6 +5,7 @@ namespace Orb.GirlLike.Players
 {
   public class PlayerAnimator : MonoBehaviour
   {
+    [SerializeField] private float spawnDisableInputInSeconds;
     [SerializeField] private SpriteUtility spriteUtility;
     [SerializeField] private Animator spriteAnimator;
 
@@ -22,6 +23,12 @@ namespace Orb.GirlLike.Players
 
       var playerCombat = GetComponent<PlayerCombatSystem>();
       playerCombat.onDash.AddListener(() => Animator.SetTrigger("Dash"));
+    }
+
+    private void Start()
+    {
+      Animator.Play("Spawn");
+      PlayerMovement.DisableForSeconds(spawnDisableInputInSeconds);
     }
 
     private void Update()

@@ -200,6 +200,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940764, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: spawnDisableInputInSeconds
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940765, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: onShow.m_PersistentCalls.m_Calls.Array.size
