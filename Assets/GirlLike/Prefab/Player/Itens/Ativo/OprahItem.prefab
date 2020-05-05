@@ -17,7 +17,16 @@ MonoBehaviour:
   offset: {x: 0, y: 1, z: 0}
   itemDistance: 1
   itemCount: 5
-  itens: []
+  itens:
+  - {fileID: 508959154, guid: 972c0cc7c0a79524b83fe65d48fc7fe1, type: 3}
+  - {fileID: 2029459423, guid: c25e707a9b17d4340b2704aac093bbbb, type: 3}
+  - {fileID: 1008548980814086015, guid: f3028bd09ea41f846b003432961689e1, type: 3}
+  - {fileID: 9053924675003715750, guid: c5e9a13d19e1bb54cadfde27ab6af3d3, type: 3}
+  - {fileID: 269852928040060432, guid: 18f15a4ad5744fe4aa7e59d23c903164, type: 3}
+  - {fileID: 595178791938503809, guid: 7a722bdff32e6ed4e980cb8c8ff54efc, type: 3}
+  - {fileID: 8581776684711640709, guid: 538955280e977d7459a428c890f8c643, type: 3}
+  - {fileID: 2327018630371505209, guid: 64c6eea9d5ba0c54d8c60ea167215665, type: 3}
+  - {fileID: 8160720232297979291, guid: ddf433a9cbe42db41b59559e81e8550c, type: 3}
 --- !u!1001 &1596281473569868084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83,7 +92,7 @@ PrefabInstance:
     - target: {fileID: 4650526236299418337, guid: 78de5e7f666cb31478d8e8e9ceddf1c1,
         type: 3}
       propertyPath: m_Name
-      value: OprahItem Variant
+      value: OprahItem
       objectReference: {fileID: 0}
     - target: {fileID: 4650526236299418337, guid: 78de5e7f666cb31478d8e8e9ceddf1c1,
         type: 3}
