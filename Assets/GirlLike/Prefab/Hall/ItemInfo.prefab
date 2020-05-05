@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 6738107780625081314}
+  titleMesh: {fileID: 749091812383642412}
+  descriptionMesh: {fileID: 7933625280582229403}
 --- !u!1 &3463814410553362474
 GameObject:
   m_ObjectHideFlags: 0
