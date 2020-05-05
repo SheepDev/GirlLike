@@ -628,6 +628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8255941454605192964}
   - component: {fileID: 2989257351204206245}
+  - component: {fileID: 1788785609}
   m_Layer: 0
   m_Name: GameMode
   m_TagString: Untagged
@@ -662,6 +663,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693df751fa671774587671dc65332804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDisableHUDAndCombat: 0
+  onSetCharacter:
+    m_PersistentCalls:
+      m_Calls: []
   playerStart: {fileID: 8255941454605192964}
   parallax: {fileID: 0}
   cam: {fileID: 1884112265}
@@ -669,3 +674,15 @@ MonoBehaviour:
   - {fileID: 4804672305511158064, guid: 24083b3656e65cd4d842fc1ebd8ce4c2, type: 3}
   - {fileID: 8338178302748122276, guid: 876714a3220ff384e93ce9dcc48e02ea, type: 3}
   - {fileID: 8783563098171673507, guid: 015f1cd96a792f74d9ba2c8a5be4010c, type: 3}
+--- !u!114 &1788785609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049310081225744395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03dc0e29e6ecb9246b8b37ac79d01551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
