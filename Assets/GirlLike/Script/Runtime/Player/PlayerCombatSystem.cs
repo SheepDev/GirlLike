@@ -85,6 +85,7 @@ namespace Orb.GirlLike.Players
       isDash = true;
       isDashCountdown = true;
       yield return new WaitForSeconds(dashStartDelay);
+      var cacheGravity = Movement._rigidbody.gravityScale;
       Movement._rigidbody.gravityScale = 0;
       Movement._rigidbody.velocity = Vector2.zero;
 
@@ -94,7 +95,7 @@ namespace Orb.GirlLike.Players
 
       yield return new WaitForSeconds(dashDuration);
       Movement._rigidbody.velocity = Vector2.zero;
-      Movement._rigidbody.gravityScale = 1;
+      Movement._rigidbody.gravityScale = cacheGravity;
       Movement.IsDisable(false);
       isDash = false;
       onDashFinish.Invoke();
