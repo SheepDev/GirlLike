@@ -7,6 +7,6 @@ namespace Orb.GirlLike.Hall
   {
     public Sprite itemSprite;
     public string title;
-    [TextArea] public string description;
+    [TextArea(10, 50)] public string description;
   }
 }
