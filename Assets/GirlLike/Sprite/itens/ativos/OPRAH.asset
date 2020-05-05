@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f83255a5157b04c9dd993d35299b81, type: 3}
+  m_Name: OPRAH
+  m_EditorClassIdentifier: 
+  itemSprite: {fileID: 21300000, guid: fe3f4a200736d8642812128f6286b288, type: 3}
+  title: Oprah
+  description: "QUANDO ATIVADO O PLAYER RECEBE 5 ITENS ALEAT\xD3RIOS\r\nOprah Winfrey
+    \xE9 uma apresentadora de televis\xE3o, atriz e empres\xE1ria norte-americana,
+    vencedora de m\xFAltiplos pr\xEAmios Emmy por seu programa The Oprah Winfrey
+    Show, o talk show com maior audi\xEAncia da hist\xF3ria da televis\xE3o norte-americana.\r\n"
