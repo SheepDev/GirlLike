@@ -510,7 +510,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_TargetDisplay: 0
 --- !u!114 &1834675249
 MonoBehaviour:
@@ -670,6 +670,7 @@ MonoBehaviour:
   playerStart: {fileID: 8255941454605192964}
   parallax: {fileID: 0}
   cam: {fileID: 1884112265}
+  freeCam: {fileID: 0}
   playerCharactes:
   - {fileID: 4804672305511158064, guid: 24083b3656e65cd4d842fc1ebd8ce4c2, type: 3}
   - {fileID: 8338178302748122276, guid: 876714a3220ff384e93ce9dcc48e02ea, type: 3}
@@ -686,3 +687,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03dc0e29e6ecb9246b8b37ac79d01551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossPoint: {fileID: 0}

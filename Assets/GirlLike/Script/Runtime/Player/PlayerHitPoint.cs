@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using Orb.GirlLike.Combats;
+using Orb.GirlLike.Utility;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace Orb.GirlLike.Players
 {
@@ -28,6 +30,22 @@ namespace Orb.GirlLike.Players
       Combat = GetComponent<PlayerCombatSystem>();
       Animator = GetComponent<PlayerAnimator>();
       takeDamage.onPointDamage.AddListener(ApplyDamage);
+    }
+
+    [ContextMenu("Die")]
+    public override void Die()
+    {
+      Moviment.GetComponent<PlayerInput>().Disable(true);
+      StartCoroutine(BackToMenu());
+      onDie.Invoke();
+    }
+
+    public IEnumerator BackToMenu()
+    {
+      yield return new WaitForSeconds(1);
+      FadeManager.Current.FadeIn(.8f);
+      yield return new WaitForSeconds(3);
+      SceneManager.LoadScene(0);
     }
 
     public override void ApplyDamage(PointDamageData data)

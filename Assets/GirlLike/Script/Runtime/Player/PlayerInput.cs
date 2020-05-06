@@ -30,6 +30,11 @@ namespace Orb.GirlLike.Players
       controller.useItem.onUpdate += bag.UseItem;
     }
 
+    public void Disable(bool isDisable)
+    {
+      controller.enabled = !isDisable;
+    }
+
     public void Hidden(bool isHidden)
     {
       controller.enabled = !isHidden;
