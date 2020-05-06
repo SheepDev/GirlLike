@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using Orb.GirlLike.Combats;
+using Orb.GirlLike.Utility;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Orb.GirlLike.Ememies
 {
@@ -8,6 +10,7 @@ namespace Orb.GirlLike.Ememies
   {
     public Projectile projectilePrefab;
     public Vector3 offset;
+    public Transform bossDie;
     public Transform projectilePoint;
     public Transform[] teleportPoints;
 
@@ -16,6 +19,7 @@ namespace Orb.GirlLike.Ememies
     private Animator animator;
     private Transform _transform;
     private Transform targetTransform;
+    private bool isDie;
 
     private void Awake()
     {
@@ -29,6 +33,7 @@ namespace Orb.GirlLike.Ememies
 
     private void Attack()
     {
+      if (isDie) return;
       StartCoroutine(AttackProjectile());
     }
 
@@ -98,6 +103,25 @@ namespace Orb.GirlLike.Ememies
 
       isAttack = false;
       yield return Teleport();
+    }
+
+    public void BossDie()
+    {
+      StopAllCoroutines();
+      isDie = true;
+      animator.Play("Die");
+      var position = bossDie.position;
+      position.z = 0;
+      GetTransform().position = position;
+      StartCoroutine(Die());
+    }
+
+    private IEnumerator Die()
+    {
+      yield return new WaitForSeconds(3f);
+      FadeManager.Current.FadeIn(.8f);
+      yield return new WaitForSeconds(2f);
+      SceneManager.LoadScene(0);
     }
   }
 }
