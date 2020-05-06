@@ -41,6 +41,13 @@ namespace Orb.GirlLike.Players
       defaultGravity = Rigidbody.gravityScale;
     }
 
+    private void LateUpdate()
+    {
+      var position = GetTransform().position;
+      position.z = 0;
+      GetTransform().position = position;
+    }
+
     public void HiddenHUD(bool isHidden)
     {
       HUD.Canvas.enabled = !isHidden;
