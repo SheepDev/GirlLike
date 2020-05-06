@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Orb.GirlLike.Combats;
+﻿using Orb.GirlLike.Combats;
 using Orb.GirlLike.Players;
 using UnityEngine;
 
@@ -9,6 +7,7 @@ namespace Orb.GirlLike.Cheat
   public class Cheat : MonoBehaviour
   {
     private Player player;
+    [SerializeField] private Transform bossPoint;
     private GameObject hitpointGameObject;
 
     private void Start()
@@ -22,6 +21,10 @@ namespace Orb.GirlLike.Cheat
       if (Input.GetKeyDown(KeyCode.I))
       {
         hitpointGameObject.SetActive(!hitpointGameObject.activeInHierarchy);
+      }
+      if (Input.GetKeyDown(KeyCode.B))
+      {
+        player.GetTransform().position = bossPoint.position;
       }
     }
   }
