@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 868316364}
   - component: {fileID: 868316365}
   - component: {fileID: 3261451938419270829}
-  m_Layer: 16
+  m_Layer: 12
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 4096
+      m_Bits: 131072
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
