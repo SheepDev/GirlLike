@@ -98,6 +98,8 @@ namespace Orb.GirlLike
       player.HiddenHUD(isDisableHUDAndCombat);
       player.DisableCombat(isDisableHUDAndCombat);
       cam.Follow = player.GetTransform();
+
+      if (freeCam != null) freeCam.Follow = player.GetTransform();
     }
 
     public PlayerCharacterType GetSaveCharacterType()
