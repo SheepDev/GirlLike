@@ -9,6 +9,7 @@ namespace Orb.GirlLike.Players
 {
   public class PlayerHitPoint : HitPoint
   {
+    public GameObject painel;
     public float ignoreDamageDelay;
     public float disableInputInSeconds;
 
@@ -35,7 +36,9 @@ namespace Orb.GirlLike.Players
     [ContextMenu("Die")]
     public override void Die()
     {
+      var player = Moviment.GetComponent<Player>();
       Moviment.GetComponent<PlayerInput>().Disable(true);
+      player.DisableCombat(true);
       StartCoroutine(BackToMenu());
       onDie.Invoke();
     }
@@ -44,8 +47,8 @@ namespace Orb.GirlLike.Players
     {
       yield return new WaitForSeconds(1);
       FadeManager.Current.FadeIn(.8f);
-      yield return new WaitForSeconds(3);
-      SceneManager.LoadScene(0);
+      yield return new WaitForSeconds(2);
+      painel.SetActive(true);
     }
 
     public override void ApplyDamage(PointDamageData data)
