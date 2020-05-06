@@ -16,7 +16,7 @@ namespace Orb.GirlLike.Ememies
     public Coin coinPrefab;
 
     [Header("Collider Setup")]
-    public BoundsBehaviour followBounds;
+    public BoundsBehaviour[] followBounds;
     public BoundsBehaviour avoidBounds;
     public BoundsBehaviour attackBounds;
 
@@ -50,6 +50,16 @@ namespace Orb.GirlLike.Ememies
     protected bool BoundsConstains(BoundsBehaviour bounds, Vector3 point)
     {
       return bounds != null && bounds.GetBounds().Contains(point);
+    }
+
+    protected bool BoundsConstains(BoundsBehaviour[] bounds, Vector3 point)
+    {
+      foreach (var bound in bounds)
+      {
+        return bound != null && bound.GetBounds().Contains(point);
+      }
+
+      return false;
     }
 
     protected virtual void OnDie()

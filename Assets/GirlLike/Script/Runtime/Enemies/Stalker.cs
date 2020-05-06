@@ -34,23 +34,7 @@ namespace Orb.GirlLike.Ememies
       if (isAttack || IsStun) return;
 
       var targetPoint = GetTarget().GetCenter();
-
-      // if (isAllowToAttack && BoundsConstains(attackBounds, targetPoint))
-      // {
-      //   Stop();
-      //   StartCoroutine(Attack());
-      //   return;
-      // }
-
-      var isFollow = BoundsConstains(followBounds, targetPoint);
-      if (isFollow)
-      {
-        GoToTarget();
-      }
-      else
-      {
-        Stop();
-      }
+      GoToTarget();
     }
 
     protected override void OnDie()

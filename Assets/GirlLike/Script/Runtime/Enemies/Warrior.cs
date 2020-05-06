@@ -111,14 +111,5 @@ namespace Orb.GirlLike.Ememies
       isAttack = false;
       isAllowToAttack = true;
     }
-
-    private void OnDrawGizmos()
-    {
-      if (followBounds != null)
-      {
-        var bounds = followBounds.GetBounds();
-        Gizmos.DrawWireCube(bounds.center, bounds.size);
-      }
-    }
   }
 }

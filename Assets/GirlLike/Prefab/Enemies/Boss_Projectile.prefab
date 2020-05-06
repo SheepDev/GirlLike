@@ -77,10 +77,20 @@ PrefabInstance:
       propertyPath: defaultFlip
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8889432158312059566, guid: 92c57f15ce5c5f244b37b9896bd4c91f,
+        type: 3}
+      propertyPath: filter2D.layerMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8889432158312059567, guid: 92c57f15ce5c5f244b37b9896bd4c91f,
         type: 3}
       propertyPath: isLocal
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889432158312059567, guid: 92c57f15ce5c5f244b37b9896bd4c91f,
+        type: 3}
+      propertyPath: speed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8889432159866754392, guid: 92c57f15ce5c5f244b37b9896bd4c91f,
         type: 3}

@@ -55,10 +55,15 @@ namespace Orb.GirlLike.Ememies
 
     private IEnumerator Teleport()
     {
+      animator.Play("TeleportBegin");
       yield return new WaitForSeconds(1);
 
       var point = GetRandomTeleportPoint();
-      GetTransform().position = point.position;
+      var position = point.position;
+      position.z = 0;
+      GetTransform().position = position;
+
+      animator.Play("TeleportEnd");
       yield return new WaitForSeconds(1);
 
       if (isAttack)
@@ -69,16 +74,18 @@ namespace Orb.GirlLike.Ememies
 
     private IEnumerator Rest()
     {
-      yield return new WaitForSeconds(6);
+      animator.Play("Idle");
+      yield return new WaitForSeconds(9);
       isAttack = true;
       yield return Teleport();
     }
 
     private IEnumerator AttackProjectile()
     {
-      yield return new WaitForSeconds(1);
+      animator.Play("Conjuring");
 
-      for (int i = 0; i < 5; i++)
+      var total = Random.Range(4, 6);
+      for (int i = 0; i < total; i++)
       {
         var projectile = Instantiate(projectilePrefab, projectilePoint.position, Quaternion.identity);
         projectile.SetDirection(Vector3.forward);
@@ -86,7 +93,7 @@ namespace Orb.GirlLike.Ememies
         var direction = (targetTransform.position - _transform.position).normalized;
         var angle = Vector3.Angle(Vector3.up, direction);
         projectile.transform.LookAt(targetTransform.position + offset);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.8f);
       }
 
       isAttack = false;
