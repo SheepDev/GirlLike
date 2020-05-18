@@ -41,14 +41,15 @@ namespace Orb.GirlLike.Players
     public PlayerAnimator PlayerAnimator { get; private set; }
     public PlayerStatus Status { get; private set; }
 
-    private void Awake()
+    private void Start()
     {
       player = GetComponent<Player>();
-      Movement = GetComponent<PlayerMovement>();
-      PlayerAnimator = GetComponent<PlayerAnimator>();
-      Status = GetComponent<PlayerStatus>();
+      Status = player.Status;
+      Movement = player.Movement;
+      PlayerAnimator = player.Animator;
+      var hitPoint = player.HitPoint;
 
-      var hitPoint = GetComponent<PlayerHitPoint>();
+      Movement.onJump.AddListener(ResetAttack);
       onDash.AddListener(() => hitPoint.isIgnoreDamage = true);
       onDashFinish.AddListener(() => hitPoint.isIgnoreDamage = false);
     }
@@ -65,7 +66,6 @@ namespace Orb.GirlLike.Players
       else
       {
         Movement.LockLookDirection(true);
-        Movement.isBlockJump = true;
         Movement.currentSpeed = movementSpeedDuringAttack;
         PlayerAnimator.Animator.SetBool("IsAttack", isAttack = true);
       }
@@ -136,11 +136,11 @@ namespace Orb.GirlLike.Players
     private void ResetAttack()
     {
       Movement.LockLookDirection(false);
-      Movement.isBlockJump = false;
       Movement.BackToDefaultSpeed();
 
       isAllowNextAttack = isNextAttack = isAttack = false;
       PlayerAnimator.Animator.SetBool("IsAttack", isAttack);
+      PlayerAnimator.Animator.Play("Empty", 1);
       StartCoroutine(DelayAttack(attackDelay));
     }
 
