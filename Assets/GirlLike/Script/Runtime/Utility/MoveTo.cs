@@ -7,7 +7,7 @@ namespace Orb.GirlLike.AI
     public float speed;
     public bool isLocal;
     private Transform cacheTransform;
-    private Vector3 direction;
+    [SerializeField] private Vector3 direction;
 
     private void Update()
     {

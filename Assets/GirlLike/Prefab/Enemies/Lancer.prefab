@@ -140,15 +140,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad7bcbf7f1e52841bf672602d94e89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 7119140815241916506}
+  canAttack: 0
+  canMove: 0
+  attackCountdown: 4
+  isDirection: 0
   center: {x: 0, y: 0.5, z: 0}
+  sprite: {fileID: 7119140815241916506}
   minCoin: 5
   maxCoin: 10
   coinPrefab: {fileID: 5792025264754144352, guid: f619ff2442219df4aa75252aebb56455,
     type: 3}
-  followBounds: {fileID: 0}
-  avoidBounds: {fileID: 0}
-  attackBounds: {fileID: 2039510348}
+  followBounds: []
+  stopBounds: []
+  avoidBounds: []
+  attackBounds:
+  - {fileID: 2039510348}
   spearSpawnPoint: {fileID: 8648171454967243570}
   prefab: {fileID: 8648171455476333000}
 --- !u!114 &2038072610
@@ -164,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  isLocal: 0
 --- !u!1 &8648171454967243569
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  isLocal: 0
 --- !u!114 &8648171455476333000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94443c9d6eaf6e645b4eae31985b0987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnable: 0
   filter2D:
     useTriggers: 1
     useLayerMask: 1
@@ -371,12 +380,12 @@ PrefabInstance:
     - target: {fileID: 6216579404859356658, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.27
+      value: 10.09
       objectReference: {fileID: 0}
     - target: {fileID: 6216579404859356658, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06
+      value: -1.81
       objectReference: {fileID: 0}
     - target: {fileID: 6216579404859356658, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}
@@ -421,6 +430,11 @@ PrefabInstance:
     - target: {fileID: 6216579404859356658, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7306412285258556210, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

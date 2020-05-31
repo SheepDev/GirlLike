@@ -15,7 +15,7 @@ namespace Orb.GirlLike.Ememies
       if (IsDie) return;
 
       var direction = CalculateDirection(data.point);
-      enemy._rb2D.AddForce(direction, ForceMode2D.Impulse);
+      enemy.RB2D.AddForce(direction, ForceMode2D.Impulse);
     }
 
     private Vector2 CalculateDirection(Vector3 point)

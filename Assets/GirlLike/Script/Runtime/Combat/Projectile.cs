@@ -45,6 +45,12 @@ namespace Orb.GirlLike.Combats
     {
       if (isDestroy) return;
       MoveTo.Direction(forward);
+
+      var isLeft = forward.x < 0;
+      var isFlip = isLeft ? defaultFlip : !defaultFlip;
+      var scale = transform.localScale;
+      scale.x *= isFlip ? 1 : -1;
+      transform.localScale = scale;
     }
 
     private void OnEnable()

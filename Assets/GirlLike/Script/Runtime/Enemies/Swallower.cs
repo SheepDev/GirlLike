@@ -14,81 +14,45 @@ namespace Orb.GirlLike.Ememies
     public float forceJump;
     public float forceSpitting;
     public OverlapBehaviour overlap;
-    private bool isAttack;
-    private bool isAllowToAttack;
-    private bool isAttackCountdown;
-    private Player player;
 
-    public bool IsAllowToAttack => isAllowToAttack && !isAttackCountdown;
-    public MoveTo MoveTo { get; private set; }
-    public Animator Animator { get; private set; }
+    private Player player;
 
     protected override void Awake()
     {
       base.Awake();
-      MoveTo = GetComponent<MoveTo>();
-      Animator = GetComponent<Animator>();
-
+      isNotPlayWalkAnimation = true;
       overlap.onOverlap.AddListener(Eat);
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
-      isAllowToAttack = true;
+      canMove = canAttack = true;
     }
 
-    private void Update()
+    protected override IEnumerator Attack()
     {
-      if (isAttack || IsStun) return;
-
-      var targetPoint = GetTarget().GetCenter();
-      if (IsAllowToAttack && BoundsConstains(attackBounds, targetPoint))
-      {
-        Stop();
-        Animator.Play("OutFloor");
-        isAttack = true;
-        return;
-      }
-
-      var isFollow = BoundsConstains(followBounds, targetPoint);
-      if (isFollow)
-      {
-        GoToTarget();
-      }
-    }
-
-    protected override void OnStun()
-    {
-      StopAllCoroutines();
-      Stop();
-      isAttack = false;
-      isAllowToAttack = false;
-    }
-
-    protected override void OnNormal()
-    {
-      StopAllCoroutines();
-      Stop();
-      isAttack = false;
-      isAllowToAttack = true;
-    }
-
-    private void StartAttack()
-    {
-      StartCoroutine(Attack());
-    }
-
-    private IEnumerator Attack()
-    {
+      OnIdle();
       var isLeft = TargetIsLeft();
       SetDirection(isLeft);
+      Animator.Play("OutFloor");
+      canMove = canAttack = false;
       isAttack = true;
+      yield return new WaitForSeconds(.4f);
+    }
+
+    protected void JumpToEat_AnimTrigger()
+    {
       Animator.Play("Eat");
+      StartCoroutine(Jump());
+    }
+
+    protected IEnumerator Jump()
+    {
       yield return new WaitForSeconds(.2f);
-      yield return new WaitForSeconds(.2f);
+      var isLeft = TargetIsLeft();
       var force = isLeft ? Vector3.left : Vector3.right;
       force *= forceJump;
-      _rb2D.AddForce(force, ForceMode2D.Impulse);
+      RB2D.AddForce(force, ForceMode2D.Impulse);
     }
 
     private void Eat(List<Collider2D> colliders)
@@ -108,25 +72,12 @@ namespace Orb.GirlLike.Ememies
       }
     }
 
-    private void StartChewing()
+    private void StartChewing_AnimTrigger()
     {
       if (player != null)
         StartCoroutine(Chewing());
       else
         StartCoroutine(Vunerable());
-    }
-
-    protected override void OnDie()
-    {
-      StopAllCoroutines();
-      Animator.Play("Die");
-    }
-
-    private void GoToTarget()
-    {
-      var isLeft = TargetIsLeft();
-      MoveTo.enabled = true;
-      MoveTo.Direction(isLeft ? Vector3.left : Vector3.right);
     }
 
     private IEnumerator Chewing()
@@ -139,7 +90,7 @@ namespace Orb.GirlLike.Ememies
 
       Animator.SetBool("isChewing", false);
       isAttack = false;
-      yield return AttackCooldown();
+      yield return AttackCountdown(attackCountdown);
     }
 
     private IEnumerator Vunerable()
@@ -148,17 +99,11 @@ namespace Orb.GirlLike.Ememies
       Animator.Play("EnterFloor");
       yield return new WaitForSeconds(.3f);
       isAttack = false;
-      yield return AttackCooldown();
+      canMove = true;
+      yield return AttackCountdown(attackCountdown);
     }
 
-    private IEnumerator AttackCooldown()
-    {
-      isAttackCountdown = true;
-      yield return new WaitForSeconds(2);
-      isAttackCountdown = false;
-    }
-
-    private void Spitting()
+    private void Spitting_AnimTrigger()
     {
       var isLeft = !sprite.sprite.flipX;
       var direction = isLeft ? Vector3.left : Vector3.right;
@@ -175,12 +120,13 @@ namespace Orb.GirlLike.Ememies
       hitPoint.IgnoreDamage(hitPoint.ignoreDamageDelay, true);
       Animator.Play("EnterFloor");
       this.player = null;
+
+      canMove = true;
     }
 
-    private void Stop()
+    protected override void OnIdle()
     {
       MoveTo.enabled = false;
-      Animator.Play("Idle");
     }
   }
 }
