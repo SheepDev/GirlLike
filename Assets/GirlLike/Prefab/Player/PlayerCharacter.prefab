@@ -1490,6 +1490,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontal:
     value: 0
+  scroll:
+    value: 0
 --- !u!114 &2912120162427421155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,13 +1507,15 @@ MonoBehaviour:
   horizontal:
     name: Horizontal
     isInvert: 0
+  scroll:
+    name: Mouse ScrollWheel
+    isInvert: 0
   jumpKey: 32
   attackKey: 323
   dashKey: 324
   interactiveKey: 102
   useItemKey: 101
-  nextItemKey: 113
-  previousItemKey: 0
+  removeItemKey: 113
 --- !u!1 &3224638183934050612
 GameObject:
   m_ObjectHideFlags: 0

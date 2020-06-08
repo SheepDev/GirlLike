@@ -9,11 +9,11 @@ namespace Orb.GirlLike.Controllers
     [SerializeField] [HideInInspector] internal Button jump;
     [SerializeField] [HideInInspector] internal Button attack;
     [SerializeField] [HideInInspector] internal Button interactive;
-    [SerializeField] [HideInInspector] internal Button nextItem;
-    [SerializeField] [HideInInspector] internal Button previousItem;
+    [SerializeField] [HideInInspector] internal Button removeItem;
     [SerializeField] [HideInInspector] internal Button useItem;
     [SerializeField] [HideInInspector] internal Button dash;
     [SerializeField] [HideInInspector] internal Axis horizontal;
+    [SerializeField] [HideInInspector] internal Axis scroll;
 #pragma warning restore CS0649
 
     public ControllerMap map { get; private set; }
@@ -29,12 +29,16 @@ namespace Orb.GirlLike.Controllers
       attack.CheckState(map.attackKey);
       dash.CheckState(map.dashKey);
       interactive.CheckState(map.interactiveKey);
-      nextItem.CheckState(map.nextItemKey);
-      previousItem.CheckState(map.previousItemKey);
+      removeItem.CheckState(map.removeItemKey);
       useItem.CheckState(map.useItemKey);
 
-      var info = map.horizontal;
-      horizontal.CheckUpdate(info.name, info.isInvert);
+      UpdateAxis(map.horizontal, horizontal);
+      UpdateAxis(map.scroll, scroll);
+    }
+
+    private void UpdateAxis(AxisInfo info, Axis axis)
+    {
+      axis.CheckUpdate(info.name, info.isInvert);
     }
   }
 }

@@ -1,4 +1,5 @@
-﻿using Orb.GirlLike.Controllers;
+﻿using System;
+using Orb.GirlLike.Controllers;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,9 +26,33 @@ namespace Orb.GirlLike.Players
       controller.attack.onUpdate += combat.Attack;
       controller.dash.onUpdate += combat.Dash;
       controller.interactive.onUpdate += player.Interactive;
-      controller.nextItem.onUpdate += bag.NextItem;
-      controller.previousItem.onUpdate += bag.PreviousItem;
       controller.useItem.onUpdate += bag.UseItem;
+      controller.scroll.onUpdate += SwitchItem;
+      controller.removeItem.onUpdate += RemoveItem;
+    }
+
+    private void RemoveItem(ActionState state)
+    {
+      if (state == ActionState.Down)
+      {
+        player.Bag.StartDestroySelectedItem();
+      }
+      else if (state == ActionState.Up)
+      {
+        player.Bag.CancelDestroySelectedItem();
+      }
+    }
+
+    private void SwitchItem(float value)
+    {
+      if (value > 0)
+      {
+        player.Bag.NextItem();
+      }
+      else if (value < 0)
+      {
+        player.Bag.PreviousItem();
+      }
     }
 
     public void Disable(bool isDisable)

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Orb.GirlLike.Controllers;
 using Orb.GirlLike.Helper;
 using Orb.GirlLike.Itens;
@@ -65,15 +66,13 @@ namespace Orb.GirlLike.Players
         DestroyItem(selectedIndex);
     }
 
-    public void NextItem(ActionState state)
+    public void NextItem()
     {
-      if (state != ActionState.Down) return;
       SetSelectedIndex(selectedIndex + 1);
     }
 
-    public void PreviousItem(ActionState state)
+    public void PreviousItem()
     {
-      if (state != ActionState.Down) return;
       SetSelectedIndex(selectedIndex - 1);
     }
 
@@ -89,6 +88,32 @@ namespace Orb.GirlLike.Players
 
         Destroy(item.gameObject);
       }
+    }
+
+    public void StartDestroySelectedItem()
+    {
+      var slot = slots[selectedIndex];
+
+      if (slot.HasItem)
+        StartCoroutine(DestroyItem(selectedIndex, 3));
+    }
+
+    public void CancelDestroySelectedItem()
+    {
+      StopAllCoroutines();
+    }
+
+    private IEnumerator DestroyItem(int selectedIndex, float delay)
+    {
+      var time = 0f;
+
+      while (time < delay)
+      {
+        yield return null;
+        time += Time.deltaTime;
+      }
+
+      DestroyItem(selectedIndex);
     }
 
     public void DropItem(int index)
@@ -108,6 +133,7 @@ namespace Orb.GirlLike.Players
 
     private void SetSelectedIndex(int index)
     {
+      CancelDestroySelectedItem();
       slots[selectedIndex].Select(false);
       selectedIndex = (int)Mathf.Repeat(index, slots.Count);
       slots[selectedIndex].Select(true);
