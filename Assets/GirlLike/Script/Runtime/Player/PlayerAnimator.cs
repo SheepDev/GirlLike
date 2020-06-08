@@ -12,23 +12,20 @@ namespace Orb.GirlLike.Players
     public PlayerMovement PlayerMovement { get; private set; }
     public Animator Animator { get; private set; }
 
-    private void Awake()
+    private void Start()
     {
-      PlayerMovement = GetComponent<PlayerMovement>();
+      var player = GetComponent<Player>();
+      PlayerMovement = player.Movement;
       Animator = GetComponent<Animator>();
 
       PlayerMovement.onJump.AddListener(Jump);
-      PlayerMovement.onUpdateMoveAxis.AddListener(Move);
       PlayerMovement.onSetDirection.AddListener(SetDirection);
-
-      var playerCombat = GetComponent<PlayerCombatSystem>();
-      playerCombat.onDash.AddListener(() => Animator.SetTrigger("Dash"));
-    }
-
-    private void Start()
-    {
-      Animator.Play("Spawn");
       PlayerMovement.DisableForSeconds(spawnDisableInputInSeconds);
+
+      var playerCombat = player.Combat;
+      playerCombat.onDash.AddListener(() => Animator.SetTrigger("Dash"));
+
+      Animator.Play("Spawn");
     }
 
     private void Update()
@@ -49,6 +46,9 @@ namespace Orb.GirlLike.Players
           Animator.Play("Jump_Up", 2);
         }
       }
+
+      if (!PlayerMovement.IsDisable())
+        Move(PlayerMovement.Velocity.magnitude);
     }
 
     private void Move(float direction)
