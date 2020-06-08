@@ -211,7 +211,12 @@ namespace Orb.GirlLike.Ememies
 
     public Vector3 GetTargetDirection()
     {
-      return (target.GetCenter() - GetTransform().position).normalized;
+      return GetTargetDirection(GetTarget().GetCenter());
+    }
+
+    public Vector3 GetTargetDirection(Vector3 worldPoint)
+    {
+      return (target.GetCenter() - worldPoint).normalized;
     }
 
     protected virtual void GoToTarget()
