@@ -12,6 +12,7 @@ namespace Orb.GirlLike.Controllers
     [SerializeField] [HideInInspector] internal Button removeItem;
     [SerializeField] [HideInInspector] internal Button useItem;
     [SerializeField] [HideInInspector] internal Button dash;
+    [SerializeField] [HideInInspector] internal Button pauseGame;
     [SerializeField] [HideInInspector] internal Axis horizontal;
     [SerializeField] [HideInInspector] internal Axis scroll;
 #pragma warning restore CS0649
@@ -25,6 +26,7 @@ namespace Orb.GirlLike.Controllers
 
     private void Update()
     {
+      pauseGame.CheckState(map.pauseGameKey);
       jump.CheckState(map.jumpKey);
       attack.CheckState(map.attackKey);
       dash.CheckState(map.dashKey);

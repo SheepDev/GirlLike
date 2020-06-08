@@ -12,6 +12,7 @@ namespace Orb.GirlLike.Controllers
     public KeyCode interactiveKey;
     public KeyCode useItemKey;
     public KeyCode removeItemKey;
+    public KeyCode pauseGameKey;
   }
 
   [System.Serializable]

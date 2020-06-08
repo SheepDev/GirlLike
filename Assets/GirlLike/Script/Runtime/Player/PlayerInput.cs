@@ -8,11 +8,15 @@ namespace Orb.GirlLike.Players
   public class PlayerInput : MonoBehaviour
   {
     public Controller controller;
+    public bool blockPauseGame;
 
     [Header("Events")]
     public UnityEvent onShow;
     public UnityEvent onHidden;
+    public UnityEvent onPauseGame;
+    public UnityEvent onResumeGame;
     private Player player;
+    private bool isPause;
 
     private void Start()
     {
@@ -21,6 +25,7 @@ namespace Orb.GirlLike.Players
       var combat = player.Combat;
       var bag = player.Bag;
 
+      controller.pauseGame.onUpdate += PauseGame;
       controller.jump.onUpdate += movement.Jump;
       controller.horizontal.onUpdate += movement.SetMoveAxis;
       controller.attack.onUpdate += combat.Attack;
@@ -29,6 +34,26 @@ namespace Orb.GirlLike.Players
       controller.useItem.onUpdate += bag.UseItem;
       controller.scroll.onUpdate += SwitchItem;
       controller.removeItem.onUpdate += RemoveItem;
+    }
+
+    private void PauseGame(ActionState state)
+    {
+      if (state != ActionState.Down || isPause || blockPauseGame) return;
+
+      Disable(true);
+      isPause = true;
+      Time.timeScale = 0;
+      onPauseGame.Invoke();
+    }
+
+    public void ResumeGame()
+    {
+      if (!isPause) return;
+
+      Disable(false);
+      isPause = false;
+      Time.timeScale = 1;
+      onResumeGame.Invoke();
     }
 
     private void RemoveItem(ActionState state)

@@ -96,6 +96,7 @@ namespace Orb.GirlLike
       var player = GetPlayer();
       player.Movement.parallax = parallax;
       player.HiddenHUD(isDisableHUDAndCombat);
+      player.DisablePauseGame(isDisableHUDAndCombat);
       player.DisableCombat(isDisableHUDAndCombat);
       cam.Follow = player.GetTransform();
 

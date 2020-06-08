@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Orb.GirlLike.Controllers;
 using Orb.GirlLike.Itens;
@@ -94,6 +95,11 @@ namespace Orb.GirlLike.Players
           return;
         }
       }
+    }
+
+    internal void DisablePauseGame(bool isDisableHUDAndCombat)
+    {
+      Input.blockPauseGame = isDisableHUDAndCombat;
     }
 
     private bool SearchCloseItem<T>(ICollection<T> components, out Item foundItem) where T : Component

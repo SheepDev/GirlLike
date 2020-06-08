@@ -7,6 +7,7 @@ namespace Orb.GirlLike.Utility
   {
     public void Load(int buildIndex)
     {
+      Time.timeScale = 1;
       SceneManager.LoadScene(buildIndex);
     }
   }
