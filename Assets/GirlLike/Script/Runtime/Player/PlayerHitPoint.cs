@@ -3,12 +3,14 @@ using Orb.GirlLike.Combats;
 using Orb.GirlLike.Utility;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 namespace Orb.GirlLike.Players
 {
   public class PlayerHitPoint : HitPoint
   {
+    private int shieldPoints;
+    public UnityEvent onUpdateShield;
+
     public GameObject painel;
     public float ignoreDamageDelay;
     public float disableInputInSeconds;
@@ -24,6 +26,8 @@ namespace Orb.GirlLike.Players
     public PlayerMovement Moviment { get; private set; }
     public PlayerCombatSystem Combat { get; private set; }
     public PlayerAnimator Animator { get; private set; }
+
+    public int ShieldPoints => shieldPoints;
 
     private void Awake()
     {
@@ -67,8 +71,19 @@ namespace Orb.GirlLike.Players
 
       Moviment._rigidbody.velocity = Vector2.zero;
       Moviment._rigidbody.AddForce(direction, ForceMode2D.Impulse);
-      base.ApplyDamage(data);
-      IgnoreDamage(ignoreDamageDelay, true);
+
+      var shieldPoints = (int)(this.ShieldPoints - data.damage);
+      if (shieldPoints < 0)
+      {
+        data.damage = Mathf.Abs(shieldPoints);
+        base.ApplyDamage(data);
+        this.SetShieldPoints(0);
+        IgnoreDamage(ignoreDamageDelay, true);
+      }
+      else
+      {
+        this.SetShieldPoints(shieldPoints);
+      }
     }
 
     public void IgnoreDamage(float seconds, bool isStopDamageAnimation = false)
@@ -90,6 +105,12 @@ namespace Orb.GirlLike.Players
 
       if (isStopDamageAnimation)
         Animator.Vunerable(true);
+    }
+
+    public void SetShieldPoints(int value)
+    {
+      shieldPoints = Mathf.Abs(value);
+      onUpdateShield.Invoke();
     }
   }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Orb.GirlLike.Combats;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -13,6 +12,7 @@ namespace Orb.GirlLike.Players.UI
 
     [Header("Prefab")]
     [SerializeField] private Heart heartPrefab;
+    [SerializeField] private Heart shieldPrefab;
 
     [Header("Config")]
     [SerializeField] private Canvas canvas;
@@ -21,8 +21,9 @@ namespace Orb.GirlLike.Players.UI
     [SerializeField] private TextMeshProUGUI coinText;
 #pragma warning restore CS0649
 
-    private HitPoint hitPoint;
+    private PlayerHitPoint hitPoint;
     private List<Heart> hearts;
+    private List<Heart> shields;
     private Player player;
 
     public Canvas Canvas { get => canvas; set => canvas = value; }
@@ -30,6 +31,7 @@ namespace Orb.GirlLike.Players.UI
     private void Awake()
     {
       hearts = new List<Heart>();
+      shields = new List<Heart>();
       player = GetComponent<Player>();
 
       profileIMG.sprite = profileSprite;
@@ -42,6 +44,7 @@ namespace Orb.GirlLike.Players.UI
       hitPoint.onUpdate.AddListener(UpdateLifeHUD);
       hitPoint.onDamage.AddListener(UpdateLife);
       hitPoint.onHeal.AddListener(UpdateLife);
+      hitPoint.onUpdateShield.AddListener(ShieldUpdate);
 
       player.Bag.onCoinUpdate.AddListener((amount) => coinText.text = amount.ToString());
     }
@@ -73,6 +76,7 @@ namespace Orb.GirlLike.Players.UI
       }
 
       UpdateLife();
+      ShieldUpdate();
     }
 
     public void DeleteChild(Transform transform)
@@ -81,6 +85,25 @@ namespace Orb.GirlLike.Players.UI
       {
         var child = transform.GetChild(i);
         Destroy(child.gameObject);
+      }
+    }
+
+    public void ShieldUpdate()
+    {
+      foreach (var shield in shields)
+      {
+        if (shield != null)
+          Destroy(shield.gameObject);
+      }
+
+      shields.Clear();
+
+      var shieldCount = player.HitPoint.ShieldPoints;
+
+      for (int i = 0; i < shieldCount; i++)
+      {
+        var shield = Instantiate(shieldPrefab, lifeBarRoot);
+        shields.Add(shield);
       }
     }
   }
