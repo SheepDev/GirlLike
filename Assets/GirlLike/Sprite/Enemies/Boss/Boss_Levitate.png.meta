@@ -1,19 +1,40 @@
 fileFormatVersion: 2
-guid: 8f450d58172550046aae5bf2984242ee
+guid: 168a499439d57204ea190b3428ff5da4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7421992614122752495
-    second: boss_shoot_0
+      213: 7506156107805198021
+    second: Boss_Levitate_0
   - first:
-      213: 5808765671685068799
-    second: boss_shoot_1
+      213: -6262120079647978012
+    second: Boss_Levitate_1
   - first:
-      213: 1787109706046639033
-    second: boss_shoot_2
+      213: 7467907926836913126
+    second: Boss_Levitate_2
   - first:
-      213: 4468838830259105533
-    second: boss_shoot_3
+      213: -3379805108773739260
+    second: Boss_Levitate_3
+  - first:
+      213: -3197297384413465136
+    second: Boss_Levitate_4
+  - first:
+      213: 273818492048458841
+    second: Boss_Levitate_5
+  - first:
+      213: 2802963257863023793
+    second: Boss_Levitate_6
+  - first:
+      213: 6368533793312019026
+    second: Boss_Levitate_7
+  - first:
+      213: -9165645609132476546
+    second: Boss_Levitate_8
+  - first:
+      213: 3872291472546104265
+    second: Boss_Levitate_9
+  - first:
+      213: -1061947999212090170
+    second: Boss_Levitate_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -59,7 +80,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -123,13 +144,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_shoot_0
+      name: Boss_Levitate_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe90c5a85f6300760800000000000000
-      internalID: 7421992614122752495
+      spriteID: 5c68b52f5393b2860800000000000000
+      internalID: 7506156107805198021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_shoot_1
+      name: Boss_Levitate_1
       rect:
         serializedVersion: 2
-        x: 200
+        x: 294
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff7954c2a91ec9050800000000000000
-      internalID: 5808765671685068799
+      spriteID: 4edcdb737fa7819a0800000000000000
+      internalID: -6262120079647978012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_shoot_2
+      name: Boss_Levitate_2
       rect:
         serializedVersion: 2
-        x: 400
+        x: 588
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bb00932fc61dc810800000000000000
-      internalID: 1787109706046639033
+      spriteID: 6e3207a51b653a760800000000000000
+      internalID: 7467907926836913126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_shoot_3
+      name: Boss_Levitate_3
       rect:
         serializedVersion: 2
-        x: 600
+        x: 882
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +221,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfee01c3d31840e30800000000000000
-      internalID: 4468838830259105533
+      spriteID: 405ad7919258811d0800000000000000
+      internalID: -3379805108773739260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Levitate_4
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5ffb808fae0a3d0800000000000000
+      internalID: -3197297384413465136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Levitate_5
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9544b7fb77cccc300800000000000000
+      internalID: 273818492048458841
       vertices: []
       indices: 
       edges: []

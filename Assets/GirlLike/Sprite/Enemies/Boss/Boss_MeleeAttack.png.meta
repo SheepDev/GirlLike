@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 9016c37bcc695c64787271dfcafeaab4
+guid: 53f0f5fe723e1ed4b91dff46c6d53678
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6497752991851862820
-    second: boss_walk_0
+      213: 205880164431675533
+    second: Boss_MeleeAttack_0
   - first:
-      213: -92011574602339223
-    second: boss_walk_1
+      213: 7959950833749630124
+    second: Boss_MeleeAttack_1
   - first:
-      213: 3863911489957195679
-    second: boss_walk_2
+      213: 4463084275383306806
+    second: Boss_MeleeAttack_2
   - first:
-      213: 9001286328308611506
-    second: boss_walk_3
+      213: 2307325941983537881
+    second: Boss_MeleeAttack_3
+  - first:
+      213: 7759827894636947918
+    second: Boss_MeleeAttack_4
+  - first:
+      213: 7364708333666461523
+    second: Boss_MeleeAttack_5
+  - first:
+      213: 5200229711334139065
+    second: Boss_MeleeAttack_6
+  - first:
+      213: -625188653396259536
+    second: Boss_MeleeAttack_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -59,7 +71,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -123,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_walk_0
+      name: Boss_MeleeAttack_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42bdf856be7ac2a50800000000000000
-      internalID: 6497752991851862820
+      spriteID: d80cf333bee6bd200800000000000000
+      internalID: 205880164431675533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_walk_1
+      name: Boss_MeleeAttack_1
       rect:
         serializedVersion: 2
-        x: 200
+        x: 294
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +170,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96c6a9cd5fb19bef0800000000000000
-      internalID: -92011574602339223
+      spriteID: cac98331c1d677e60800000000000000
+      internalID: 7959950833749630124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_walk_2
+      name: Boss_MeleeAttack_2
       rect:
         serializedVersion: 2
-        x: 400
+        x: 588
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +191,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9fe27a370f5f9530800000000000000
-      internalID: 3863911489957195679
+      spriteID: 63a8ad4808f00fd30800000000000000
+      internalID: 4463084275383306806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_walk_3
+      name: Boss_MeleeAttack_3
       rect:
         serializedVersion: 2
-        x: 600
+        x: 882
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +212,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b93a68893efaec70800000000000000
-      internalID: 9001286328308611506
+      spriteID: 9dae8f038b4450020800000000000000
+      internalID: 2307325941983537881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MeleeAttack_4
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9a00a5b5270bb60800000000000000
+      internalID: 7759827894636947918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MeleeAttack_5
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3576c86a533b43660800000000000000
+      internalID: 7364708333666461523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MeleeAttack_6
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4e086de5dea2840800000000000000
+      internalID: 5200229711334139065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_MeleeAttack_7
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d06bc6b32e257f0800000000000000
+      internalID: -625188653396259536
       vertices: []
       indices: 
       edges: []

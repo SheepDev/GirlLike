@@ -1,25 +1,61 @@
 fileFormatVersion: 2
-guid: e669653332586b84d99b7f634081d164
+guid: e053b586d4bc23a4db91eff14dc49f90
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5659114589567675154
-    second: Boss_Conjuring_0
+      213: -7344166505981823797
+    second: Boss_Explosion_0
   - first:
-      213: -1118150738197560832
-    second: Boss_Conjuring_1
+      213: -2732457617997856493
+    second: Boss_Explosion_1
   - first:
-      213: -4057590009155614682
-    second: Boss_Conjuring_2
+      213: 3802373015520656010
+    second: Boss_Explosion_2
   - first:
-      213: -7992637873424771274
-    second: Boss_Conjuring_3
+      213: -2882829996820914699
+    second: Boss_Explosion_3
   - first:
-      213: -715365240063462269
-    second: Boss_Conjuring_4
+      213: 5091078314902602240
+    second: Boss_Explosion_4
   - first:
-      213: -2540759591528680715
-    second: Boss_Conjuring_5
+      213: -3143861510732689614
+    second: Boss_Explosion_5
+  - first:
+      213: -3587318149868595821
+    second: Boss_Explosion_6
+  - first:
+      213: 1602537871209148246
+    second: Boss_Explosion_7
+  - first:
+      213: 86536097488543251
+    second: Boss_Explosion_8
+  - first:
+      213: 1866003111220050268
+    second: Boss_Explosion_0
+  - first:
+      213: 6207585400579435554
+    second: Boss_Explosion_1
+  - first:
+      213: 423861595999021973
+    second: Boss_Explosion_2
+  - first:
+      213: 2713661811378752785
+    second: Boss_Explosion_3
+  - first:
+      213: 4166616174273244782
+    second: Boss_Explosion_4
+  - first:
+      213: 2699106564938895784
+    second: Boss_Explosion_5
+  - first:
+      213: -8158049590813591225
+    second: Boss_Explosion_6
+  - first:
+      213: -2361358122337492961
+    second: Boss_Explosion_7
+  - first:
+      213: 2632610184930622465
+    second: Boss_Explosion_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,7 +165,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss_Conjuring_0
+      name: Boss_Explosion_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21b69666cb6398e40800000000000000
-      internalID: 5659114589567675154
+      spriteID: c597b0271ff55e910800000000000000
+      internalID: 1866003111220050268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Conjuring_1
+      name: Boss_Explosion_1
       rect:
         serializedVersion: 2
         x: 294
@@ -164,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 002c46ce3d78b70f0800000000000000
-      internalID: -1118150738197560832
+      spriteID: 22c207a5806c52650800000000000000
+      internalID: 6207585400579435554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Conjuring_2
+      name: Boss_Explosion_2
       rect:
         serializedVersion: 2
         x: 588
@@ -185,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6280b1c726b80b7c0800000000000000
-      internalID: -4057590009155614682
+      spriteID: 59ba37730ebd1e500800000000000000
+      internalID: 423861595999021973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Conjuring_3
+      name: Boss_Explosion_3
       rect:
         serializedVersion: 2
         x: 882
@@ -206,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 637de207332741190800000000000000
-      internalID: -7992637873424771274
+      spriteID: 11d06c33a0dd8a520800000000000000
+      internalID: 2713661811378752785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Conjuring_4
+      name: Boss_Explosion_4
       rect:
         serializedVersion: 2
         x: 1176
@@ -227,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 384fa55ba138216f0800000000000000
-      internalID: -715365240063462269
+      spriteID: e6e24f6b55bc2d930800000000000000
+      internalID: 4166616174273244782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Conjuring_5
+      name: Boss_Explosion_5
       rect:
         serializedVersion: 2
         x: 1470
@@ -248,8 +284,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f2344fec986dbcd0800000000000000
-      internalID: -2540759591528680715
+      spriteID: 8a19b1ece17257520800000000000000
+      internalID: 2699106564938895784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749f88fce19c8ce80800000000000000
+      internalID: -8158049590813591225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Explosion_7
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10279a7c45ca3fd0800000000000000
+      internalID: -2361358122337492961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Explosion_8
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c7dd8d309e88420800000000000000
+      internalID: 2632610184930622465
       vertices: []
       indices: 
       edges: []

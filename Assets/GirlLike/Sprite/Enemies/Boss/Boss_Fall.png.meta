@@ -1,28 +1,34 @@
 fileFormatVersion: 2
-guid: 43320394f1eb6174493dc2ee9fea9f06
+guid: f9a93dbbfa5cbd54ca2d1fb0dcb5d4ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5094869328915343115
-    second: boss_projectileDestroy_0
+      213: 8697459733169992449
+    second: Boss_Fall_0
   - first:
-      213: -1073000245650974082
-    second: boss_projectileDestroy_1
+      213: 8108719090834837451
+    second: Boss_Fall_1
   - first:
-      213: 6677688435053006185
-    second: boss_projectileDestroy_2
+      213: 79066323319643089
+    second: Boss_Fall_2
   - first:
-      213: 5266657076154824269
-    second: boss_projectileDestroy_3
+      213: -2786891872167995605
+    second: Boss_Fall_3
   - first:
-      213: -623842301436357495
-    second: boss_projectileDestroy_4
+      213: -4803184400608052912
+    second: Boss_Fall_4
   - first:
-      213: -1993470310828432357
-    second: boss_projectileDestroy_5
+      213: -5938274561123905057
+    second: Boss_Fall_5
   - first:
-      213: -7646513287653305122
-    second: boss_projectileDestroy_6
+      213: -8793422183221560575
+    second: Boss_Fall_6
+  - first:
+      213: 8217611559226675443
+    second: Boss_Fall_7
+  - first:
+      213: 5848490297176581299
+    second: Boss_Fall_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -132,148 +138,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_projectileDestroy_0
+      name: Boss_Fall_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 267
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1037cd3db8593b870800000000000000
+      internalID: 8697459733169992449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Fall_1
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 267
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf83a02d05f78070800000000000000
+      internalID: 8108719090834837451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Fall_2
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 267
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbd923f666e81100800000000000000
+      internalID: 79066323319643089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Fall_3
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 267
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27d00c9b98f259d0800000000000000
+      internalID: -2786891872167995605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Fall_4
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 267
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0593f0b6c39a75db0800000000000000
+      internalID: -4803184400608052912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Fall_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b07280f29ac94b640800000000000000
-      internalID: 5094869328915343115
+      spriteID: fd1987dbfb2079da0800000000000000
+      internalID: -5938274561123905057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_projectileDestroy_1
+      name: Boss_Fall_6
       rect:
         serializedVersion: 2
-        x: 20
+        x: 294
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7a111a26ffeb11f0800000000000000
-      internalID: -1073000245650974082
+      spriteID: 10bf9092d1d77f580800000000000000
+      internalID: -8793422183221560575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_projectileDestroy_2
+      name: Boss_Fall_7
       rect:
         serializedVersion: 2
-        x: 40
+        x: 588
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96d8114704aebac50800000000000000
-      internalID: 6677688435053006185
+      spriteID: 3f099d1ac22da0270800000000000000
+      internalID: 8217611559226675443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_projectileDestroy_3
+      name: Boss_Fall_8
       rect:
         serializedVersion: 2
-        x: 60
+        x: 882
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d467102f4bce61940800000000000000
-      internalID: 5266657076154824269
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss_projectileDestroy_4
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 984160b6bbaa757f0800000000000000
-      internalID: -623842301436357495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss_projectileDestroy_5
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b14a8cc6055c554e0800000000000000
-      internalID: -1993470310828432357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss_projectileDestroy_6
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed4de178da022e590800000000000000
-      internalID: -7646513287653305122
+      spriteID: 3b4678b40f20a2150800000000000000
+      internalID: 5848490297176581299
       vertices: []
       indices: 
       edges: []

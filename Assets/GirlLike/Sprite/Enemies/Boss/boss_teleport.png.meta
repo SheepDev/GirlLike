@@ -3,20 +3,35 @@ guid: a70f61d2dd826584e9de65d58b73edb3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6722430459001395655
-    second: boss_teleport_0
+      213: -4282385814776730898
+    second: Boss_Teleport_0
   - first:
-      213: 447550926371859762
-    second: boss_teleport_1
+      213: -3456346930429751232
+    second: Boss_Teleport_1
   - first:
-      213: 4327858894956196631
-    second: boss_teleport_2
+      213: -2825854289514526402
+    second: Boss_Teleport_2
   - first:
-      213: 7186945450971109812
-    second: boss_teleport_3
+      213: 6934020990644923012
+    second: Boss_Teleport_3
   - first:
-      213: 2796429645108160584
-    second: boss_teleport_4
+      213: -6802757840142158808
+    second: Boss_Teleport_4
+  - first:
+      213: 681761034787004039
+    second: Boss_Teleport_5
+  - first:
+      213: 313602474750509290
+    second: Boss_Teleport_6
+  - first:
+      213: 2221026539575410145
+    second: Boss_Teleport_7
+  - first:
+      213: 7289530383824389983
+    second: Boss_Teleport_8
+  - first:
+      213: 2961736841042858402
+    second: Boss_Teleport_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -62,7 +77,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -126,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_teleport_0
+      name: Boss_Teleport_0
       rect:
         serializedVersion: 2
-        x: 200
+        x: 0
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 936a4ff4d1125b2a0800000000000000
-      internalID: -6722430459001395655
+      spriteID: eeaaf0f5ac8e194c0800000000000000
+      internalID: -4282385814776730898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_teleport_1
+      name: Boss_Teleport_1
       rect:
         serializedVersion: 2
-        x: 400
+        x: 294
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23daa414235063600800000000000000
-      internalID: 447550926371859762
+      spriteID: 040193f77c69800d0800000000000000
+      internalID: -3456346930429751232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_teleport_2
+      name: Boss_Teleport_2
       rect:
         serializedVersion: 2
-        x: 600
+        x: 588
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 713f0e72cb4af0c30800000000000000
-      internalID: 4327858894956196631
+      spriteID: e390976ee7c88c8d0800000000000000
+      internalID: -2825854289514526402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_teleport_3
+      name: Boss_Teleport_3
       rect:
         serializedVersion: 2
-        x: 800
+        x: 882
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b91e314fc82db360800000000000000
-      internalID: 7186945450971109812
+      spriteID: 48a2e7c5a579a3060800000000000000
+      internalID: 6934020990644923012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_teleport_4
+      name: Boss_Teleport_4
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 1176
         y: 0
-        width: 200
-        height: 150
+        width: 294
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,8 +239,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8482b0432f9eec620800000000000000
-      internalID: 2796429645108160584
+      spriteID: 824b25579cfb791a0800000000000000
+      internalID: -6802757840142158808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Teleport_5
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e9e2c8c0a167900800000000000000
+      internalID: 681761034787004039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Teleport_6
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0003c0ac32a5400800000000000000
+      internalID: 313602474750509290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Teleport_7
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed7b18cedba2de10800000000000000
+      internalID: 2221026539575410145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Teleport_8
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f570543334d992560800000000000000
+      internalID: 7289530383824389983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Teleport_9
+      rect:
+        serializedVersion: 2
+        x: 2646
+        y: 0
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a11c8807f33a1920800000000000000
+      internalID: 2961736841042858402
       vertices: []
       indices: 
       edges: []

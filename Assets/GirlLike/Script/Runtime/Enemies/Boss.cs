@@ -1,127 +1,148 @@
 ﻿using System.Collections;
 using Orb.GirlLike.Combats;
+using Orb.GirlLike.Players;
 using Orb.GirlLike.Utility;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Orb.GirlLike.Ememies
 {
   public class Boss : MonoBehaviour
   {
-    public Projectile projectilePrefab;
-    public Vector3 offset;
-    public Transform bossDie;
-    public Transform projectilePoint;
-    public Transform[] teleportPoints;
+    public CircleCollider2D circleExplosion;
+    public Transform[] spawnPoints;
+    public float impulseForce;
 
-    public float delay = 3;
-    private bool isAttack;
-    private Animator animator;
-    private Transform _transform;
-    private Transform targetTransform;
-    private bool isDie;
+    public float maxLevitateOffsetY;
+    public AnimationCurve levitateSpeedCurve;
+    public AnimationCurve fallCurve;
+    public Projectile projectilePrefab;
+    public Transform spawnPoint;
+
+    private float groundHeight;
+    private Player player;
+    private Target target;
+    private HitPoint hitPoint;
+    private Transform cacheTransform;
+
+    public Animator Animator { get; private set; }
 
     private void Awake()
     {
-      animator = GetComponent<Animator>();
+      Animator = GetComponent<Animator>();
+      hitPoint = GetComponentInChildren<HitPoint>();
+      cacheTransform = transform;
+      groundHeight = cacheTransform.position.y;
+      player = GameMode.Current.GetPlayer();
+      target = player.GetComponent<Target>();
+    }
+
+    public void StartLevitate()
+    {
+      StartCoroutine(Levitate());
     }
 
     private void OnEnable()
     {
-      StartCoroutine(StartCombat());
+      Animator.Play("Spawn");
     }
 
-    private void Attack()
+    private void Explosion_AnimTrigger()
     {
-      if (isDie) return;
-      StartCoroutine(AttackProjectile());
-    }
+      var isOverlap = circleExplosion.OverlapPoint(target.GetCenter());
 
-    public Transform GetTransform()
-    {
-      if (_transform == null)
-        _transform = transform;
-      return _transform;
-    }
-
-    private Transform GetRandomTeleportPoint()
-    {
-      var randomIndex = Random.Range(0, teleportPoints.Length);
-      return teleportPoints[randomIndex];
-    }
-
-    private IEnumerator StartCombat()
-    {
-      yield return new WaitForSeconds(2);
-      isAttack = true;
-      targetTransform = GameMode.Current.GetPlayer().GetTransform();
-      yield return Teleport();
-    }
-
-    private IEnumerator Teleport()
-    {
-      animator.Play("TeleportBegin");
-      yield return new WaitForSeconds(1);
-
-      var point = GetRandomTeleportPoint();
-      var position = point.position;
-      position.z = 0;
-      GetTransform().position = position;
-
-      animator.Play("TeleportEnd");
-      yield return new WaitForSeconds(1);
-
-      if (isAttack)
-        Attack();
-      else
-        yield return Rest();
-    }
-
-    private IEnumerator Rest()
-    {
-      animator.Play("Idle");
-      yield return new WaitForSeconds(9);
-      isAttack = true;
-      yield return Teleport();
-    }
-
-    private IEnumerator AttackProjectile()
-    {
-      animator.Play("Conjuring");
-
-      var total = Random.Range(4, 6);
-      for (int i = 0; i < total; i++)
+      if (isOverlap)
       {
-        var projectile = Instantiate(projectilePrefab, projectilePoint.position, Quaternion.identity);
-        projectile.SetDirection(Vector3.forward);
+        player.HitPoint.ApplyDamage(new PointDamageData(cacheTransform.position, 2f));
 
-        var direction = (targetTransform.position - _transform.position).normalized;
-        var angle = Vector3.Angle(Vector3.up, direction);
-        projectile.transform.LookAt(targetTransform.position + offset);
-        yield return new WaitForSeconds(.8f);
+        player.Rigidbody.velocity = Vector3.zero;
+        var direction = cacheTransform.position.x > target.GetCenter().x ? Vector3.left : Vector3.right;
+        direction.y = 1;
+        direction.Normalize();
+        player.Rigidbody.AddForce(direction * impulseForce, ForceMode2D.Impulse);
+      }
+    }
+
+    private void FinishSpawn_AnimTrigger()
+    {
+      StartLevitate();
+    }
+
+    private void SpawnRandomPoint_AnimTrigger()
+    {
+      var randomIndex = Random.Range(0, spawnPoints.Length);
+      var spawnPoint = spawnPoints[randomIndex];
+      cacheTransform.position = spawnPoint.position;
+      Animator.Play("Spawn");
+    }
+
+    private IEnumerator Levitate()
+    {
+      Animator.Play("StartConjuring");
+
+      var offsetY = 0f;
+      var position = cacheTransform.position;
+
+      while (offsetY < maxLevitateOffsetY)
+      {
+        var speed = levitateSpeedCurve.Evaluate(offsetY / maxLevitateOffsetY);
+        offsetY += Time.deltaTime * speed;
+        cacheTransform.position = position + new Vector3(0, offsetY, 0);
+        yield return null;
       }
 
-      isAttack = false;
-      yield return Teleport();
+      yield return AttackPhase();
     }
 
-    public void BossDie()
+    private IEnumerator AttackPhase()
     {
-      StopAllCoroutines();
-      isDie = true;
-      animator.Play("Die");
-      var position = bossDie.position;
-      position.z = 0;
-      GetTransform().position = position;
-      StartCoroutine(Die());
+      var projectileCount = Random.Range(12, 20);
+      var delay = new WaitForSeconds(.3f);
+
+      for (int i = 0; i < projectileCount; i++)
+      {
+        var projectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
+        projectile.gameObject.SetActive(true);
+        projectile.MoveTo.Direction(TargetDirection());
+
+        yield return delay;
+      }
+
+      yield return FallPhase();
     }
 
-    private IEnumerator Die()
+    private Vector3 TargetDirection()
     {
-      yield return new WaitForSeconds(3f);
-      FadeManager.Current.FadeIn(.8f);
-      yield return new WaitForSeconds(2f);
-      SceneManager.LoadScene(0);
+      return (target.GetCenter() - spawnPoint.position).normalized;
+    }
+
+    private IEnumerator FallPhase()
+    {
+      Animator.Play("Fall");
+      var currentPoint = hitPoint.CurrentHitPoint;
+
+      var position = cacheTransform.position;
+      var targetPosition = position;
+      targetPosition.y = groundHeight;
+
+      var time = 0f;
+      while (time < fallCurve.keys[fallCurve.length - 1].time)
+      {
+        time += Time.deltaTime;
+        var t = fallCurve.Evaluate(time);
+        cacheTransform.position = Vector3.Lerp(position, targetPosition, t);
+        yield return null;
+      }
+
+      Animator.Play("Idle");
+
+      time = 3f;
+      while (time > 0)
+      {
+        time -= Time.deltaTime;
+        yield return null;
+      }
+
+      Animator.Play("Explosion");
     }
   }
 }

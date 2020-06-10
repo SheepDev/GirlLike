@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: e669653332586b84d99b7f634081d164
+guid: 02bc8e329e5dd6948841653cc673426d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5659114589567675154
-    second: Boss_Conjuring_0
+      213: 5570859867977628305
+    second: Boss_StartConjuring_0
   - first:
-      213: -1118150738197560832
-    second: Boss_Conjuring_1
+      213: 8767444380393258667
+    second: Boss_StartConjuring_1
   - first:
-      213: -4057590009155614682
-    second: Boss_Conjuring_2
+      213: -5297196617019368213
+    second: Boss_StartConjuring_2
   - first:
-      213: -7992637873424771274
-    second: Boss_Conjuring_3
+      213: 222085127197366663
+    second: Boss_StartConjuring_3
   - first:
-      213: -715365240063462269
-    second: Boss_Conjuring_4
+      213: -918056705306059999
+    second: Boss_StartConjuring_4
   - first:
-      213: -2540759591528680715
-    second: Boss_Conjuring_5
+      213: 2956354176404020293
+    second: Boss_StartConjuring_5
+  - first:
+      213: -2786766449974539269
+    second: Boss_StartConjuring_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,7 +132,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss_Conjuring_0
+      name: Boss_StartConjuring_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 267
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a3944c88baf4d40800000000000000
+      internalID: 5570859867977628305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_StartConjuring_1
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 267
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baeb55946383ca970800000000000000
+      internalID: 8767444380393258667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_StartConjuring_2
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 267
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: becd8291eb39c76b0800000000000000
+      internalID: -5297196617019368213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_StartConjuring_3
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 267
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7891f7c1f31051300800000000000000
+      internalID: 222085127197366663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_StartConjuring_4
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 267
+        width: 294
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b11946a486243f0800000000000000
+      internalID: -918056705306059999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_StartConjuring_5
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +251,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21b69666cb6398e40800000000000000
-      internalID: 5659114589567675154
+      spriteID: 54cddc2c574170920800000000000000
+      internalID: 2956354176404020293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Conjuring_1
+      name: Boss_StartConjuring_6
       rect:
         serializedVersion: 2
         x: 294
@@ -164,92 +272,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 002c46ce3d78b70f0800000000000000
-      internalID: -1118150738197560832
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_Conjuring_2
-      rect:
-        serializedVersion: 2
-        x: 588
-        y: 0
-        width: 294
-        height: 267
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6280b1c726b80b7c0800000000000000
-      internalID: -4057590009155614682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_Conjuring_3
-      rect:
-        serializedVersion: 2
-        x: 882
-        y: 0
-        width: 294
-        height: 267
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 637de207332741190800000000000000
-      internalID: -7992637873424771274
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_Conjuring_4
-      rect:
-        serializedVersion: 2
-        x: 1176
-        y: 0
-        width: 294
-        height: 267
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 384fa55ba138216f0800000000000000
-      internalID: -715365240063462269
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_Conjuring_5
-      rect:
-        serializedVersion: 2
-        x: 1470
-        y: 0
-        width: 294
-        height: 267
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f2344fec986dbcd0800000000000000
-      internalID: -2540759591528680715
+      spriteID: bfb8a4dbdaa6359d0800000000000000
+      internalID: -2786766449974539269
       vertices: []
       indices: 
       edges: []

@@ -20,22 +20,37 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 0}
-    - time: 0.083333336
-      value: {fileID: -6722430459001395655, guid: a70f61d2dd826584e9de65d58b73edb3,
+      value: {fileID: -4282385814776730898, guid: a70f61d2dd826584e9de65d58b73edb3,
         type: 3}
-    - time: 0.2
-      value: {fileID: 447550926371859762, guid: a70f61d2dd826584e9de65d58b73edb3,
+    - time: 0.11666667
+      value: {fileID: -3456346930429751232, guid: a70f61d2dd826584e9de65d58b73edb3,
         type: 3}
-    - time: 0.31666666
-      value: {fileID: 4327858894956196631, guid: a70f61d2dd826584e9de65d58b73edb3,
+    - time: 0.21666667
+      value: {fileID: -2825854289514526402, guid: a70f61d2dd826584e9de65d58b73edb3,
         type: 3}
-    - time: 0.43333334
-      value: {fileID: 7186945450971109812, guid: a70f61d2dd826584e9de65d58b73edb3,
+    - time: 0.33333334
+      value: {fileID: 6934020990644923012, guid: a70f61d2dd826584e9de65d58b73edb3,
+        type: 3}
+    - time: 0.45
+      value: {fileID: -6802757840142158808, guid: a70f61d2dd826584e9de65d58b73edb3,
         type: 3}
     - time: 0.55
-      value: {fileID: 2796429645108160584, guid: a70f61d2dd826584e9de65d58b73edb3,
+      value: {fileID: 681761034787004039, guid: a70f61d2dd826584e9de65d58b73edb3,
         type: 3}
+    - time: 0.6666667
+      value: {fileID: 313602474750509290, guid: a70f61d2dd826584e9de65d58b73edb3,
+        type: 3}
+    - time: 0.78333336
+      value: {fileID: 2221026539575410145, guid: a70f61d2dd826584e9de65d58b73edb3,
+        type: 3}
+    - time: 0.8833333
+      value: {fileID: 7289530383824389983, guid: a70f61d2dd826584e9de65d58b73edb3,
+        type: 3}
+    - time: 1
+      value: {fileID: 2961736841042858402, guid: a70f61d2dd826584e9de65d58b73edb3,
+        type: 3}
+    - time: 1.1166667
+      value: {fileID: 0}
     attribute: m_Sprite
     path: Sprite
     classID: 212
@@ -55,23 +70,28 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
+    - {fileID: -4282385814776730898, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
+    - {fileID: -3456346930429751232, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
+    - {fileID: -2825854289514526402, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
+    - {fileID: 6934020990644923012, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
+    - {fileID: -6802757840142158808, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
+    - {fileID: 681761034787004039, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
+    - {fileID: 313602474750509290, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
+    - {fileID: 2221026539575410145, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
+    - {fileID: 7289530383824389983, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
+    - {fileID: 2961736841042858402, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
     - {fileID: 0}
-    - {fileID: -6722430459001395655, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
-    - {fileID: 447550926371859762, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
-    - {fileID: 4327858894956196631, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
-    - {fileID: 7186945450971109812, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
-    - {fileID: 2796429645108160584, guid: a70f61d2dd826584e9de65d58b73edb3, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.56666666
+    m_StopTime: 1.1333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -85,4 +105,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1.1166667
+    functionName: SpawnRandomPoint_AnimTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
