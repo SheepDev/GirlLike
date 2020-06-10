@@ -18,7 +18,7 @@ MonoBehaviour:
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: -784072715471495667, guid: ad3de6d995b164d4e90a9ab7ee89021e, type: 3}
+    - {fileID: 7116331349190181454, guid: 15772800dd77b444f8890c22e34ba0f2, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -34,7 +34,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 1
     m_Sprites:
-    - {fileID: 2976124048136650872, guid: ad3de6d995b164d4e90a9ab7ee89021e, type: 3}
+    - {fileID: -9111251443208592347, guid: 15772800dd77b444f8890c22e34ba0f2, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -50,7 +50,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 2
     m_Sprites:
-    - {fileID: -6644314303545487294, guid: ad3de6d995b164d4e90a9ab7ee89021e, type: 3}
+    - {fileID: 6868157636396428197, guid: 15772800dd77b444f8890c22e34ba0f2, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -66,7 +66,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 3
     m_Sprites:
-    - {fileID: -4118211401531481757, guid: ad3de6d995b164d4e90a9ab7ee89021e, type: 3}
+    - {fileID: 5735537420365981336, guid: 15772800dd77b444f8890c22e34ba0f2, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -82,7 +82,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 4
     m_Sprites:
-    - {fileID: -2955092741870285692, guid: ad3de6d995b164d4e90a9ab7ee89021e, type: 3}
+    - {fileID: -7923565367908851723, guid: 15772800dd77b444f8890c22e34ba0f2, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -98,7 +98,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 5
     m_Sprites:
-    - {fileID: 8270934320298741755, guid: ad3de6d995b164d4e90a9ab7ee89021e, type: 3}
+    - {fileID: 2637456028946395816, guid: 15772800dd77b444f8890c22e34ba0f2, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -114,7 +114,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 6
     m_Sprites:
-    - {fileID: 5106198085536898552, guid: ad3de6d995b164d4e90a9ab7ee89021e, type: 3}
+    - {fileID: 765000506511078081, guid: 15772800dd77b444f8890c22e34ba0f2, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
