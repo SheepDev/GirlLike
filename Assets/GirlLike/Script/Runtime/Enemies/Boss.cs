@@ -145,7 +145,6 @@ namespace Orb.GirlLike.Ememies
     private IEnumerator Levitate()
     {
       Animator.Play("StartConjuring");
-      Debug.Log("Levitate");
       var offsetY = 0f;
       var position = cacheTransform.position;
 
