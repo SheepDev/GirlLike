@@ -85,28 +85,32 @@ namespace Orb.GirlLike.Ememies
       {
         Animator.Play("Explosion");
       }
-      else
+      else if (hitPoint.CurrentHitPoint > 5)
       {
         Phase1();
       }
-    }
-
-    private void Phase1()
-    {
-      StartLevitate();
+      else
+      {
+        Phase2();
+      }
     }
 
     private void Phase2()
     {
+      StartLevitate();
+    }
+
+    private void Phase1()
+    {
       var random = UnityEngine.Random.Range(0f, 100f);
 
-      if (random < 30f)
+      if (random < 50f)
       {
         MeleeStart();
       }
       else
       {
-        Levitate();
+        StartLevitate();
       }
     }
 
@@ -141,7 +145,7 @@ namespace Orb.GirlLike.Ememies
     private IEnumerator Levitate()
     {
       Animator.Play("StartConjuring");
-
+      Debug.Log("Levitate");
       var offsetY = 0f;
       var position = cacheTransform.position;
 
@@ -153,10 +157,31 @@ namespace Orb.GirlLike.Ememies
         yield return null;
       }
 
-      yield return AttackPhase();
+      yield return ProjectilePhase();
     }
 
-    private IEnumerator AttackPhase()
+    private IEnumerator ProjectilePhase()
+    {
+      var attackPhase = 1;
+      if (hitPoint.CurrentHitPoint < 5)
+        attackPhase = Random.Range(0, 1);
+
+      switch (attackPhase)
+      {
+        case 0:
+          yield return ProjectilePhase1();
+          break;
+        case 1:
+          yield return ProjectilePhase2();
+          break;
+        default:
+          yield return ProjectilePhase1();
+          break;
+      }
+      yield return FallPhase();
+    }
+
+    private IEnumerator ProjectilePhase1()
     {
       var projectileCount = UnityEngine.Random.Range(12, 20);
       var delay = new WaitForSeconds(.3f);
@@ -169,8 +194,41 @@ namespace Orb.GirlLike.Ememies
 
         yield return delay;
       }
+    }
 
-      yield return FallPhase();
+    private IEnumerator ProjectilePhase2()
+    {
+      var projectileCount = UnityEngine.Random.Range(12, 20);
+      var delay1 = new WaitForSeconds(.1f);
+      var delay2 = new WaitForSeconds(.3f);
+
+      for (int j = 0; j < 6; j++)
+      {
+        var direction = TargetDirection();
+        for (int i = 0; i < 8; i++)
+        {
+          var projectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
+          projectile.gameObject.SetActive(true);
+          projectile.MoveTo.Direction(direction);
+          projectile.MoveTo.speed = ProjectileSpeed();
+          yield return delay1;
+        }
+
+        yield return delay2;
+      }
+    }
+
+    private float ProjectileSpeed()
+    {
+      var hitpoint = hitPoint.CurrentHitPoint;
+      if (hitpoint < 2f)
+        return 15f;
+      else if (hitpoint < 4f)
+        return 12f;
+      else if (hitpoint < 7f)
+        return 10f;
+
+      return 8f;
     }
 
     private IEnumerator MeleePhase()

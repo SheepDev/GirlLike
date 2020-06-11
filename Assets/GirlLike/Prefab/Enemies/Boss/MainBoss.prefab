@@ -860,8 +860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c8ae837a9ee4946ae309581a7b777a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoint: 1
-  maxHitPoint: 1
+  hitPoint: 10
+  maxHitPoint: 10
   onDie:
     m_PersistentCalls:
       m_Calls:
