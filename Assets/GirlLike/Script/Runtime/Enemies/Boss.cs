@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using Orb.GirlLike.Combats;
 using Orb.GirlLike.Players;
-using Orb.GirlLike.Utility;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Orb.GirlLike.Ememies
 {
@@ -11,12 +11,14 @@ namespace Orb.GirlLike.Ememies
     public CircleCollider2D circleExplosion;
     public Transform[] spawnPoints;
     public float impulseForce;
-
     public float maxLevitateOffsetY;
     public AnimationCurve levitateSpeedCurve;
     public AnimationCurve fallCurve;
     public Projectile projectilePrefab;
     public Transform spawnPoint;
+
+    [Header("Events")]
+    public UnityEvent onLand;
 
     private float groundHeight;
     private Player player;
@@ -24,16 +26,29 @@ namespace Orb.GirlLike.Ememies
     private HitPoint hitPoint;
     private Transform cacheTransform;
 
+    private bool isMeleePhase;
+    private int meleeAttackCount;
+    private bool isDie;
+
     public Animator Animator { get; private set; }
 
     private void Awake()
     {
       Animator = GetComponent<Animator>();
-      hitPoint = GetComponentInChildren<HitPoint>();
+      hitPoint = GetComponentInChildren<HitPoint>(true);
+
       cacheTransform = transform;
       groundHeight = cacheTransform.position.y;
       player = GameMode.Current.GetPlayer();
       target = player.GetComponent<Target>();
+      hitPoint.onDie.AddListener(OnDie);
+    }
+
+    private void OnDie()
+    {
+      StopAllCoroutines();
+      hitPoint.gameObject.SetActive(false);
+      isDie = true;
     }
 
     public void StartLevitate()
@@ -60,18 +75,66 @@ namespace Orb.GirlLike.Ememies
         direction.Normalize();
         player.Rigidbody.AddForce(direction * impulseForce, ForceMode2D.Impulse);
       }
+
+      meleeAttackCount++;
     }
 
     private void FinishSpawn_AnimTrigger()
     {
+      if (isMeleePhase)
+      {
+        Animator.Play("Explosion");
+      }
+      else
+      {
+        Phase1();
+      }
+    }
+
+    private void Phase1()
+    {
       StartLevitate();
+    }
+
+    private void Phase2()
+    {
+      var random = UnityEngine.Random.Range(0f, 100f);
+
+      if (random < 30f)
+      {
+        MeleeStart();
+      }
+      else
+      {
+        Levitate();
+      }
+    }
+
+    private void MeleeStart()
+    {
+      Animator.Play("Teleport");
+      isMeleePhase = true;
+      meleeAttackCount = 0;
+
+      StartCoroutine(MeleePhase());
     }
 
     private void SpawnRandomPoint_AnimTrigger()
     {
-      var randomIndex = Random.Range(0, spawnPoints.Length);
-      var spawnPoint = spawnPoints[randomIndex];
-      cacheTransform.position = spawnPoint.position;
+      Vector3 position = Vector3.zero;
+
+      if (isMeleePhase)
+      {
+        position = player.GetTransform().position;
+        position.y = groundHeight;
+      }
+      else
+      {
+        var randomIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
+        position = spawnPoints[randomIndex].position;
+      }
+
+      cacheTransform.position = position;
       Animator.Play("Spawn");
     }
 
@@ -95,7 +158,7 @@ namespace Orb.GirlLike.Ememies
 
     private IEnumerator AttackPhase()
     {
-      var projectileCount = Random.Range(12, 20);
+      var projectileCount = UnityEngine.Random.Range(12, 20);
       var delay = new WaitForSeconds(.3f);
 
       for (int i = 0; i < projectileCount; i++)
@@ -108,6 +171,17 @@ namespace Orb.GirlLike.Ememies
       }
 
       yield return FallPhase();
+    }
+
+    private IEnumerator MeleePhase()
+    {
+      while (meleeAttackCount < 3)
+      {
+        yield return null;
+      }
+
+      isMeleePhase = false;
+      yield return Vulnerable();
     }
 
     private Vector3 TargetDirection()
@@ -133,15 +207,29 @@ namespace Orb.GirlLike.Ememies
         yield return null;
       }
 
+      onLand.Invoke();
+      player.Rigidbody.AddForce(Vector3.up * 5, ForceMode2D.Impulse);
+
+      yield return Vulnerable();
+    }
+
+    private IEnumerator Vulnerable()
+    {
       Animator.Play("Idle");
 
-      time = 3f;
+      hitPoint.gameObject.SetActive(true);
+      var maxTakeDamage = hitPoint.CurrentHitPoint - 2;
+      var time = 7f;
+
       while (time > 0)
       {
         time -= Time.deltaTime;
+        if (hitPoint.CurrentHitPoint <= maxTakeDamage)
+          break;
         yield return null;
       }
 
+      hitPoint.gameObject.SetActive(false);
       Animator.Play("Explosion");
     }
   }
