@@ -17,6 +17,8 @@ namespace Orb.GirlLike.Ememies
     public SpriteUtility sprite;
 
 #pragma warning disable CS0649
+    private Animator spriteAnimator;
+
     [Header("Drop Setup")]
     [SerializeField] private int minCoin;
     [SerializeField] private int maxCoin;
@@ -51,6 +53,8 @@ namespace Orb.GirlLike.Ememies
     protected virtual void Awake()
     {
       Animator = GetComponent<Animator>();
+      spriteAnimator = GetComponentsInChildren<Animator>()[1];
+
       RB2D = GetComponent<Rigidbody2D>();
       MoveTo = GetComponent<MoveTo>();
       HitPoint = GetComponentInChildren<EnemyHitPoint>();
@@ -181,6 +185,7 @@ namespace Orb.GirlLike.Ememies
 
     protected virtual void OnTakeDamage()
     {
+      spriteAnimator.Play("Damage1");
     }
 
     protected virtual void OnStun()
