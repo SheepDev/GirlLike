@@ -79,5 +79,10 @@ namespace Orb.GirlLike.Combats
       yield return new WaitForSeconds(time);
       Destroy(gameObject);
     }
+
+    public void Destroy()
+    {
+      StartCoroutine(Destroy(delayToDestroy));
+    }
   }
 }

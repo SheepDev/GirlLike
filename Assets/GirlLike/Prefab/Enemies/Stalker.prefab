@@ -171,6 +171,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stalker
       objectReference: {fileID: 0}
+    - target: {fileID: 5838927557551728936, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 16e214f8180d6f54c9c0f62d16a8f70c, type: 3}
     - target: {fileID: 6216579404859356658, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -228,8 +233,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8943565258703323782, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943565258703323782, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
       propertyPath: forceDamage
       value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943565258703323782, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943565258703323782, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943565258703323782, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943565258703323782, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943565258703323782, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e16bd741792ae74ab53c44572785e19, type: 3}

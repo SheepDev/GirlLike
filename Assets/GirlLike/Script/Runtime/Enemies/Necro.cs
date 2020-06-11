@@ -32,6 +32,7 @@ namespace Orb.GirlLike.Ememies
             break;
           }
 
+      canMove = !IsAttack;
       base.Update();
     }
 

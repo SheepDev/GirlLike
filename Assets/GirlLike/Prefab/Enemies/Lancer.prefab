@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canAttack: 0
   canMove: 0
+  delaySpawn: 0.5
   attackCountdown: 4
   isDirection: 0
   center: {x: 0, y: 0.5, z: 0}
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   isLocal: 0
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &8648171454967243569
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   isLocal: 0
+  direction: {x: 0, y: 0, z: 0}
 --- !u!114 &8648171455476333000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,12 +364,27 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.092
       objectReference: {fileID: 0}
+    - target: {fileID: 1241931381322553699, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0958f367153501540b7a5d6bf7474a62, type: 3}
     - target: {fileID: 4467101904204254413, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -849647904550908143, guid: e153ab6e2d9d1ee41ad915344e150467,
         type: 3}
+    - target: {fileID: 4781201160054342568, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969684039665343733, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5190685601162791988, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}
       propertyPath: m_Name
@@ -376,6 +394,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838927557551728936, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fbb799303fcca5945bdd876cc7621c2f, type: 3}
+    - target: {fileID: 6206681288295819578, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6216579404859356658, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}

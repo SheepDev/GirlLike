@@ -506,6 +506,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.583
       objectReference: {fileID: 0}
+    - target: {fileID: 1241931381322553699, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a8354675c964eb4497186ba6c553a9d, type: 3}
     - target: {fileID: 2920580539959426830, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}
       propertyPath: m_BodyType
@@ -542,10 +547,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3472232241397311842, guid: afeb9bff56d680d4fbb289e73aed509f,
         type: 3}
+    - target: {fileID: 4781201160054342568, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969684039665343733, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5190685601162791988, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}
       propertyPath: m_Name
       value: Bateye
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838927557551728936, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e6302f787e90b0a41abb403d0c192bcd, type: 3}
+    - target: {fileID: 6206681288295819578, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6216579404859356658, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}

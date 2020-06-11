@@ -216,7 +216,7 @@ namespace Orb.GirlLike.Ememies
 
     public Vector3 GetTargetDirection()
     {
-      return GetTargetDirection(GetTarget().GetCenter());
+      return GetTargetDirection(GetCenter());
     }
 
     public Vector3 GetTargetDirection(Vector3 worldPoint)

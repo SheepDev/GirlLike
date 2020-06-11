@@ -5,6 +5,8 @@ namespace Orb.GirlLike.Ememies
 {
   public class TreeEnemy : Enemy
   {
+    public AudioSource audioSpawn;
+
     protected override void Update()
     {
       if (IsAttack || IsStun) return;
@@ -47,6 +49,7 @@ namespace Orb.GirlLike.Ememies
       isSpawn = true;
       Animator.Play("Idle");
       Animator.Play("Spawn");
+      audioSpawn.Play();
       yield return new WaitForSeconds(delay);
       canAttack = true;
     }
