@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GirlLike/Scene/GameOver.unity
     guid: 92ad9a17d51da2744872191f7478369f
+  - enabled: 1
+    path: Assets/GirlLike/Scene/Victory.unity
+    guid: e9adafd3633b9ca42bdf3b0b733bef84
   m_configObjects: {}
