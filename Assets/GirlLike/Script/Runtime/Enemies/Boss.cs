@@ -162,7 +162,7 @@ namespace Orb.GirlLike.Ememies
 
     private IEnumerator ProjectilePhase()
     {
-      var attackPhase = 1;
+      var attackPhase = 0;
       if (hitPoint.CurrentHitPoint < 5)
         attackPhase = Random.Range(0, 1);
 
@@ -188,10 +188,7 @@ namespace Orb.GirlLike.Ememies
 
       for (int i = 0; i < projectileCount; i++)
       {
-        var projectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
-        projectile.gameObject.SetActive(true);
-        projectile.MoveTo.Direction(TargetDirection());
-
+        var projectile = CreateProjectile(TargetDirection());
         yield return delay;
       }
     }
@@ -207,15 +204,21 @@ namespace Orb.GirlLike.Ememies
         var direction = TargetDirection();
         for (int i = 0; i < 8; i++)
         {
-          var projectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
-          projectile.gameObject.SetActive(true);
-          projectile.MoveTo.Direction(direction);
-          projectile.MoveTo.speed = ProjectileSpeed();
+          var projectile = CreateProjectile(direction);
           yield return delay1;
         }
 
         yield return delay2;
       }
+    }
+
+    private Projectile CreateProjectile(Vector3 direction)
+    {
+      var projectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
+      projectile.gameObject.SetActive(true);
+      projectile.MoveTo.Direction(direction);
+      projectile.MoveTo.speed = ProjectileSpeed();
+      return projectile;
     }
 
     private float ProjectileSpeed()
