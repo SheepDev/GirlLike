@@ -43,8 +43,14 @@ namespace Orb.GirlLike.Players
 
     public override void Add(Item item)
     {
-      if (!HasItem(item) && GetAvaliableSlot(out var slot))
+      if (!HasItem(item) && HasCoin(item) && GetAvaliableSlot(out var slot))
       {
+        if (item.NeedToBuy)
+        {
+          RemoveCoin(item.Price);
+          item.HasBuy();
+        }
+
         slot.Save(item);
         base.Add(item);
 
@@ -150,6 +156,24 @@ namespace Orb.GirlLike.Players
       return false;
     }
 
+    public bool HasCoin(Item item)
+    {
+      return !item.NeedToBuy || item.Price <= coinAmount;
+    }
+
+    public bool HasAvaliableSlot()
+    {
+      foreach (var slot in slots)
+      {
+        if (slot.IsAvailable)
+        {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
     private bool GetAvaliableSlot(out ItemSlot itemSlot)
     {
       itemSlot = default;
@@ -176,10 +200,19 @@ namespace Orb.GirlLike.Players
       }
     }
 
-    private void AddCoin(int totalCoin)
+    public void AddCoin(int totalCoin)
     {
-      coinAmount += Mathf.Abs(totalCoin);
-      onCoinUpdate.Invoke(coinAmount);
+      SetCoin(coinAmount + Mathf.Abs(totalCoin));
+    }
+
+    public void RemoveCoin(int totalCoin)
+    {
+      SetCoin(coinAmount - Mathf.Abs(totalCoin));
+    }
+
+    private void SetCoin(int coin)
+    {
+      onCoinUpdate.Invoke(coinAmount = coin);
     }
 
     [System.Serializable]
