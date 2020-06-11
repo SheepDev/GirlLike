@@ -37,6 +37,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1562779728596434688, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940753, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: m_Name
@@ -136,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: attackDelay
-      value: 1.2
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940767, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
@@ -155,6 +160,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -9021266584343574465, guid: 8e62a5fa4b7d7744aaad8309c48899fe,
         type: 3}
+    - target: {fileID: 7479841942481648959, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 071bd3ba363802e4da4778588a288616, type: 3}
     - target: {fileID: 8373010205787282378, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: defaultSpeed
