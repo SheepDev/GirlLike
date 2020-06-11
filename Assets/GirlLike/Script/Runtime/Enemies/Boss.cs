@@ -163,7 +163,7 @@ namespace Orb.GirlLike.Ememies
     {
       var attackPhase = 0;
       if (hitPoint.CurrentHitPoint < 5)
-        attackPhase = Random.Range(0, 1);
+        attackPhase = Random.Range(0, 2);
 
       switch (attackPhase)
       {
