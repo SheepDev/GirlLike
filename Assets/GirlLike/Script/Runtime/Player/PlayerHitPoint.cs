@@ -3,6 +3,7 @@ using Orb.GirlLike.Combats;
 using Orb.GirlLike.Utility;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace Orb.GirlLike.Players
 {
@@ -22,6 +23,7 @@ namespace Orb.GirlLike.Players
 
     [Header("Event")]
     public UnityEvent onVunerable;
+    private Player player;
 
     public PlayerMovement Moviment { get; private set; }
     public PlayerCombatSystem Combat { get; private set; }
@@ -31,18 +33,20 @@ namespace Orb.GirlLike.Players
 
     private void Awake()
     {
-      Moviment = GetComponent<PlayerMovement>();
-      Combat = GetComponent<PlayerCombatSystem>();
-      Animator = GetComponent<PlayerAnimator>();
+      player = GetComponent<Player>();
+      Moviment = player.Movement;
+      Combat = player.Combat;
+      Animator = player.Animator;
       takeDamage.onPointDamage.AddListener(ApplyDamage);
     }
 
     [ContextMenu("Die")]
     public override void Die()
     {
-      var player = Moviment.GetComponent<Player>();
-      Moviment.GetComponent<PlayerInput>().Disable(true);
+      player.Input.Disable(true);
+      player.HiddenHUD(true);
       player.DisableCombat(true);
+      Animator.Animator.Play("Die");
       StartCoroutine(BackToMenu());
       onDie.Invoke();
     }
@@ -52,7 +56,7 @@ namespace Orb.GirlLike.Players
       yield return new WaitForSeconds(1);
       FadeManager.Current.FadeIn(.8f);
       yield return new WaitForSeconds(2);
-      painel.SetActive(true);
+      SceneManager.LoadScene("GameOver");
     }
 
     public override void ApplyDamage(PointDamageData data)
