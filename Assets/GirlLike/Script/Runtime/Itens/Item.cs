@@ -9,6 +9,7 @@ namespace Orb.GirlLike.Itens
     public int ID;
     public Type type;
     public bool needToBuy;
+    [SerializeField] [TextArea(5, 10)] private string description;
     [SerializeField] private int price;
 
     public bool NeedToBuy => needToBuy;
@@ -18,6 +19,7 @@ namespace Orb.GirlLike.Itens
     private Player player;
     private PlayerBag bag;
     private Animator iconAnimator;
+    public string Description => description;
 
     private void Awake()
     {

@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 23
   type: 0
+  needToBuy: 0
+  description: sdasdasda
+  price: 0
+  onBuy:
+    m_PersistentCalls:
+      m_Calls: []
   damageBonus: 0
   moveSpeedBonus: 0
   jumpForceBonus: 0

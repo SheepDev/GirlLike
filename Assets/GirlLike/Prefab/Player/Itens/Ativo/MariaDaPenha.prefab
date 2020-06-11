@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 147
   type: 1
   needToBuy: 1
+  description: asdasdasdasdasd
   price: 18
   onBuy:
     m_PersistentCalls:

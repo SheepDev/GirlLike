@@ -6,6 +6,7 @@ using Orb.GirlLike.Itens;
 using Orb.GirlLike.Players.UI;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 namespace Orb.GirlLike.Players
 {
@@ -15,6 +16,7 @@ namespace Orb.GirlLike.Players
     [SerializeField] private int maxItens;
     [SerializeField] private ItemSlot itemPrefab;
     [SerializeField] private Transform itensHUD;
+    [SerializeField] private TextMeshProUGUI itemDescription;
 #pragma warning restore CS0649
     [Header("Events")]
     public IntEvent onCoinUpdate;
@@ -54,10 +56,12 @@ namespace Orb.GirlLike.Players
         slot.Save(item);
         base.Add(item);
 
-        if (item.type == Type.Passive)
+        if (item.type == Itens.Type.Passive)
         {
           onAddPassiveItem.Invoke(item);
         }
+
+        UpdateDescriptionItem();
       }
     }
 
@@ -87,12 +91,13 @@ namespace Orb.GirlLike.Players
       var slot = slots[index];
       if (slot.Remove(out var item))
       {
-        if (item.type == Type.Passive)
+        if (item.type == Itens.Type.Passive)
         {
           onRemovePassiveItem.Invoke(item);
         }
 
         Destroy(item.gameObject);
+        UpdateDescriptionItem();
       }
     }
 
@@ -130,7 +135,7 @@ namespace Orb.GirlLike.Players
         item.transform.position = player.GetTransform().position;
         item.gameObject.SetActive(true);
 
-        if (item.type == Type.Passive)
+        if (item.type == Itens.Type.Passive)
         {
           onRemovePassiveItem.Invoke(item);
         }
@@ -143,6 +148,24 @@ namespace Orb.GirlLike.Players
       slots[selectedIndex].Select(false);
       selectedIndex = (int)Mathf.Repeat(index, slots.Count);
       slots[selectedIndex].Select(true);
+
+      UpdateDescriptionItem();
+    }
+
+    private void UpdateDescriptionItem()
+    {
+      var slot = slots[selectedIndex];
+      var parent = itemDescription.transform.parent;
+
+      if (slot.HasItem)
+      {
+        parent.gameObject.SetActive(true);
+        itemDescription.text = slot.CurrentItem.Description;
+      }
+      else
+      {
+        parent.gameObject.SetActive(false);
+      }
     }
 
     public bool HasItem(Item item)

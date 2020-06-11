@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 22
   type: 0
+  needToBuy: 0
+  description: asdadad
+  price: 0
+  onBuy:
+    m_PersistentCalls:
+      m_Calls: []
   damageBonus: 0
   moveSpeedBonus: 0
   jumpForceBonus: 1.5
@@ -83,7 +89,7 @@ PrefabInstance:
     - target: {fileID: 4650526236299418337, guid: 78de5e7f666cb31478d8e8e9ceddf1c1,
         type: 3}
       propertyPath: m_Name
-      value: AdalziraItem Variant
+      value: AdalziraItem
       objectReference: {fileID: 0}
     - target: {fileID: 4650526236299418337, guid: 78de5e7f666cb31478d8e8e9ceddf1c1,
         type: 3}

@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   type: 1
+  needToBuy: 0
+  description: dsasdasdasd
+  price: 0
+  onBuy:
+    m_PersistentCalls:
+      m_Calls: []
   offset: {x: 0, y: 1, z: 0}
   itemDistance: 1
   itemCount: 5

@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   type: 1
+  needToBuy: 0
+  description: asdasdasdasd
+  price: 0
+  onBuy:
+    m_PersistentCalls:
+      m_Calls: []
   invulnerableTime: 6
 --- !u!1001 &953399438217273276
 PrefabInstance:
@@ -80,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 4650526236299418337, guid: 78de5e7f666cb31478d8e8e9ceddf1c1,
         type: 3}
       propertyPath: m_Name
-      value: TeresaMeloItem Variant
+      value: TeresaMeloItem
       objectReference: {fileID: 0}
     - target: {fileID: 4650526236299418337, guid: 78de5e7f666cb31478d8e8e9ceddf1c1,
         type: 3}

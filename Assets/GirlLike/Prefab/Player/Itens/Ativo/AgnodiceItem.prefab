@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   type: 1
+  needToBuy: 0
+  description: asdadsasdadsasdads
+  price: 0
+  onBuy:
+    m_PersistentCalls:
+      m_Calls: []
   amount: 1
 --- !u!1001 &592542624973437221
 PrefabInstance:
