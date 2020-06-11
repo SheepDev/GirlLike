@@ -29,6 +29,10 @@ namespace Orb.GirlLike.Cheat
       {
         player.GetTransform().position = bossPoint.position;
       }
+      if (Input.GetKeyDown(KeyCode.P))
+      {
+        player.Bag.AddCoin(10);
+      }
       if (Input.GetKeyDown(KeyCode.O))
       {
         var itemPrefab = itens[indexItem];
