@@ -22,6 +22,7 @@ namespace Orb.GirlLike.Players
     public IntEvent onCoinUpdate;
     public ItemEvent onAddPassiveItem;
     public ItemEvent onRemovePassiveItem;
+    public AudioSource coinSFX;
 
     private List<ItemSlot> slots;
     private Player player;
@@ -225,6 +226,7 @@ namespace Orb.GirlLike.Players
 
     public void AddCoin(int totalCoin)
     {
+      coinSFX.Play();
       SetCoin(coinAmount + Mathf.Abs(totalCoin));
     }
 
