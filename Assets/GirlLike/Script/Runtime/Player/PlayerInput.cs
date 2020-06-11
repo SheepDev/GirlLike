@@ -29,6 +29,7 @@ namespace Orb.GirlLike.Players
       controller.jump.onUpdate += movement.Jump;
       controller.horizontal.onUpdate += movement.SetMoveAxis;
       controller.attack.onUpdate += combat.Attack;
+      controller.special.onUpdate += combat.Special;
       controller.dash.onUpdate += combat.Dash;
       controller.interactive.onUpdate += player.Interactive;
       controller.useItem.onUpdate += bag.UseItem;

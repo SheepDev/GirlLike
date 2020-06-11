@@ -2252,6 +2252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEnable: 0
   attackDelay: 1
+  specialDelay: 0
   movementSpeedDuringAttack: 0
   isDash: 0
   isDashCountdown: 0
@@ -2631,6 +2632,7 @@ MonoBehaviour:
     isInvert: 0
   jumpKey: 32
   attackKey: 323
+  specialKey: 99
   dashKey: 324
   interactiveKey: 102
   useItemKey: 101

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Orb.GirlLike.Combats;
 using Orb.GirlLike.Controllers;
 using Orb.GirlLike.Settings;
@@ -12,10 +13,13 @@ namespace Orb.GirlLike.Players
     [Header("Attack")]
     public bool isEnable;
     public float attackDelay;
+    public bool hasSpecial;
+    public float specialDelay;
     public float movementSpeedDuringAttack;
 
     private bool isAttack;
     private bool isDelayAttack;
+    private bool isDelaySpecial;
     private bool isAllowNextAttack;
     private bool isNextAttack;
 
@@ -71,12 +75,30 @@ namespace Orb.GirlLike.Players
       }
     }
 
+    internal void Special(ActionState state)
+    {
+      var inGround = Movement.InGround();
+      if (!hasSpecial || !inGround || !isEnable || isDelaySpecial || state != ActionState.Down) return;
+
+      Movement.LockLookDirection(true);
+      Movement.currentSpeed = movementSpeedDuringAttack;
+      PlayerAnimator.Animator.SetTrigger("Special");
+      isDelaySpecial = isAttack = true;
+      StartCoroutine(DelaySpecial(specialDelay));
+    }
+
     public void Dash(ActionState state)
     {
       if (!isEnable || isDash || isDashCountdown || state != ActionState.Down) return;
 
       onDash.Invoke();
       StartCoroutine(WhileDash());
+    }
+
+    private IEnumerator DelaySpecial(float delay)
+    {
+      yield return new WaitForSeconds(delay);
+      isDelaySpecial = false;
     }
 
     private IEnumerator WhileDash()

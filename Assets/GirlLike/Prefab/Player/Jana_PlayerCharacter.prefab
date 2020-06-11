@@ -114,39 +114,36 @@ MonoBehaviour:
   colliders:
   - {fileID: 868316364}
   - {fileID: 868316365}
---- !u!114 &-1466482777439724593
-MonoBehaviour:
+--- !u!1 &2746061632251233016
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4787208986757263325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f3cc20ec434fe41a411be51722ddae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isEnable: 1
-  attackDelay: 0
-  movementSpeedDuringAttack: 0
-  isDash: 0
-  isDashCountdown: 0
-  dashDelay: 0
-  dashStartDelay: 0.2
-  dashDuration: 0.62
-  dashForce: 5
-  onDash:
-    m_PersistentCalls:
-      m_Calls: []
-  onDashFinish:
-    m_PersistentCalls:
-      m_Calls: []
-  attackSettings:
-  - baseDamage: 1
-    tag:
-      name: 8
-    castDamage: {fileID: 0}
-  projectileSettings: []
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3712274334302907566}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3712274334302907566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2746061632251233016}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1399999, y: 0.278, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4787208985955604058}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7639926781491612556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -241,6 +238,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
+      propertyPath: projectileSettings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
       propertyPath: dashDuration
       value: 0.38
       objectReference: {fileID: 0}
@@ -279,6 +281,27 @@ PrefabInstance:
       propertyPath: movementSpeedDuringAttack
       value: 0.87
       objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: projectileSettings.Array.data[0].pivo
+      value: 
+      objectReference: {fileID: 3712274334302907566}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: projectileSettings.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 1706653966255047490, guid: f7a8c47f9327e194da0214f762b88872,
+        type: 3}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: specialDelay
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912120161910940766, guid: 1e0d9c09e2f68934295ed0003b46d944,
+        type: 3}
+      propertyPath: hasSpecial
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2912120161910940767, guid: 1e0d9c09e2f68934295ed0003b46d944,
         type: 3}
       propertyPath: m_Controller
@@ -307,12 +330,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e0d9c09e2f68934295ed0003b46d944, type: 3}
---- !u!1 &4787208986757263325 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2912120161910940753, guid: 1e0d9c09e2f68934295ed0003b46d944,
-    type: 3}
-  m_PrefabInstance: {fileID: 7639926781491612556}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &4787208986773053983 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2912120161926867347, guid: 1e0d9c09e2f68934295ed0003b46d944,

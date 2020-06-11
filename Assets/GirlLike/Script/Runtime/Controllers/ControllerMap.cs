@@ -8,6 +8,7 @@ namespace Orb.GirlLike.Controllers
     public AxisInfo scroll;
     public KeyCode jumpKey;
     public KeyCode attackKey;
+    public KeyCode specialKey;
     public KeyCode dashKey;
     public KeyCode interactiveKey;
     public KeyCode useItemKey;

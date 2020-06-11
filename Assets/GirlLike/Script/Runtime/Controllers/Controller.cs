@@ -8,6 +8,7 @@ namespace Orb.GirlLike.Controllers
 #pragma warning disable CS0649
     [SerializeField] [HideInInspector] internal Button jump;
     [SerializeField] [HideInInspector] internal Button attack;
+    [SerializeField] [HideInInspector] internal Button special;
     [SerializeField] [HideInInspector] internal Button interactive;
     [SerializeField] [HideInInspector] internal Button removeItem;
     [SerializeField] [HideInInspector] internal Button useItem;
@@ -28,6 +29,7 @@ namespace Orb.GirlLike.Controllers
     {
       pauseGame.CheckState(map.pauseGameKey);
       jump.CheckState(map.jumpKey);
+      special.CheckState(map.specialKey);
       attack.CheckState(map.attackKey);
       dash.CheckState(map.dashKey);
       interactive.CheckState(map.interactiveKey);
