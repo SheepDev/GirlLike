@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 21
   type: 0
   needToBuy: 0
-  description: asdsadas
+  description: "Item Passivo\nChiquinha Gonzaga: \nAumenta velocidade de movimento"
   price: 0
   onBuy:
     m_PersistentCalls:

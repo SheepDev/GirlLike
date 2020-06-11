@@ -15,7 +15,8 @@ MonoBehaviour:
   ID: 3
   type: 1
   needToBuy: 0
-  description: dsasdasdasd
+  description: "Item Ativ\xE1vel\nOprah: \nQuando ativado o player recebe 5 itens
+    aleat\xF3rios"
   price: 0
   onBuy:
     m_PersistentCalls:

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 22
   type: 0
   needToBuy: 0
-  description: asdadad
+  description: "Item Passivo\nAdalzira Bittencourt : \nAumenta o tamanho do pulo."
   price: 0
   onBuy:
     m_PersistentCalls:

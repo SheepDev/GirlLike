@@ -15,7 +15,8 @@ MonoBehaviour:
   ID: 2
   type: 1
   needToBuy: 0
-  description: asdasdasdasd
+  description: "Item Ativ\xE1vel\nTeresa Melo :\nO jogador fica \"invis\xEDvel\"
+    ignorando dano "
   price: 0
   onBuy:
     m_PersistentCalls:

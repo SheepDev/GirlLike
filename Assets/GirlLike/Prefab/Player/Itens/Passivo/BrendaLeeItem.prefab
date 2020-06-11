@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 23
   type: 0
   needToBuy: 0
-  description: sdasdasda
+  description: "Item Passivo\nBrenda Lee: \nAumenta  a distancia do dash."
   price: 0
   onBuy:
     m_PersistentCalls:

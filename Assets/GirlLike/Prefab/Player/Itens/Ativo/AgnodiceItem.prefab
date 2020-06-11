@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 0
   type: 1
   needToBuy: 0
-  description: asdadsasdadsasdads
+  description: "Item Ativ\xE1vel\nAgnodice de Athenas : \nAdiciona uma Vida extra."
   price: 0
   onBuy:
     m_PersistentCalls:

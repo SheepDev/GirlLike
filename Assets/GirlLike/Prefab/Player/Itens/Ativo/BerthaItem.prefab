@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 1
   type: 1
   needToBuy: 0
-  description: asdadsadsasdasd
+  description: "Item Ativ\xE1vel\nBertha Lutz : \nRegenera uma vida."
   price: 0
   onBuy:
     m_PersistentCalls:

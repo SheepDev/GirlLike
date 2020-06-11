@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 20
   type: 0
   needToBuy: 0
-  description: sdasdasdasdasdasd
+  description: "Item Passivo\nN\xEDsia Floresta:\nAdiciona dano de ataque"
   price: 0
   onBuy:
     m_PersistentCalls:
