@@ -2,6 +2,7 @@
 using Orb.GirlLike.Itens;
 using Orb.GirlLike.Players;
 using UnityEngine;
+using static Orb.GirlLike.GameMode;
 
 namespace Orb.GirlLike.Cheat
 {
@@ -32,6 +33,17 @@ namespace Orb.GirlLike.Cheat
       if (Input.GetKeyDown(KeyCode.P))
       {
         player.Bag.AddCoin(10);
+      }
+      if (Input.GetKeyDown(KeyCode.N))
+      {
+        var gamemode = GameMode.Current;
+        var currentCharacter = gamemode.CurrentCharacterType;
+        if (currentCharacter == PlayerCharacterType.Thay)
+          currentCharacter = PlayerCharacterType.Jana;
+        else
+          currentCharacter++;
+
+        GameMode.Current.SetCharacter(currentCharacter);
       }
       if (Input.GetKeyDown(KeyCode.O))
       {
