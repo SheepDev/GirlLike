@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Orb.GirlLike.Helper
 {
@@ -7,6 +8,7 @@ namespace Orb.GirlLike.Helper
     public Transform icon;
     public Transform[] positions;
     public static Minimap Current;
+    public UnityEvent onClose;
 
     private void Awake()
     {
@@ -16,6 +18,14 @@ namespace Orb.GirlLike.Helper
     public void SetPosition(int index)
     {
       icon.position = positions[index].position;
+    }
+
+    private void Update()
+    {
+      if (Input.GetKeyUp(KeyCode.Escape))
+      {
+        onClose.Invoke();
+      }
     }
   }
 }
