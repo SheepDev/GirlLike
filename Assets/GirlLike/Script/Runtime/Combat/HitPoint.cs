@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Orb.GirlLike.Players;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Orb.GirlLike.Combats
@@ -22,7 +23,6 @@ namespace Orb.GirlLike.Combats
     {
       hitPoint -= damage;
       onDamage.Invoke();
-
       if (IsDie)
         Die();
     }
