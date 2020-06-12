@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5242fb376bc382f429cf2a35e67816b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnable: 0
   filter2D:
     useTriggers: 1
     useLayerMask: 1
@@ -98,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  isLocal: 0
+  direction: {x: 0, y: 0, z: 0}
 --- !u!114 &6692100332529697937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectTag:
     name: 8
-  damage: 1
+  damage: 2
   onTrigger:
     m_PersistentCalls:
       m_Calls:
