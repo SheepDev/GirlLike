@@ -169,6 +169,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thrash
       objectReference: {fileID: 0}
+    - target: {fileID: 5838927557551728936, guid: 0e16bd741792ae74ab53c44572785e19,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e0575b08b2764f41a4b441ab7913e8f, type: 3}
     - target: {fileID: 6216579404859356658, guid: 0e16bd741792ae74ab53c44572785e19,
         type: 3}
       propertyPath: m_LocalPosition.x
