@@ -5,6 +5,7 @@ using Orb.GirlLike.Controllers;
 using Orb.GirlLike.Settings;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace Orb.GirlLike.Players
 {
@@ -16,6 +17,7 @@ namespace Orb.GirlLike.Players
     public bool hasSpecial;
     public float specialDelay;
     public float movementSpeedDuringAttack;
+    public Image specialIcon;
 
     private bool isAttack;
     private bool isDelayAttack;
@@ -56,6 +58,9 @@ namespace Orb.GirlLike.Players
       Movement.onJump.AddListener(ResetAttack);
       onDash.AddListener(() => hitPoint.isIgnoreDamage = true);
       onDashFinish.AddListener(() => hitPoint.isIgnoreDamage = false);
+
+      if (hasSpecial)
+        specialIcon.gameObject.SetActive(true);
     }
 
     public void Attack(ActionState state)
@@ -84,6 +89,7 @@ namespace Orb.GirlLike.Players
       Movement.currentSpeed = movementSpeedDuringAttack;
       PlayerAnimator.Animator.SetTrigger("Special");
       isDelaySpecial = isAttack = true;
+      specialIcon.color = new Color(.3f, .3f, .3f);
       StartCoroutine(DelaySpecial(specialDelay));
     }
 
@@ -99,6 +105,7 @@ namespace Orb.GirlLike.Players
     {
       yield return new WaitForSeconds(delay);
       isDelaySpecial = false;
+      specialIcon.color = Color.white;
     }
 
     private IEnumerator WhileDash()

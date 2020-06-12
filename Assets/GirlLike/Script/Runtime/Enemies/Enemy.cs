@@ -36,6 +36,7 @@ namespace Orb.GirlLike.Ememies
     protected bool isAttack;
     protected bool isSpawn;
     private Transform cacheTransform;
+    private StunIcon icon;
 
     public bool IsStun => isStun;
     public bool IsAttack => isAttack;
@@ -61,6 +62,7 @@ namespace Orb.GirlLike.Ememies
       HitPoint.enemy = this;
       HitPoint.onDie.AddListener(OnDie);
       HitPoint.onDamage.AddListener(OnTakeDamage);
+      icon = GetComponentInChildren<StunIcon>(true);
     }
 
     protected virtual void Update()
@@ -284,8 +286,10 @@ namespace Orb.GirlLike.Ememies
     private IEnumerator StunDelay(float delay)
     {
       isStun = true;
+      icon.gameObject.SetActive(true);
       yield return new WaitForSeconds(delay);
       isStun = false;
+      icon.gameObject.SetActive(false);
       OnNormal();
     }
 

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IntroLoop
+  m_Name: Stun
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -25,17 +25,17 @@ AnimationClip:
     - time: 0.1
       value: {fileID: 2831363460287316188, guid: ba878d8fab1fd5b48af8b2401e3e0ade,
         type: 3}
-    - time: 0.18333334
+    - time: 0.21666667
       value: {fileID: -6614594754308018031, guid: ba878d8fab1fd5b48af8b2401e3e0ade,
         type: 3}
-    - time: 0.26666668
+    - time: 0.33333334
       value: {fileID: -5379046816916949201, guid: ba878d8fab1fd5b48af8b2401e3e0ade,
         type: 3}
-    - time: 0.36666667
+    - time: 0.43333334
       value: {fileID: 7688289491304706891, guid: ba878d8fab1fd5b48af8b2401e3e0ade,
         type: 3}
     attribute: m_Sprite
-    path: 
+    path: StunIcon
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -46,7 +46,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 1067701203
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -63,7 +63,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.38333336
+    m_StopTime: 0.45000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
