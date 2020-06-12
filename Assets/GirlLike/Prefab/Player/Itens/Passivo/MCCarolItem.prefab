@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 0
   needToBuy: 0
   description: "Item Passivo\nMC Carol: \n+Dano de Ataque\n- Velocidade deAtaque"
-  price: 0
+  price: 40
   onBuy:
     m_PersistentCalls:
       m_Calls: []

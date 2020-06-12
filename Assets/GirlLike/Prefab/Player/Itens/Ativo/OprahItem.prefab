@@ -17,7 +17,7 @@ MonoBehaviour:
   needToBuy: 0
   description: "Item Ativ\xE1vel\nOprah: \nQuando ativado o player recebe 5 itens
     aleat\xF3rios"
-  price: 0
+  price: 60
   onBuy:
     m_PersistentCalls:
       m_Calls: []

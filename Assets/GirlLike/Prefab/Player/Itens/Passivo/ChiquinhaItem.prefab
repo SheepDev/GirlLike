@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 0
   needToBuy: 0
   description: "Item Passivo\nChiquinha Gonzaga: \nAumenta velocidade de movimento"
-  price: 0
+  price: 40
   onBuy:
     m_PersistentCalls:
       m_Calls: []

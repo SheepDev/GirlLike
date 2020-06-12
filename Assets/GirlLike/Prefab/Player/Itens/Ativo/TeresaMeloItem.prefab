@@ -17,7 +17,7 @@ MonoBehaviour:
   needToBuy: 0
   description: "Item Ativ\xE1vel\nTeresa Melo :\nO jogador fica \"invis\xEDvel\"
     ignorando dano "
-  price: 0
+  price: 60
   onBuy:
     m_PersistentCalls:
       m_Calls: []

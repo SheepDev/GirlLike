@@ -17,7 +17,7 @@ MonoBehaviour:
   needToBuy: 1
   description: "Item Ativ\xE1vel\nMaria da Penha:\nUm escudo que protege de qualquer
     ataque"
-  price: 18
+  price: 60
   onBuy:
     m_PersistentCalls:
       m_Calls: []

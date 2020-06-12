@@ -29,6 +29,8 @@ namespace Orb.GirlLike.Players
     private int selectedIndex;
     private int coinAmount;
 
+    public int CoinAmount => coinAmount;
+
     private void Awake()
     {
       slots = new List<ItemSlot>();

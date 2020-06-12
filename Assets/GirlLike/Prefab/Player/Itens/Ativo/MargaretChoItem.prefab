@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 1
   needToBuy: 0
   description: "Item Ativ\xE1vel\nMargaret Cho: \nFaz os inimigos ficarem paralisados\n"
-  price: 0
+  price: 60
   onBuy:
     m_PersistentCalls:
       m_Calls: []
