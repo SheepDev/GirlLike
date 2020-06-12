@@ -1965,6 +1965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc7affdd78c2df4daca7cea3deb9301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_light: {fileID: 1402317991020516581}
   overlapInteractive: {fileID: 7565174837049219749}
   defaultGravity: 0
 --- !u!114 &2912120161910940765

@@ -11,6 +11,7 @@ namespace Orb.GirlLike.Players
   public class Player : MonoBehaviour
   {
 #pragma warning disable CS0649
+    [SerializeField] private GameObject m_light;
     [SerializeField] private OverlapBehaviour overlapInteractive;
 #pragma warning restore CS0649
     private Transform cacheTransform;
@@ -52,6 +53,7 @@ namespace Orb.GirlLike.Players
     public void HiddenHUD(bool isHidden)
     {
       HUD.Canvas.enabled = !isHidden;
+      m_light.SetActive(!isHidden);
     }
 
     public void DisableCombat(bool isDisable)
