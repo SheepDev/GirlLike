@@ -11,13 +11,11 @@ namespace Orb.GirlLike.Ememies
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Projectile prefab;
 #pragma warning restore CS0649
-    private Vector3 attackDirection;
 
     protected override IEnumerator Attack()
     {
       OnIdle();
       SetDirection(TargetIsLeft());
-      attackDirection = GetTargetDirection(spawnPoint.position);
       canMove = false;
       yield return base.Attack();
     }
@@ -39,7 +37,7 @@ namespace Orb.GirlLike.Ememies
     {
       var projectile = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
       projectile.gameObject.SetActive(true);
-      projectile.SetDirection(attackDirection);
+      projectile.SetDirection(GetTargetDirection(spawnPoint.position));
     }
   }
 }

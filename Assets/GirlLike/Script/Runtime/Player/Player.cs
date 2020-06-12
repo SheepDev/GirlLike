@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Orb.GirlLike.Controllers;
+using Orb.GirlLike.Ememies;
 using Orb.GirlLike.Itens;
 using Orb.GirlLike.Players.UI;
 using Orb.GirlLike.Utility;
@@ -11,6 +12,7 @@ namespace Orb.GirlLike.Players
   public class Player : MonoBehaviour
   {
 #pragma warning disable CS0649
+    [SerializeField] private GameObject m_light;
     [SerializeField] private OverlapBehaviour overlapInteractive;
 #pragma warning restore CS0649
     private Transform cacheTransform;
@@ -23,6 +25,7 @@ namespace Orb.GirlLike.Players
     public PlayerStatus Status { get; private set; }
     public Rigidbody2D Rigidbody { get; private set; }
     public PlayerInput Input { get; private set; }
+    public Target Target { get; private set; }
     public PlayerMovement Movement { get; private set; }
     public PlayerCombatSystem Combat { get; private set; }
     public PlayerBag Bag { get; private set; }
@@ -39,6 +42,7 @@ namespace Orb.GirlLike.Players
       Status = GetComponent<PlayerStatus>();
       Rigidbody = GetComponent<Rigidbody2D>();
       Input = GetComponent<PlayerInput>();
+      Target = GetComponent<Target>();
       defaultGravity = Rigidbody.gravityScale;
     }
 
@@ -52,6 +56,7 @@ namespace Orb.GirlLike.Players
     public void HiddenHUD(bool isHidden)
     {
       HUD.Canvas.enabled = !isHidden;
+      m_light.SetActive(!isHidden);
     }
 
     public void DisableCombat(bool isDisable)

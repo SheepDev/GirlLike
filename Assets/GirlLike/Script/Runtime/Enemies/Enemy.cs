@@ -35,7 +35,6 @@ namespace Orb.GirlLike.Ememies
     private bool isStun;
     protected bool isAttack;
     protected bool isSpawn;
-    private Target target;
     private Transform cacheTransform;
 
     public bool IsStun => isStun;
@@ -44,6 +43,7 @@ namespace Orb.GirlLike.Ememies
     public Rigidbody2D RB2D { get; private set; }
     public EnemyHitPoint HitPoint { get; private set; }
     public MoveTo MoveTo { get; private set; }
+    private Target Target => GameMode.Current.GetPlayer().Target;
 
     protected Enemy()
     {
@@ -210,7 +210,7 @@ namespace Orb.GirlLike.Ememies
     public bool TargetIsLeft()
     {
       var transform = GetTransform();
-      var targetPoint = target.GetCenter();
+      var targetPoint = Target.GetCenter();
       return targetPoint.x < transform.position.x;
     }
 
@@ -221,7 +221,7 @@ namespace Orb.GirlLike.Ememies
 
     public Vector3 GetTargetDirection(Vector3 worldPoint)
     {
-      return (target.GetCenter() - worldPoint).normalized;
+      return (Target.GetCenter() - worldPoint).normalized;
     }
 
     protected virtual void GoToTarget()
@@ -268,9 +268,7 @@ namespace Orb.GirlLike.Ememies
 
     protected Target GetTarget()
     {
-      if (target == null)
-        target = GameMode.Current.GetPlayer().GetComponent<Target>();
-      return target;
+      return GameMode.Current.GetPlayer().Target;
     }
 
     public Transform GetTransform()

@@ -12,18 +12,13 @@ namespace Orb.GirlLike.Cheat
     [SerializeField] private Transform bossPoint;
     [SerializeField] private Item[] itens;
     private int indexItem;
-    private GameObject hitpointGameObject;
-
-    private void Start()
-    {
-      player = GameMode.Current.GetPlayer();
-      hitpointGameObject = player.GetComponentInChildren<TakeDamage>(true).gameObject;
-    }
 
     private void Update()
     {
+      player = GameMode.Current.GetPlayer();
       if (Input.GetKeyDown(KeyCode.I))
       {
+        var hitpointGameObject = player.GetComponentInChildren<TakeDamage>(true).gameObject;
         hitpointGameObject.SetActive(!hitpointGameObject.activeInHierarchy);
       }
       if (Input.GetKeyDown(KeyCode.B))

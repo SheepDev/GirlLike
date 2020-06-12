@@ -18,6 +18,7 @@ namespace Orb.GirlLike.Players.UI
     [SerializeField] private Canvas canvas;
     [SerializeField] private Transform lifeBarRoot;
     [SerializeField] private Image profileIMG;
+    [SerializeField] private Image minimapIMG;
     [SerializeField] private TextMeshProUGUI coinText;
 #pragma warning restore CS0649
 
@@ -34,7 +35,7 @@ namespace Orb.GirlLike.Players.UI
       shields = new List<Heart>();
       player = GetComponent<Player>();
 
-      profileIMG.sprite = profileSprite;
+      minimapIMG.sprite = profileIMG.sprite = profileSprite;
     }
 
     private void Start()

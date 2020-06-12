@@ -16,21 +16,19 @@ namespace Orb.GirlLike.Itens
     public int Price => price;
 
     [HideInInspector] public UnityEvent onBuy;
-    private Player player;
-    private PlayerBag bag;
     private Animator iconAnimator;
+    private Player Player => GameMode.Current.GetPlayer();
+    private PlayerBag Bag => Player.Bag;
     public string Description => description;
 
     private void Awake()
     {
-      player = GameMode.Current.GetPlayer();
-      bag = player.Bag;
       enabled = false;
     }
 
     private void Update()
     {
-      var isBlock = bag.HasItem(this) || !bag.HasCoin(this) || !bag.HasAvaliableSlot();
+      var isBlock = Bag.HasItem(this) || !Bag.HasCoin(this) || !Bag.HasAvaliableSlot();
 
       if (isBlock)
       {
