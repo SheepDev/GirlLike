@@ -268,9 +268,7 @@ namespace Orb.GirlLike.Ememies
 
     protected Target GetTarget()
     {
-      if (target == null)
-        target = GameMode.Current.GetPlayer().GetComponent<Target>();
-      return target;
+      return GameMode.Current.GetPlayer().Target;
     }
 
     public Transform GetTransform()

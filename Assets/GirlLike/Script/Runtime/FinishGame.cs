@@ -7,16 +7,11 @@ namespace Orb.GirlLike
   public class FinishGame : MonoBehaviour
   {
     public PlayableDirector playableDirector;
-    private Player player;
-
-    private void Start()
-    {
-      player = GameMode.Current.GetPlayer();
-    }
+    private Player Player => GameMode.Current.GetPlayer();
 
     public void Finish()
     {
-      player.HiddenHUD(true);
+      Player.HiddenHUD(true);
       Time.timeScale = 0;
       playableDirector.Play();
     }

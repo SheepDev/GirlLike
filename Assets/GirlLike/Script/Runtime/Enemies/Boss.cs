@@ -21,8 +21,6 @@ namespace Orb.GirlLike.Ememies
     public UnityEvent onLand;
 
     private float groundHeight;
-    private Player player;
-    private Target target;
     private HitPoint hitPoint;
     private Transform cacheTransform;
 
@@ -31,6 +29,8 @@ namespace Orb.GirlLike.Ememies
     private bool isDie;
 
     public Animator Animator { get; private set; }
+    public Player Player => GameMode.Current.GetPlayer();
+    private Target Target => Player.Target;
 
     private void Awake()
     {
@@ -39,8 +39,6 @@ namespace Orb.GirlLike.Ememies
 
       cacheTransform = transform;
       groundHeight = cacheTransform.position.y;
-      player = GameMode.Current.GetPlayer();
-      target = player.GetComponent<Target>();
       hitPoint.onDie.AddListener(OnDie);
     }
 
@@ -63,17 +61,17 @@ namespace Orb.GirlLike.Ememies
 
     private void Explosion_AnimTrigger()
     {
-      var isOverlap = circleExplosion.OverlapPoint(target.GetCenter());
+      var isOverlap = circleExplosion.OverlapPoint(Target.GetCenter());
 
       if (isOverlap)
       {
-        player.HitPoint.ApplyDamage(new PointDamageData(cacheTransform.position, 2f));
+        Player.HitPoint.ApplyDamage(new PointDamageData(cacheTransform.position, 2f));
 
-        player.Rigidbody.velocity = Vector3.zero;
-        var direction = cacheTransform.position.x > target.GetCenter().x ? Vector3.left : Vector3.right;
+        Player.Rigidbody.velocity = Vector3.zero;
+        var direction = cacheTransform.position.x > Target.GetCenter().x ? Vector3.left : Vector3.right;
         direction.y = 1;
         direction.Normalize();
-        player.Rigidbody.AddForce(direction * impulseForce, ForceMode2D.Impulse);
+        Player.Rigidbody.AddForce(direction * impulseForce, ForceMode2D.Impulse);
       }
 
       meleeAttackCount++;
@@ -129,7 +127,7 @@ namespace Orb.GirlLike.Ememies
 
       if (isMeleePhase)
       {
-        position = player.GetTransform().position;
+        position = Player.GetTransform().position;
         position.y = groundHeight;
       }
       else
@@ -246,7 +244,7 @@ namespace Orb.GirlLike.Ememies
 
     private Vector3 TargetDirection()
     {
-      return (target.GetCenter() - spawnPoint.position).normalized;
+      return (Target.GetCenter() - spawnPoint.position).normalized;
     }
 
     private IEnumerator FallPhase()
@@ -268,7 +266,7 @@ namespace Orb.GirlLike.Ememies
       }
 
       onLand.Invoke();
-      player.Rigidbody.AddForce(Vector3.up * 5, ForceMode2D.Impulse);
+      Player.Rigidbody.AddForce(Vector3.up * 5, ForceMode2D.Impulse);
 
       yield return Vulnerable();
     }

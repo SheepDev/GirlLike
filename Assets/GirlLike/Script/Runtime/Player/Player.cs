@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Orb.GirlLike.Controllers;
+using Orb.GirlLike.Ememies;
 using Orb.GirlLike.Itens;
 using Orb.GirlLike.Players.UI;
 using Orb.GirlLike.Utility;
@@ -24,6 +25,7 @@ namespace Orb.GirlLike.Players
     public PlayerStatus Status { get; private set; }
     public Rigidbody2D Rigidbody { get; private set; }
     public PlayerInput Input { get; private set; }
+    public Target Target { get; private set; }
     public PlayerMovement Movement { get; private set; }
     public PlayerCombatSystem Combat { get; private set; }
     public PlayerBag Bag { get; private set; }
@@ -40,6 +42,7 @@ namespace Orb.GirlLike.Players
       Status = GetComponent<PlayerStatus>();
       Rigidbody = GetComponent<Rigidbody2D>();
       Input = GetComponent<PlayerInput>();
+      Target = GetComponent<Target>();
       defaultGravity = Rigidbody.gravityScale;
     }
 
